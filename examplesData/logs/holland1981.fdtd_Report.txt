@@ -12,14 +12,14 @@ Compiled WITH .h5 HDF support
 Compiled WITH MTLN support
 Compiled WITH SMBJSON support
 __________________________________________
-Launched on              27/04/2025 09:18
+Launched on              27/04/2025 13:23
 Switches build\bin\semba-fdtd.exe -i examplesData\cases\holland1981.fdtd.json
 __________________________________________
 Closing warning file. Number of messages:            0
 __________________________________________
 Compiled with Single precision (real*4)
 __________________________________________
-Launched on              27/04/2025 09:18
+Launched on              27/04/2025 13:23
 __________________________________________
 Launched with total options
 build\bin\semba-fdtd.exe -i examplesData\cases\holland1981.fdtd.json
@@ -101,13 +101,13 @@ Flushing observation DATA every      10000001  minutes and every         1024  s
 Reporting simulation info every             1  minutes
 __________________________________________
 Simulation from n=      0, t=   0.000000000E+000 to n=     1000, t=   0.299999990E-007
-Date/time 27/04/2025   09:18:04
+Date/time 27/04/2025   13:23:09
 __________________________________________
 Closing warning file. Number of messages:           22
 __________________________________________
 END PREPROCESSING. STARTING simulation.
 __________________________________________
-Start Date/time 27/04   09:18:04
+Start Date/time 27/04   13:23:09
 __________________________________________
 END FDTD time stepping. Beginning posprocessing at n=         1000
 __________________________________________
@@ -132,7 +132,7 @@ END FINAL POSTPROCESSING at n=         1000
 __________________________________________
 DONE :  examplesData\cases\holland1981.fdtd UNTIL n=        1000
 __________________________________________
-BEGUN examplesData\cases\holland1981.fdtd at 27/04/2025 , 09:18
-ENDED examplesData\cases\holland1981.fdtd at 27/04/2025 , 09:18
+BEGUN examplesData\cases\holland1981.fdtd at 27/04/2025 , 13:23
+ENDED examplesData\cases\holland1981.fdtd at 27/04/2025 , 13:23
 __________________________________________
 __________________________________________
