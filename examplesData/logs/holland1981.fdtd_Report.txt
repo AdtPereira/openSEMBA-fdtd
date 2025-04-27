@@ -1,0 +1,138 @@
+=========================
+SEMBA-FDTD SOLVER
+=========================
+__________________________________________
+SEMBA-FDTD. Release build, compiled on: Apr 26 2025 16:13:54
+__________________________________________
+All rights reserved by the University of Granada (Spain)
+Contact person: Salvador G. Garcia <salva@ugr.es>
+
+__________________________________________
+Compiled WITH .h5 HDF support
+Compiled WITH MTLN support
+Compiled WITH SMBJSON support
+__________________________________________
+Launched on              27/04/2025 09:18
+Switches build\bin\semba-fdtd.exe -i examplesData\cases\holland1981.fdtd.json
+__________________________________________
+Closing warning file. Number of messages:            0
+__________________________________________
+Compiled with Single precision (real*4)
+__________________________________________
+Launched on              27/04/2025 09:18
+__________________________________________
+Launched with total options
+build\bin\semba-fdtd.exe -i examplesData\cases\holland1981.fdtd.json
+If later resuming use compulsory options
+mpirun -n    1
+__________________________________________
+INIT conversion internal ASCII => Binary
+__________________________________________
+__________________________________________
+__________________________________________
+CFLN=   0.1557767
+__________________________________________
+__________________________________________
+Deltat=   2.999999901276418E-011
+__________________________________________
+INIT NFDE --------> GEOM
+INIT UPDATING SHARED INFO. This process may take time!
+Launch with -noshared to skip this process (just relevant for structured NIBC CFCs and Anisot.)
+[OK] END UPDATING SHARED INFO
+[OK] ENDED NFDE --------> GEOM
+!SLICES_34
+_________Spanning from z=     -6 to z=     28
+[OK] Ended conversion internal ASCII => Binary
+[OK] Ended Conformal Mesh
+__________________________________________
+Solver launched with options:
+---> l%mibc    solver for NIBC multilayer: F
+---> l%ade     solver for ADC multilayer: F
+---> sgbc    solver for multilayer: T
+---> sgbc DISPERSIVE solver for multilayer: F
+---> sgbc Crank-Nicolson solver for multilayer: T
+---> sgbc Depth: -1
+---> sgbc Freq: 1.0000000E+09
+---> sgbc Resol: 1.000000
+---> l%skindepthpre preprocessing for multilayer: F
+---> Conformal file external: F
+---> Conformal solver: F
+---> Conformal thin-gap solver: F
+---> DMMA thin-gap solver: T
+---> Wire model: holland
+---> Inductance model: boutayeb
+---> Holland -l%stableradholland automatic correction switch: F
+---> Thin-wire double-tails removed: T
+---> Thin-wire -l%fieldtotl experimental switch: F
+__________________________________________
+Init Reporting...
+__________________________________________
+[OK]
+Init Other Borders...
+----> no PEC, PMC or periodic Borders found
+Init CPML Borders...
+----> there are CPML Borders
+Init PML Bodies...
+----> no PML Bodies found
+Init Mur Borders...
+----> no Mur Borders found
+Init Lumped Elements...
+----> no lumped Structured elements found
+Init Holland Wires...
+----> there are Holland/transition wires
+Init Anisotropic...
+----> no Structured anisotropic elements found
+Init Multi sgbc...
+----> no Structured sgbc elements found
+Init EDispersives...
+----> no Structured Electric dispersive elements found
+Init MDispersives...
+----> no Structured Magnetic dispersive elements found
+Init Multi Plane-Waves...
+----> there are Plane Wave
+Init Nodal Sources...
+----> no Structured Nodal sources are found
+Init Observation...
+----> there are observation requests
+Init Timing...
+Total Mcells:   3.4816001E-02
+NO flushing of restarting FIELDS scheduled
+Flushing observation DATA every      10000001  minutes and every         1024  steps
+Reporting simulation info every             1  minutes
+__________________________________________
+Simulation from n=      0, t=   0.000000000E+000 to n=     1000, t=   0.299999990E-007
+Date/time 27/04/2025   09:18:04
+__________________________________________
+Closing warning file. Number of messages:           22
+__________________________________________
+END PREPROCESSING. STARTING simulation.
+__________________________________________
+Start Date/time 27/04   09:18:04
+__________________________________________
+END FDTD time stepping. Beginning posprocessing at n=         1000
+__________________________________________
+INIT FINAL OBSERVATION DATA FLUSHING n=      1000
+__________________________________________
+__________________________________________
+DONE FINAL OBSERVATION  DATA FLUSHED n=      1000
+__________________________________________
+INIT FINAL Postprocessing frequency domain probes, if any, at n=      1000
+__________________________________________
+No FINAL frequency domain probes snapshots found to be postrocessed
+__________________________________________
+INIT FINAL FLUSHING .vtk if any.
+__________________________________________
+No FINAL .vtk snapshots found to be flushed
+__________________________________________
+INIT FINAL FLUSHING .xdmf if any.
+__________________________________________
+No FINAL .xdmf snapshots found to be flushed
+__________________________________________
+END FINAL POSTPROCESSING at n=         1000
+__________________________________________
+DONE :  examplesData\cases\holland1981.fdtd UNTIL n=        1000
+__________________________________________
+BEGUN examplesData\cases\holland1981.fdtd at 27/04/2025 , 09:18
+ENDED examplesData\cases\holland1981.fdtd at 27/04/2025 , 09:18
+__________________________________________
+__________________________________________

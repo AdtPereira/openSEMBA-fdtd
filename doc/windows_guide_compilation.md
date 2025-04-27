@@ -23,12 +23,14 @@ Before starting, make sure you have:
 
 4. **Microsoft Visual Studio 2019 or 2022**
    
-   Visual Studio Community Edition is free for students, open-source developers, and individual use. You can obtain Microsoft Visual Studio 2019 or Visual Studio 2022 officially from Microsoft's website:
+   - Visual Studio Community Edition is free for students, open-source developers, and individual use. You can obtain Microsoft Visual Studio 2019 or Visual Studio 2022 officially from Microsoft's website:
 
-   - Visual Studio 2022: https://visualstudio.microsoft.com/vs/
+      - Visual Studio 2022: https://visualstudio.microsoft.com/vs/
+      - Visual Studio 2019 (older versions / archive): https://learn.microsoft.com/en-us/visualstudio/releases/2019/history
 
-   - Visual Studio 2019 (older versions / archive): https://learn.microsoft.com/en-us/visualstudio/releases/2019/history 
-
+   - Install Visual Studio with C++ support. During the installation, enable:
+      - `Desktop development with C++`
+      - `C++ Build Tools`
 
 ## 2. Fortran Compiler
 
