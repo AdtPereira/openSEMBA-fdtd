@@ -17,7 +17,7 @@
         {
             "id": 1,
             "type": "wire",
-            "radius": 0.02,
+            "radius": 0.04,
             "resistancePerMeter": 0.0,
             "inductancePerMeter": 0.0
         },
@@ -29,6 +29,13 @@
                     "type": "open"
                 }
             ]
+        },
+        {
+            "id": 3,
+            "type": "free_space",
+            "relativePermittivity": 1.0,
+            "relativeMagneticPermeability": 1.0,
+            "conductivity": 0.0
         }
     ],
     "mesh": {
@@ -137,6 +144,13 @@
             "elementIds": [
                 2
             ]
+        },
+        {
+            "name": "air_domain",
+            "materialId": 3,
+            "elementIds": [
+                3
+            ]
         }
     ],
     "sources": [
@@ -151,7 +165,7 @@
                 "phi": 0.0
             },
             "polarization": {
-                "theta": 0.0,
+                "theta": 3.1416,
                 "phi": 0.0
             }
         }

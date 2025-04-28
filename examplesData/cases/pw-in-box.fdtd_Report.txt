@@ -12,17 +12,17 @@ Compiled WITH .h5 HDF support
 Compiled WITH MTLN support
 Compiled WITH SMBJSON support
 __________________________________________
-Launched on              28/04/2025 19:44
-Switches C:\Users\adilt\OneDrive\05_GIT\openSEMBA\fdtd\build\bin\semba-fdtd.exe -mapvtk -i holland1981.fdtd.json
+Launched on              28/04/2025 19:50
+Switches C:\Users\adilt\OneDrive\05_GIT\openSEMBA\fdtd\build\bin\semba-fdtd.exe -i pw-in-box.fdtd.json
 __________________________________________
 Closing warning file. Number of messages:            0
 __________________________________________
 Compiled with Single precision (real*4)
 __________________________________________
-Launched on              28/04/2025 19:44
+Launched on              28/04/2025 19:50
 __________________________________________
 Launched with total options
-C:\Users\adilt\OneDrive\05_GIT\openSEMBA\fdtd\build\bin\semba-fdtd.exe -mapvtk -i holland1981.fdtd.json
+C:\Users\adilt\OneDrive\05_GIT\openSEMBA\fdtd\build\bin\semba-fdtd.exe -i pw-in-box.fdtd.json
 If later resuming use compulsory options
 mpirun -n    1
 __________________________________________
@@ -30,20 +30,28 @@ INIT conversion internal ASCII => Binary
 __________________________________________
 __________________________________________
 __________________________________________
-CFLN=   0.1557767
+Automatically correcting dt for stability reasons:
+Original dt:   5.000000066757160E-011
+New dt:   1.540666552668490E-011
 __________________________________________
 __________________________________________
-Deltat=   2.999999901276418E-011
+CFLN=   0.8000000
+__________________________________________
+__________________________________________
+Deltat=   1.540666552668490E-011
 __________________________________________
 INIT NFDE --------> GEOM
 INIT UPDATING SHARED INFO. This process may take time!
 Launch with -noshared to skip this process (just relevant for structured NIBC CFCs and Anisot.)
 [OK] END UPDATING SHARED INFO
 [OK] ENDED NFDE --------> GEOM
-!SLICES_34
-_________Spanning from z=     -6 to z=     28
+!SLICES_6
+_________Spanning from z=      0 to z=      6
 [OK] Ended conversion internal ASCII => Binary
 [OK] Ended Conformal Mesh
+__________________________________________
+Original Final Time Step=          400
+Corrected Final Time Step=         1298
 __________________________________________
 Solver launched with options:
 ---> l%mibc    solver for NIBC multilayer: F
@@ -71,15 +79,15 @@ __________________________________________
 Init Other Borders...
 ----> no PEC, PMC or periodic Borders found
 Init CPML Borders...
-----> there are CPML Borders
+----> no CPML Borders found
 Init PML Bodies...
 ----> no PML Bodies found
 Init Mur Borders...
-----> no Mur Borders found
+----> there are Mur Borders
 Init Lumped Elements...
 ----> no lumped Structured elements found
 Init Holland Wires...
-----> there are Holland/transition wires
+----> no Holland/transition wires found
 Init Anisotropic...
 ----> no Structured anisotropic elements found
 Init Multi sgbc...
@@ -95,48 +103,29 @@ Init Nodal Sources...
 Init Observation...
 ----> there are observation requests
 Init Timing...
-Total Mcells:   3.4816001E-02
+Total Mcells:   2.1600001E-04
 NO flushing of restarting FIELDS scheduled
 Flushing observation DATA every      10000001  minutes and every         1024  steps
 Reporting simulation info every             1  minutes
 __________________________________________
-Simulation from n=      0, t=   0.000000000E+000 to n=     1000, t=   0.299999990E-007
-Date/time 28/04/2025   19:44:41
+Simulation from n=      0, t=   0.000000000E+000 to n=     1298, t=   0.199978519E-007
+Date/time 28/04/2025   19:50:53
 __________________________________________
-Closing warning file. Number of messages:           22
+Closing warning file. Number of messages:            0
 __________________________________________
 END PREPROCESSING. STARTING simulation.
 __________________________________________
-Start Date/time 28/04   19:44:41
+Start Date/time 28/04   19:50:53
+__________________________________________
+Switching plane-wave off at n=         372
+END FDTD time stepping. Beginning posprocessing at n=         1298
+__________________________________________
+INIT FINAL OBSERVATION DATA FLUSHING n=      1298
 __________________________________________
 __________________________________________
-INIT OBSERVATION DATA FLUSHING n=         5
+DONE FINAL OBSERVATION  DATA FLUSHED n=      1298
 __________________________________________
-__________________________________________
-Done OBSERVATION DATA FLUSHED n=         5
-__________________________________________
-__________________________________________
-Post-processing .vtk files n=         5
-__________________________________________
-----> file holland1981.fdtd__MAP_0_0_0__20_20_22_1.vtk         1/        1
-End flushing .vtk snapshots
-__________________________________________
-__________________________________________
-Post-processing .xdmf files n=         5
-__________________________________________
-No .xdmf snapshots found to be flushed
-__________________________________________
-__________________________________________
-Continuing simulation at n=         5
-__________________________________________
-END FDTD time stepping. Beginning posprocessing at n=         1000
-__________________________________________
-INIT FINAL OBSERVATION DATA FLUSHING n=      1000
-__________________________________________
-__________________________________________
-DONE FINAL OBSERVATION  DATA FLUSHED n=      1000
-__________________________________________
-INIT FINAL Postprocessing frequency domain probes, if any, at n=      1000
+INIT FINAL Postprocessing frequency domain probes, if any, at n=      1298
 __________________________________________
 No FINAL frequency domain probes snapshots found to be postrocessed
 __________________________________________
@@ -148,11 +137,11 @@ INIT FINAL FLUSHING .xdmf if any.
 __________________________________________
 No FINAL .xdmf snapshots found to be flushed
 __________________________________________
-END FINAL POSTPROCESSING at n=         1000
+END FINAL POSTPROCESSING at n=         1298
 __________________________________________
-DONE :  holland1981.fdtd UNTIL n=        1000
+DONE :  pw-in-box.fdtd UNTIL n=        1298
 __________________________________________
-BEGUN holland1981.fdtd at 28/04/2025 , 19:44
-ENDED holland1981.fdtd at 28/04/2025 , 19:44
+BEGUN pw-in-box.fdtd at 28/04/2025 , 19:50
+ENDED pw-in-box.fdtd at 28/04/2025 , 19:50
 __________________________________________
 __________________________________________

@@ -2,15 +2,17 @@
 # cd C:\Users\adilt\OneDrive\05_GIT\openSEMBA\fdtd
 # python examples/holland1981.py
 
-import numpy as np
 import os
 import sys
-import shutil
-import subprocess
+import json
+import numpy as np
+import pyvista as pv 
 import matplotlib.pyplot as plt
 
-# Permite importar src_pyWrapper e utils mesmo rodando da raiz
+# Insere o diretório atual no início da lista sys.path, com prioridade 0.
+# Permite que o Python encontre módulos locais que estão na raiz do projeto openSEMBA/fdtd.
 sys.path.insert(0, os.getcwd())
+from src_pyWrapper.pyWrapper import CaseMaker
 
 EXCITATIONS_FOLDER = os.path.join('examplesData', 'excitations')
 OUTPUTS_FOLDER = os.path.join('examplesData', 'outputs')
@@ -22,8 +24,6 @@ def create_case_holland1981():
     Create holland1981.fdtd.json by following exactly the structure and indentation of existing_holland1981.fdtd.json.
     Using CaseMaker where possible, and direct input when needed.
     """
-    from src_pyWrapper.pyWrapper import CaseMaker  # Ajuste o import conforme seu projeto
-
     cm = CaseMaker()
 
     # --- 1. Headers ---
@@ -51,7 +51,7 @@ def create_case_holland1981():
         {
             "id": 1,
             "type": "wire",
-            "radius": 0.02,
+            "radius": 0.04,
             "resistancePerMeter": 0.0,
             "inductancePerMeter": 0.0
         },
@@ -59,6 +59,13 @@ def create_case_holland1981():
             "id": 2,
             "type": "terminal",
             "terminations": [{"type": "open"}]
+        },
+        {
+            "id": 3,
+            "type": "free_space",
+            "relativePermittivity": 1.0,
+            "relativeMagneticPermeability": 1.0,
+            "conductivity": 0.0
         }
     ]
 
@@ -94,6 +101,11 @@ def create_case_holland1981():
             "initialTerminalId": 2,
             "endTerminalId": 2,
             "elementIds": [2]
+        },
+        {
+            "name": "air_domain",
+            "materialId": 3,
+            "elementIds": [3]
         }
     ]
 
@@ -108,7 +120,7 @@ def create_case_holland1981():
                 "phi": 0.0
             },
             "polarization": {
-                "theta": 0.0,
+                "theta": 3.1416,
                 "phi": 0.0
             }
         }
@@ -165,55 +177,63 @@ def create_excitation_holland():
     print(f"✅ Excitation file 'holland.exc' created successfully at {output_path}.")
 
 def run_simulation():
-    """ Run the FDTD simulation using the generated case and excitation files. """
+    """ Run the FDTD simulation using the generated case and excitation files,
+        gerando também o VTK da geometria diretamente em examplesData/cases.
+    """
+    import os
+    import shutil
+    import subprocess
 
-    # --- Verifica se o executável existe ---
-    executable = os.path.join("build", "bin", "semba-fdtd.exe")
+    # --- 1) Definições iniciais ---
+    cwd_root    = os.getcwd()
+    rel_exe     = os.path.join("build", "bin", "semba-fdtd.exe")
+    executable  = os.path.abspath(rel_exe)
+    cases_dir   = os.path.join('examplesData', 'cases')
+    logs_dir    = os.path.join('examplesData', 'logs')
+    outputs_dir = os.path.join('examplesData', 'outputs')
+
+    # --- 2) Validações ---
     if not os.path.isfile(executable):
         raise FileNotFoundError(f"Executable {executable} not found.")
-    input_file = os.path.join(CASES_FOLDER, 'holland1981.fdtd.json')
 
-    # --- Se o arquivo .json não existir, cria-o ---
-    if not os.path.isfile(input_file):
-        print(f"⚡ Input file {input_file} not found. Generating it now...")
+    json_name = 'holland1981.fdtd.json'
+    json_src  = os.path.join(cases_dir, json_name)
+    exc_src   = os.path.join('examplesData', 'excitations', 'holland.exc')
+
+    if not os.path.isfile(json_src):
+        print(f"⚡ Input JSON {json_src} não encontrado. Gerando…")
         create_case_holland1981()
 
-    # --- Se o arquivo holland.exc não existir, cria-o ---
-    excitation_file = os.path.join(EXCITATIONS_FOLDER, 'holland.exc')
-    if not os.path.isfile(excitation_file):
-        print(f"⚡ Excitation file {excitation_file} not found. Generating it now...")
+    if not os.path.isfile(exc_src):
+        print(f"⚡ Excitation {exc_src} não encontrado. Gerando…")
         create_excitation_holland()
 
-    # --- Copiar arquivo de excitação para a raiz (fdtd/) ---
-    if not os.path.isfile('holland.exc'):
-        if os.path.isfile(excitation_file):
-            shutil.copy2(excitation_file, '.')
-        else:
-            raise FileNotFoundError(f"Excitation file {excitation_file} not found.")
+    # --- 3) Prep de pastas e arquivos ---
+    os.makedirs(cases_dir,    exist_ok=True)
+    os.makedirs(outputs_dir,   exist_ok=True)
+    os.makedirs(logs_dir,      exist_ok=True)
 
-    # --- Executar o solver ---
-    print(f"Executando: {executable} -i {input_file}")
-    subprocess.run([executable, "-i", input_file], check=True)
-    print("Simulação finalizada.")
+    # copia só a excitação, o JSON já está lá
+    shutil.copy2(exc_src, cases_dir)
 
-    # --- Criar pastas se necessário ---
-    os.makedirs(OUTPUTS_FOLDER, exist_ok=True)
-    os.makedirs(LOGS_FOLDER, exist_ok=True)
+    # --- 4) Roda o solver dentro de cases_dir ---
+    os.chdir(cases_dir)
+    try:
+        print(f"Executando: {executable} -mapvtk -i {json_name}")
+        subprocess.run([executable, "-mapvtk", "-i", json_name], check=True)
+    finally:
+        os.chdir(cwd_root)
 
-    # --- Mover arquivos ---
-    for file in os.listdir(CASES_FOLDER):
-        if file.startswith('holland1981'):
-            src = os.path.join(CASES_FOLDER, file)
-            if file.endswith('.dat') or file.endswith('.h5'):
-                dst = os.path.join(OUTPUTS_FOLDER, file)
-                shutil.move(src, dst)
-            elif file.endswith('.txt'):
-                dst = os.path.join(LOGS_FOLDER, file)
-                shutil.move(src, dst)
+    # --- 5) Move resultados para outputs/logs ---
+    for fname in os.listdir(cases_dir):
+        if fname.startswith('holland1981') and fname.endswith(('.dat', '.h5', '.vtk')):
+            shutil.move(os.path.join(cases_dir, fname),
+                        os.path.join(outputs_dir, fname))
+        elif fname.startswith('holland1981') and fname.endswith('.txt'):
+            shutil.move(os.path.join(cases_dir, fname),
+                        os.path.join(logs_dir, fname))
 
-    # --- Limpar o arquivo de excitação temporário ---
-    if os.path.isfile('holland.exc'):
-        os.remove('holland.exc')
+    print("Simulação finalizada e arquivos movidos para outputs e logs.")
 
 def check_output_files(output_folder, expected_files):
     """Confere se todos os arquivos esperados foram gerados."""
@@ -300,19 +320,97 @@ def plot_output_midpoint(output_filename):
     current = data[:, 1]  # Current (Amperes)
 
     # Plotting
-    plt.figure(figsize=(8, 4))
+    plt.figure(figsize=(6,5))
     plt.plot(time * 1e9, current, label='Mid-point Current', linestyle='-', linewidth=2)
     plt.xlabel('Time [ns]')
     plt.ylabel('Current [A]')
     plt.title('Mid-point Wire Current - ' + output_filename)
     plt.grid(True)
+    plt.xlim(0, 32)
+    plt.ylim(-8e-4, 8e-4)
     plt.legend()
     plt.tight_layout()
     plt.show()
 
+def export_mesh(case_json_path:  str = None,
+                                  output_vtm_path: str = None,
+                                  origin: tuple = (0.0, 0.0, 0.0)):
+    """
+    Gera um único arquivo .vtm (MultiBlock) contendo:
+      - A grade (UniformGrid/ImageData)
+      - O fio fino (PolyData)
+
+    Parâmetros
+    ----------
+    case_json_path : str, optional
+        Caminho para o JSON do CaseMaker. Se None, usa:
+        CASES_FOLDER/holland1981.fdtd.json
+    output_vtm_path : str, optional
+        Caminho completo de saída para o arquivo .vtm combinado. Se None, usa:
+        OUTPUTS_FOLDER/holland1981_combined.vtm
+    origin : tuple, optional
+        Origem (x, y, z) da malha, padrão (0.0,0.0,0.0).
+    """
+    
+    # Define paths padrão se não fornecidos
+    if case_json_path is None:
+        case_json_path = os.path.join(CASES_FOLDER, 'holland1981.fdtd.json')
+    if output_vtm_path is None:
+        output_vtm_path = os.path.join(OUTPUTS_FOLDER, 'holland1981.vtm')
+
+    # 1) Carrega JSON do caso
+    with open(case_json_path, 'r') as f:
+        case = json.load(f)
+    mesh = case.get('mesh') or {}
+
+    # 2) Extrai número de células e espaçamentos
+    ncx, ncy, ncz = mesh['grid']['numberOfCells']
+    dx = mesh['grid']['steps']['x'][0]
+    dy = mesh['grid']['steps']['y'][0]
+    dz = mesh['grid']['steps']['z'][0]
+    dims = (ncx + 1, ncy + 1, ncz + 1)
+
+    # 3) Cria a grade (UniformGrid ou ImageData)
+    if hasattr(pv, 'UniformGrid'):
+        grid = pv.UniformGrid(dims=dims, spacing=(dx, dy, dz), origin=origin)
+    else:
+        grid = pv.ImageData(dimensions=dims, spacing=(dx, dy, dz), origin=origin)
+
+    # 4) Reconstrói o fio fino (polyline)
+    coords = mesh.get('coordinates', [])
+    coord_map = {c['id']: np.array(c['relativePosition']) * np.array([dx, dy, dz])
+                 for c in coords}
+    wire = None
+    for elem in mesh.get('elements', []):
+        if elem.get('type') == 'polyline':
+            ids = elem['coordinateIds']
+            pts = np.vstack([coord_map[i] for i in ids if i in coord_map])
+            if pts.shape[0] >= 2:
+                n = pts.shape[0]
+                # conectividade VTK: [n, 0,1,2,...]
+                lines = np.hstack(([n], np.arange(n)))
+                wire = pv.PolyData(pts, lines)
+            break
+
+    # 5) Monta MultiBlock
+    blocks = {'mesh': grid}
+    if wire is not None:
+        blocks['wire'] = wire
+    mb = pv.MultiBlock(blocks)
+
+    # 6) Salva em .vtm (extensão obrigatória)
+    os.makedirs(os.path.dirname(output_vtm_path) or '.', exist_ok=True)
+    if not output_vtm_path.lower().endswith('.vtm'):
+        raise ValueError("O output_vtm_path deve terminar com '.vtm'.")
+    mb.save(output_vtm_path)
+    print(f"✅ Arquivo combinado salvo em: {output_vtm_path}")
+
+    # 7) Limpeza
+    del mb, grid, wire
+
 if __name__ == "__main__":
     # --- Executa a simulação ---
-    # run_simulation()
+    run_simulation()
 
     # --- Depois da simulação, confere os resultados ---
     expected_files = [
@@ -329,3 +427,4 @@ if __name__ == "__main__":
     plot_output_midpoint('holland1981.fdtd_mid_point_Wz_11_11_12_s2.dat')
     print("\nAnálise de resultados concluída.")
 
+    export_mesh()

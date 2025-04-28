@@ -1,2 +1,3 @@
-examplesData\cases\holland1981.fdtd_mid_point_Wz_11_11_12_s2.dat
+holland1981.fdtd_mid_point_Wz_11_11_12_s2.dat
+holland1981.fdtd__MAP_0_0_0__20_20_22.bin
 !END 
