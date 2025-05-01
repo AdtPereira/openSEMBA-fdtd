@@ -1,0 +1,63 @@
+* mesher\ugrfdtd\WireAirBox.smb.nfde
+* 01-05-25 07:04:56
+
+********************* SOLVER OPTIONS ***********************
+
+!SIMULATION
+ -mibc -wiresflavor holland 
+************************* GENERAL **************************
+
+!TIMESTEPS
+3.84781e-11 780
+
+*********************** SPACE STEPS ************************
+
+!NEWSPACESTEPS
+!!XCONS
+0
+0 100
+0.02
+!!YCONS
+0
+0 100
+0.02
+!!ZCONS
+0
+0 100
+0.02
+
+************************ BACKGROUND ************************
+
+!BACKGROUND
+!!LINEAR
+0 8.85419e-12 1.25664e-06 0
+
+******************* BOUNDARY CONDITIONS ********************
+
+!BOUNDARY CONDITION
+PML ALL
+8 2 0.001
+
+********************* EXTENDED SOURCES *********************
+
+!PLANE WAVE SOURCE
+predefinedExcitation.1.exc
+LOCKED
+10 10 10 
+90 90 90 
+0 0 1.5708 0
+
+************************** PROBES **************************
+
+** NEW PROBES **
+
+* Point_probe_A_0
+!NEW PROBE
+!!NUMER
+!!!TIME
+0 3e-08 3.84781e-11
+EX 50 50 25 
+EY 50 50 25 
+EZ 50 50 25 
+
+!END

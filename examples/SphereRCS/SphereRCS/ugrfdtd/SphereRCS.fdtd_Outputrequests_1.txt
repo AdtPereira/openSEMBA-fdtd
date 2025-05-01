@@ -1,0 +1,4 @@
+SphereRCS.fdtd_Point probe_Ex_15_15_4.dat
+SphereRCS.fdtd_Point probe_Ey_15_15_4.dat
+SphereRCS.fdtd_Point probe_Ez_15_15_4.dat
+!END 

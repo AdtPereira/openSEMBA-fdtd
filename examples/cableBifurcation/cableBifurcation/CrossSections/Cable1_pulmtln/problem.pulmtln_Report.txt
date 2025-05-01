@@ -1,0 +1,9 @@
+-- pulmtln --
+per unit length capacitance and inductance for MTL cross - sections.
+Visit https://github.com/OpenSEMBA/pulmtln for more information.
+Available options:
+  -h [ --help ]         this help message
+  -i [ --input ] arg    input filename .pulmtln.json
+
+Using input file: problem.pulmtln.in.json
+-- pulmtln finished succesfully --

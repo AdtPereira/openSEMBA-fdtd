@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<VTKFile type="Collection" version="0.1" byte_order="LittleEndian" compressor="vtkZLibDataCompressor">
+  <Collection>
+    <DataSet group="EMSource_PlaneWave" part="0" file="AirBox.smb.vtk\EMSource_PlaneWave.vtu" />
+    <DataSet group="OutRq_On_Point_Point_probe_A_0" part="1" file="AirBox.smb.vtk\OutRq_On_Point_Point_probe_A_0.vtu" />
+    <DataSet group="OutRq_On_Point_Point_probe_B_0" part="2" file="AirBox.smb.vtk\OutRq_On_Point_Point_probe_B_0.vtu" />
+    <DataSet group="OutRq_On_Point_Point_probe_C_0" part="3" file="AirBox.smb.vtk\OutRq_On_Point_Point_probe_C_0.vtu" />
+  </Collection>
+</VTKFile>

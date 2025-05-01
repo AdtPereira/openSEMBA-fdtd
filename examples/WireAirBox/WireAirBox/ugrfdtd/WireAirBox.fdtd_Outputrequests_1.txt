@@ -1,0 +1,4 @@
+WireAirBox.fdtd_Point probe A_Ex_50_50_25.dat
+WireAirBox.fdtd_Point probe A_Ey_50_50_25.dat
+WireAirBox.fdtd_Point probe A_Ez_50_50_25.dat
+!END 

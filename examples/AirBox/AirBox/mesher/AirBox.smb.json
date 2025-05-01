@@ -1,0 +1,142 @@
+{
+    "_version": "0.16",
+    "_format": "Semba Data File in JSON format",
+    "analysis": {
+        "solver": "ugrfdtd",
+        "runSimulation": false,
+        "timeStep": 3.847815e-11,
+        "forceRestarting": false,
+        "resumeSimulation": false,
+        "flush": 0.0,
+        "compositesModel": "MIBC",
+        "wiresFlavor": "holland",
+        "mtln": false,
+        "minDistanceWires": 0.5,
+        "mesherOptions": {
+            "contourRefinement": false,
+            "unwantedConnectionsInfo": false,
+            "structuredCellsInfo": false,
+            "mesher": "DMesher",
+            "mode": "Structured",
+            "forbiddenLength": 0.25,
+            "slantedWires": false,
+            "vtkExport": true,
+            "postmshExport": false,
+            "postsmbExport": false,
+            "slantedThreshold": 0.25
+        },
+        "cfl": 0.8,
+        "mapVTK": false,
+        "geometryScalingFactor": 0.001,
+        "finalTime": 4e-08
+    },
+    "grids": [
+        {
+            "gridType": "gridCondition",
+            "type": "Number_of_cells",
+            "numberOfCells": "{100 100 100}",
+            "layerBox": "{2000.0 2000.0 2000.0 0.0 0.0 0.0}"
+        }
+    ],
+    "model": {
+        "layers": [
+            {
+                "id": 1,
+                "name": "PointA"
+            },
+            {
+                "id": 2,
+                "name": "PointB"
+            },
+            {
+                "id": 3,
+                "name": "PointC"
+            }
+        ],
+        "materials": [],
+        "coordinates": [
+            "      1  +5.00000000e+02  +1.00000000e+03  +2.50000000e+02",
+            "      2  +1.00000000e+03  +1.00000000e+03  +2.50000000e+02",
+            "      3  +1.50000000e+03  +1.00000000e+03  +2.50000000e+02"
+        ],
+        "elements": {
+            "node": [
+                "       1    0    1        1",
+                "       2    0    2        2",
+                "       3    0    3        3",
+                "       4    0    0        1",
+                "       5    0    0        2",
+                "       6    0    0        3"
+            ],
+            "line": [],
+            "polyline": [],
+            "triangle": []
+        }
+    },
+    "sources": [
+        {
+            "sourceType": "planewave",
+            "definitionMode": "by_vectors",
+            "directionVector": "{0.0 0.0 1.0}",
+            "polarizationVector": "{1.0 0.0 0.0}",
+            "magnitude": {
+                "type": "Gaussian",
+                "frequencyMaximum": 1000000000.0
+            },
+            "layerBox": "{1800.0 1800.0 1800.0 200.0 200.0 200.0}"
+        }
+    ],
+    "probes": [
+        {
+            "gidOutputType": "OutRq_on_point",
+            "name": "Point probe A",
+            "type": "electricField",
+            "domain": {
+                "initialTime": 0.0,
+                "finalTime": 0.0,
+                "samplingPeriod": 0.0
+            },
+            "elemIds": [
+                4
+            ]
+        },
+        {
+            "gidOutputType": "OutRq_on_point",
+            "name": "Point probe B",
+            "type": "electricField",
+            "domain": {
+                "initialTime": 0.0,
+                "finalTime": 0.0,
+                "samplingPeriod": 0.0
+            },
+            "elemIds": [
+                5
+            ]
+        },
+        {
+            "gidOutputType": "OutRq_on_point",
+            "name": "Point probe C",
+            "type": "magneticField",
+            "domain": {
+                "initialTime": 0.0,
+                "finalTime": 0.0,
+                "samplingPeriod": 0.0
+            },
+            "elemIds": [
+                6
+            ]
+        }
+    ],
+    "boundary": {
+        "lower": [
+            "PML",
+            "PML",
+            "PML"
+        ],
+        "upper": [
+            "PML",
+            "PML",
+            "PML"
+        ]
+    }
+}

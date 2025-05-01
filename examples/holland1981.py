@@ -1,12 +1,13 @@
 # conda activate semba-fdtd
 # cd C:\Users\adilt\OneDrive\05_GIT\openSEMBA\fdtd
+# build\bin\semba-fdtd -i testData\input_examples\holland1981.fdtd.json
 # python examples/holland1981.py
 
 import os
 import sys
 import json
 import numpy as np
-import pyvista as pv 
+import pyvista as pv
 import matplotlib.pyplot as plt
 
 # Insere o diretório atual no início da lista sys.path, com prioridade 0.

@@ -110,7 +110,6 @@ class Probe():
     FAR_FIELD_TAG = ['_FF_']
     MOVIE_TAGS = ['_ExC_', '_EyC_', '_EzC_',
                   '_HxC_', '_HyC_', '_HzC_', '_ME_', '_MH_']
-
     ALL_TAGS = MTLN_PROBE_TAGS \
         + CURRENT_PROBE_TAGS \
         + BULK_CURRENT_PROBE_TAGS \

@@ -1,0 +1,20 @@
+set term x11 persist           1
+plot 'cableBifurcation.fdtd_ProbeStart_Ex_10_25_10.dat' using 1:2 every 1::2 with lines
+set term x11 persist           2
+plot 'cableBifurcation.fdtd_ProbeStart_Ey_10_25_10.dat' using 1:2 every 1::2 with lines
+set term x11 persist           3
+plot 'cableBifurcation.fdtd_ProbeStart_Ez_10_25_10.dat' using 1:2 every 1::2 with lines
+set term x11 persist           4
+plot 'cableBifurcation.fdtd_ProbeEnd1_Ex_50_15_10.dat' using 1:2 every 1::2 with lines
+set term x11 persist           5
+plot 'cableBifurcation.fdtd_ProbeEnd1_Ey_50_15_10.dat' using 1:2 every 1::2 with lines
+set term x11 persist           6
+plot 'cableBifurcation.fdtd_ProbeEnd1_Ez_50_15_10.dat' using 1:2 every 1::2 with lines
+set term x11 persist           7
+plot 'cableBifurcation.fdtd_ProbeEnd2_Ex_50_35_10.dat' using 1:2 every 1::2 with lines
+set term x11 persist           8
+plot 'cableBifurcation.fdtd_ProbeEnd2_Ey_50_35_10.dat' using 1:2 every 1::2 with lines
+set term x11 persist           9
+plot 'cableBifurcation.fdtd_ProbeEnd2_Ez_50_35_10.dat' using 1:2 every 1::2 with lines
+set term x11 persist          10
+plot 'cableBifurcation.fdtd_Bulk probe_Jx_29_23_25__29_26_34.dat' using 1:2 every 1::2 with lines

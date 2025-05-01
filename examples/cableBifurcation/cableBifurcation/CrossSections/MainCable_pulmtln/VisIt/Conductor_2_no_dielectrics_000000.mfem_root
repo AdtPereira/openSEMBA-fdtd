@@ -1,0 +1,45 @@
+{
+  "dsets": {
+    "main": {
+      "cycle": 0,
+      "domains": 1,
+      "fields": {
+        "D": {
+          "path": "Conductor_2_no_dielectrics_000000/D.%06d",
+          "tags": {
+            "assoc": "nodes",
+            "comps": "2",
+            "lod": "3"
+          }
+        },
+        "E": {
+          "path": "Conductor_2_no_dielectrics_000000/E.%06d",
+          "tags": {
+            "assoc": "nodes",
+            "comps": "2",
+            "lod": "3"
+          }
+        },
+        "Phi": {
+          "path": "Conductor_2_no_dielectrics_000000/Phi.%06d",
+          "tags": {
+            "assoc": "nodes",
+            "comps": "1",
+            "lod": "3"
+          }
+        }
+      },
+      "mesh": {
+        "format": "0",
+        "path": "Conductor_2_no_dielectrics_000000/mesh.%06d",
+        "tags": {
+          "max_lods": "32",
+          "spatial_dim": "2",
+          "topo_dim": "2"
+        }
+      },
+      "time": 0,
+      "time_step": 0
+    }
+  }
+}

@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<VTKFile type="Collection" version="0.1" byte_order="LittleEndian" compressor="vtkZLibDataCompressor">
+  <Collection>
+    <DataSet group="Terminal50Ohms@MainWire" part="0" file="cableBifurcation.smb.vtk\Terminal50Ohms@MainWire.vtu" />
+    <DataSet group="Short@MainWire" part="1" file="cableBifurcation.smb.vtk\Short@MainWire.vtu" />
+    <DataSet group="Wirematerial_1@MainWire" part="2" file="cableBifurcation.smb.vtk\Wirematerial_1@MainWire.vtu" />
+    <DataSet group="Terminal50Ohms@Wire1" part="3" file="cableBifurcation.smb.vtk\Terminal50Ohms@Wire1.vtu" />
+    <DataSet group="Short@Wire1" part="4" file="cableBifurcation.smb.vtk\Short@Wire1.vtu" />
+    <DataSet group="Wirematerial_2@Wire1" part="5" file="cableBifurcation.smb.vtk\Wirematerial_2@Wire1.vtu" />
+    <DataSet group="Terminal50Ohms@Wire2" part="6" file="cableBifurcation.smb.vtk\Terminal50Ohms@Wire2.vtu" />
+    <DataSet group="Short@Wire2" part="7" file="cableBifurcation.smb.vtk\Short@Wire2.vtu" />
+    <DataSet group="Wirematerial_3@Wire2" part="8" file="cableBifurcation.smb.vtk\Wirematerial_3@Wire2.vtu" />
+    <DataSet group="PEC@Plane" part="9" file="cableBifurcation.smb.vtk\PEC@Plane.vtu" />
+    <DataSet group="EMSource_Generator" part="10" file="cableBifurcation.smb.vtk\EMSource_Generator.vtu" />
+    <DataSet group="OutRq_On_Point_ProbeStart_0" part="11" file="cableBifurcation.smb.vtk\OutRq_On_Point_ProbeStart_0.vtu" />
+    <DataSet group="OutRq_On_Point_ProbeEnd1_0" part="12" file="cableBifurcation.smb.vtk\OutRq_On_Point_ProbeEnd1_0.vtu" />
+    <DataSet group="OutRq_On_Point_ProbeEnd2_0" part="13" file="cableBifurcation.smb.vtk\OutRq_On_Point_ProbeEnd2_0.vtu" />
+    <DataSet group="OutRq_Bulk_Current_Bulk_probe" part="14" file="cableBifurcation.smb.vtk\OutRq_Bulk_Current_Bulk_probe.vtu" />
+  </Collection>
+</VTKFile>
