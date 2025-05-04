@@ -1,5 +1,5 @@
 * mesher\ugrfdtd\AirBox.smb.nfde
-* 01-05-25 06:06:47
+* 03-05-25 10:55:22
 
 ********************* SOLVER OPTIONS ***********************
 
@@ -8,7 +8,7 @@
 ************************* GENERAL **************************
 
 !TIMESTEPS
-3.84781e-11 1040
+3.84781e-11 520
 
 *********************** SPACE STEPS ************************
 
@@ -18,8 +18,8 @@
 0 100
 0.02
 !!YCONS
-0
-0 100
+-0.02
+0 3
 0.02
 !!ZCONS
 0
@@ -43,39 +43,8 @@ PML ALL
 !PLANE WAVE SOURCE
 predefinedExcitation.1.exc
 LOCKED
-10 10 10 
-90 90 90 
+10 1 10 
+90 2 90 
 0 0 1.5708 0
-
-************************** PROBES **************************
-
-** NEW PROBES **
-
-* Point_probe_A_0
-!NEW PROBE
-!!NUMER
-!!!TIME
-0 4e-08 3.84781e-11
-EX 25 50 13 
-EY 25 50 13 
-EZ 25 50 13 
-
-* Point_probe_B_0
-!NEW PROBE
-!!NUMER
-!!!TIME
-0 4e-08 3.84781e-11
-EX 50 50 13 
-EY 50 50 13 
-EZ 50 50 13 
-
-* Point_probe_C_0
-!NEW PROBE
-!!NUMER
-!!!TIME
-0 4e-08 3.84781e-11
-HX 75 50 13 
-HY 75 50 13 
-HZ 75 50 13 
 
 !END

@@ -1,0 +1,56 @@
+ <Xdmf>
+ <Domain>
+ <Grid Name="GridTime" GridType="Collection" CollectionType="Temporal">
+<Grid Name="IntGrid" GridType="Uniform"  CollectionType="Spatial">>
+<Time Value="0.000000000E+000" />
+<Topology TopologyType="3DCoRectMesh" Dimensions="   80    1   80">
+</Topology>
+<Geometry Type="ORIGIN_DXDYDZ">
+<DataItem Format="XML" Dimensions="3">
+  0.2000000      2.0000000E-02  0.2000000    
+</DataItem>
+<DataItem Format="XML" Dimensions="3">
+  2.0000000E-02  2.0000000E-02  2.0000000E-02
+</DataItem>
+</Geometry>
+<Attribute Name="IntValues" Center="Node">
+<DataItem ItemType="HyperSlab" Dimensions="    1   80    1   80" Format="XML">
+<DataItem Dimensions="3 4" Format="XML">
+    0    0    0    0
+    1    1    1    1
+    1   80    1   80
+</DataItem>
+<DataItem Format="HDF" NumberType="Float" Precision="4" Dimensions="    2   80    1   80">
+AirBox.fdtd_electric_field_movie_ExC_10_1_10__89_1_89_time.h5:/data
+</DataItem>
+</DataItem>
+</Attribute>
+</Grid>
+<Grid Name="IntGrid" GridType="Uniform"  CollectionType="Spatial">>
+<Time Value="0.308133311E-010" />
+<Topology TopologyType="3DCoRectMesh" Dimensions="   80    1   80">
+</Topology>
+<Geometry Type="ORIGIN_DXDYDZ">
+<DataItem Format="XML" Dimensions="3">
+  0.2000000      2.0000000E-02  0.2000000    
+</DataItem>
+<DataItem Format="XML" Dimensions="3">
+  2.0000000E-02  2.0000000E-02  2.0000000E-02
+</DataItem>
+</Geometry>
+<Attribute Name="IntValues" Center="Node">
+<DataItem ItemType="HyperSlab" Dimensions="    1   80    1   80" Format="XML">
+<DataItem Dimensions="3 4" Format="XML">
+    1    0    0    0
+    1    1    1    1
+    1   80    1   80
+</DataItem>
+<DataItem Format="HDF" NumberType="Float" Precision="4" Dimensions="    2   80    1   80">
+AirBox.fdtd_electric_field_movie_ExC_10_1_10__89_1_89_time.h5:/data
+</DataItem>
+</DataItem>
+</Attribute>
+</Grid>
+</Grid>
+</Domain>
+</Xdmf>

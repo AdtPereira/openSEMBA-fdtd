@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+<VTKFile type="Collection" version="0.1" byte_order="LittleEndian" compressor="vtkZLibDataCompressor">
+  <Collection>
+    <DataSet group="IsotropicMaterial@Box" part="0" file="SphereGround.smb.vtk\IsotropicMaterial@Box.vtu" />
+    <DataSet group="EMSource_PlaneWave" part="1" file="SphereGround.smb.vtk\EMSource_PlaneWave.vtu" />
+    <DataSet group="OutRq_On_Point_Point_probe_1_0" part="2" file="SphereGround.smb.vtk\OutRq_On_Point_Point_probe_1_0.vtu" />
+  </Collection>
+</VTKFile>

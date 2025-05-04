@@ -1,0 +1,143 @@
+{
+    "_version": "0.16",
+    "_format": "Semba Data File in JSON format",
+    "analysis": {
+        "solver": "ugrfdtd",
+        "runSimulation": false,
+        "timeStep": 3.84781e-11,
+        "forceRestarting": false,
+        "resumeSimulation": false,
+        "flush": 0.0,
+        "compositesModel": "MIBC",
+        "wiresFlavor": "holland",
+        "mtln": false,
+        "minDistanceWires": 0.5,
+        "mesherOptions": {
+            "contourRefinement": false,
+            "unwantedConnectionsInfo": false,
+            "structuredCellsInfo": false,
+            "mesher": "DMesher",
+            "mode": "Structured",
+            "forbiddenLength": 0.25,
+            "slantedWires": false,
+            "vtkExport": true,
+            "postmshExport": false,
+            "postsmbExport": false,
+            "slantedThreshold": 0.25
+        },
+        "cfl": 0.8,
+        "mapVTK": false,
+        "geometryScalingFactor": 0.001,
+        "finalTime": 2e-08
+    },
+    "grids": [
+        {
+            "gridType": "gridCondition",
+            "type": "Number_of_cells",
+            "numberOfCells": "{100 100 100}",
+            "layerBox": "{2000.0 2000.0 2000.0 0.0 0.0 0.0}"
+        }
+    ],
+    "model": {
+        "layers": [
+            {
+                "id": 1,
+                "name": "Point_0"
+            },
+            {
+                "id": 2,
+                "name": "Box"
+            },
+            {
+                "id": 3,
+                "name": "Point_1"
+            }
+        ],
+        "materials": [
+            {
+                "materialId": 1,
+                "name": "IsotropicMaterial",
+                "materialType": "Classic",
+                "permittivity": 5.0,
+                "permeability": 1.0,
+                "electricConductivity": 0.0,
+                "magneticConductivity": 0.0
+            }
+        ],
+        "coordinates": [
+            "      1  +1.00000000e+03  +1.00000000e+03  +2.50000000e+02",
+            "      2  +7.00000000e+02  +7.00000000e+02  +7.00000000e+02",
+            "      3  +7.00000000e+02  +7.00000000e+02  +1.30000000e+03",
+            "      4  +7.00000000e+02  +1.30000000e+03  +7.00000000e+02",
+            "      5  +7.00000000e+02  +1.30000000e+03  +1.30000000e+03",
+            "      6  +1.30000000e+03  +7.00000000e+02  +1.30000000e+03",
+            "      7  +1.30000000e+03  +7.00000000e+02  +7.00000000e+02",
+            "      8  +1.30000000e+03  +1.30000000e+03  +7.00000000e+02",
+            "      9  +1.30000000e+03  +1.30000000e+03  +1.30000000e+03",
+            "      10  +1.00000000e+03  +1.00000000e+03  +1.00000000e+03"
+        ],
+        "elements": {
+            "node": [
+                "       1    0    1        1",
+                "       14    0    3        10",
+                "       15    0    0        10"
+            ],
+            "line": [],
+            "polyline": [],
+            "triangle": [
+                "       2    1    2        2        3        4",
+                "       3    1    2        4        3        5",
+                "       4    1    2        6        7        8",
+                "       5    1    2        6        8        9",
+                "       6    1    2        7        6        2",
+                "       7    1    2        2        6        3",
+                "       8    1    2        9        8        4",
+                "       9    1    2        9        4        5",
+                "       10    1    2        4        8        2",
+                "       11    1    2        2        8        7",
+                "       12    1    2        9        5        3",
+                "       13    1    2        9        3        6"
+            ]
+        }
+    },
+    "sources": [
+        {
+            "sourceType": "planewave",
+            "definitionMode": "by_vectors",
+            "directionVector": "{0.0 0.0 1.0}",
+            "polarizationVector": "{1.0 0.0 0.0}",
+            "magnitude": {
+                "type": "Gaussian",
+                "frequencyMaximum": 1000000000.0
+            },
+            "layerBox": "{1800.0 1800.0 1800.0 200.0 200.0 200.0}"
+        }
+    ],
+    "probes": [
+        {
+            "gidOutputType": "OutRq_on_point",
+            "name": "Point probe_1",
+            "type": "electricField",
+            "domain": {
+                "initialTime": 0.0,
+                "finalTime": 0.0,
+                "samplingPeriod": 0.0
+            },
+            "elemIds": [
+                15
+            ]
+        }
+    ],
+    "boundary": {
+        "lower": [
+            "PML",
+            "PML",
+            "PML"
+        ],
+        "upper": [
+            "PML",
+            "PML",
+            "PML"
+        ]
+    }
+}

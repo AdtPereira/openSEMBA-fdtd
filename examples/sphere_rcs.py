@@ -1,122 +1,459 @@
-# sphere_rcs.py
-# Local: C:\Users\adilt\OneDrive\05_GIT\openSEMBA\fdtd\examples\sphere_rcs\
-# Executar a partir da raiz do projeto: fdtd/
-# Exemplo de execução: python examples/sphere_rcs.py
+r"""
+    Plane wave scattering from a sphere in a box using openSEMBA FDTD solver.
+    This example shows how to run a simulation the openSEMBA FDTD solver 
+    from examples\SphereRCS\SphereRCS\ugrfdtd\SphereRCS.fdtd.json.
 
-import numpy as np
-import subprocess
+        cmd commands:
+        conda activate semba-fdtd
+        cd C:\Users\adilt\OneDrive\05_GIT\openSEMBA\fdtd
+        python examples/sphere_rcs.py
+
+        flowchart TD
+        A[Início de run_simulation()] --> B[Verifica se SEMBA_EXE existe]
+        B -->|OK| C[Verifica se JSON_FILE existe]
+        C -->|OK| D[Salva cwd_root = os.getcwd()]
+        D --> E[Muda diretório para CASES_FOLDER]
+        E --> F{Try bloco}
+        F --> G[Cria objeto solver]
+        G --> H[solver.cleanUp()]
+        H --> I[solver.run()]
+        I --> J{Finally bloco}
+        J --> K[Volta para cwd_root (diretório original)]
+        K --> L[Copia arquivos de probe para OUTPUTS_DIR]
+        L --> M[Retorna o dicionário probes]
+"""
+
 import os
 import sys
 import shutil
+import numpy as np
+import pandas as pd
 import matplotlib.pyplot as plt
 
-# Permite importar src_pyWrapper e utils mesmo rodando da raiz
+# Insere o diretório atual no início da lista sys.path, com prioridade 0.
 sys.path.insert(0, os.getcwd())
+from src_pyWrapper.pyWrapper import FDTD, Probe # pylint: disable=unused-import,wrong-import-position
 
-from src_pyWrapper.pyWrapper import CaseMaker, Probe
+# Define o diretório atual (cwd) como o diretório raiz do projeto
+# CWD_ROOT = C:\Users\adilt\OneDrive\05_GIT\openSEMBA\fdtd
+CWD_ROOT = os.getcwd()
+CASE_NAME = 'SphereRCS'
 
-EXCITATIONS_FOLDER = os.path.join('examplesData', 'excitations')
-OUTPUTS_FOLDER = os.path.join('examplesData', 'outputs')
-CASES_FOLDER = os.path.join('examplesData', 'cases')
+# Define o caminho absoluto para o executável semba-fdtd.exe
+SEMBA_EXE           = os.path.abspath(os.path.join('build','bin','semba-fdtd.exe'))
+EXAMPLES_FOLDER     = os.path.join(CWD_ROOT,'examples')
+CASES_FOLDER        = os.path.join('examplesData','cases')
+EXCITATIONS_FOLDER  = os.path.join('examplesData','excitations')
+LOGS_FOLDER         = os.path.join(CWD_ROOT,'examplesData','logs')
 
-# --- 1) Gera o caso sphere_rcs ---
-def generate_sphere_rcs_case():
-    cm = CaseMaker()
+# Define o caminho absoluto para o diretório de saída dos arquivos .dat
+JSON_FILE           = os.path.join(CASES_FOLDER,f'{CASE_NAME}.fdtd.json')
+OUTPUTS_FOLDER      = os.path.join('examplesData','outputs', CASE_NAME)
+ABS_OUTPUTS_FOLDER  = os.path.abspath(OUTPUTS_FOLDER) # "...\examplesData\outputs\SphereRCS"
 
-    cm.setNumberOfTimeSteps(100)  # Definido 100 passos para evitar erro
-    cm.setAllBoundaries("mur")
-    cm.setGridFromVTK("testData/geometries/sphere.grid.vtp")
+# Cria os diretórios de saída e logs, se não existirem
+os.makedirs(ABS_OUTPUTS_FOLDER, exist_ok=True)
+os.makedirs(OUTPUTS_FOLDER, exist_ok=True)
+os.makedirs(LOGS_FOLDER, exist_ok=True)
+os.makedirs(EXCITATIONS_FOLDER, exist_ok=True)
 
-    sphereId = cm.addCellElementsFromVTK("testData/geometries/buggy_sphere.str.vtp")
-    pecId = cm.addPECMaterial()
-    cm.addMaterialAssociation(pecId, [sphereId])
+def copy_case_files(case_name: str):
+    r"""
+    Copia os arquivos:
+      - 'predefinedExcitation.1.exc'
+      - '{case_name}.fdtd.json'
+    do diretório:
+      examples_root\{case_name}\{case_name}\ugrfdtd
+    para o diretório:
+      cases_root
 
-    planewaveBoxId = cm.addCellElementBox([[-75.0, -75.0, -75.0], [75.0, 75.0, 75.0]])
-    direction = {"theta": np.pi/2, "phi": 0.0}
-    polarization = {"theta": np.pi/2, "phi": np.pi/2}
+    Parâmetros
+    ----------
+    case_name : str
+        Nome do caso (por ex. 'SphereRCS'). Será usado para montar o nome
+        do arquivo JSON e o caminho da subpasta ugrfdtd.
+    examples_root : str, opcional
+        Raiz dos exemplos (padrão apontando para ...\fdtd\examples).
+    cases_root : str, opcional
+        Diretório de destino onde os arquivos serão copiados
+        (padrão ...\fdtd\examplesData\cases).
+    """
 
-    dt = 1e-12
-    w0 = 0.1e-9
-    t0 = 10 * w0
-    t = np.arange(0, t0 + 20*w0, dt)
-    data = np.empty((len(t), 2))
-    data[:, 0] = t
-    data[:, 1] = np.exp(-np.power(t - t0, 2) / w0**2)
+    # Monta os caminhos de origem e destino
+    src_dir = os.path.join(EXAMPLES_FOLDER, case_name, case_name, "ugrfdtd")
 
-    # --- Salva gauss.exc ---
-    os.makedirs(EXCITATIONS_FOLDER, exist_ok=True)
-    gauss_exc_path = os.path.join(EXCITATIONS_FOLDER, 'gauss.exc')
-    np.savetxt(gauss_exc_path, data)
+    files_to_copy = [
+        "predefinedExcitation.1.exc",
+        f"{case_name}.fdtd.json"
+    ]
 
-    cm.addPlanewaveSource(planewaveBoxId, gauss_exc_path, direction, polarization)
+    for filename in files_to_copy:
+        src_path = os.path.join(src_dir, filename)
+        dst_path = os.path.join(CASES_FOLDER, filename)
 
-    pointProbeNodeId = cm.addNodeElement([-65.0, 0.0, 0.0])
-    cm.addPointProbe(pointProbeNodeId, name="front")
+        if not os.path.isfile(src_path):
+            raise FileNotFoundError(f"Arquivo de origem não encontrado: {src_path}")
 
-    n2ffBoxId = cm.addCellElementBox([[-85.0, -85.0, -85.0], [85.0, 85.0, 85.0]])
-    theta = {"initial": np.pi/2, "final": np.pi/2, "step": 0.0}
-    phi = {"initial": np.pi, "final": np.pi, "step": 0.0}
-    domain = {
-        "type": "frequency",
-        "initialFrequency": 10e6,
-        "finalFrequency": 1e9,
-        "numberOfFrequencies": 10,
-        "frequencySpacing": "logarithmic"
-    }
-    cm.addFarFieldProbe(n2ffBoxId, "n2ff", theta, phi, domain)
+        shutil.copy2(src_path, dst_path)
+        print(f"✅ Arquivo '{filename}' copiado com sucesso para '{CASES_FOLDER}'")
 
-    os.makedirs(CASES_FOLDER, exist_ok=True)
-    json_path = os.path.join(CASES_FOLDER, 'sphere_rcs')
-    cm.exportCase(json_path)
-
-    print("Caso sphere_rcs gerado com sucesso.")
-
-# --- 2) Roda a simulação usando semba-fdtd ---
 def run_simulation():
-    executable = os.path.join("build", "bin", "semba-fdtd.exe")
-    if not os.path.isfile(executable):
-        raise FileNotFoundError(f"Executable {executable} not found.")
+    """ Run the simulation and return o dicionário de probes com caminhos absolutos. """
 
-    input_file = os.path.join(CASES_FOLDER, 'sphere_rcs.fdtd.json')
+    # 1) Verifica a existência do semba-fdtd.exe e do JSON de entrada
+    if not os.path.isfile(SEMBA_EXE):
+        raise FileNotFoundError(SEMBA_EXE)
+    if not os.path.isfile(JSON_FILE):
+        raise FileNotFoundError(JSON_FILE)
 
-    print(f"Executando: {executable} -i {input_file}")
-    subprocess.run([executable, "-i", input_file], check=True)
-    print("Simulação finalizada.")
+    # 2) Vai para o diretório do caso
+    os.chdir(CASES_FOLDER)
 
-    os.makedirs(OUTPUTS_FOLDER, exist_ok=True)
+    try:
+        # 3) Executa solver
+        solver = FDTD(input_filename=os.path.basename(JSON_FILE),
+                      path_to_exe=SEMBA_EXE)
+        solver.cleanUp()
+        solver.run()
 
-    for ext in (".txt", ".dat", ".h5"):
-        for file in os.listdir():
-            if file.startswith('sphere_rcs') and file.endswith(ext):
-                shutil.move(file, os.path.join(OUTPUTS_FOLDER, file))
+        sim_probes = {}
 
-# --- 3) Carrega o resultado e plota o RCS ---
-def analyze_results():
-    far_field_filename = os.path.join(OUTPUTS_FOLDER, 'sphere_rcs.fdtd_n2ff_Wtheta_phi.dat')
+        # 4) Move arquivos .txt e .pl para logs
+        for fname in os.listdir('.'):
+            if fname.endswith('.txt') or fname.endswith('.pl'):
+                src = os.path.abspath(fname)
+                dst = os.path.join(LOGS_FOLDER, fname)
+                os.replace(src, dst)
+                print(f"📄 Arquivo de log '{fname}' movido para '{LOGS_FOLDER}'.")
 
-    if not os.path.isfile(far_field_filename):
-        raise FileNotFoundError(f"Arquivo de resultado {far_field_filename} não encontrado.")
+        # 5) Move arquivos .dat para OUTPUTS_FOLDER
+        for fname in os.listdir('.'):
+            if fname.endswith('.dat'):
+                src = os.path.abspath(fname)
+                dst = os.path.join(ABS_OUTPUTS_FOLDER, fname)
+                shutil.move(src, dst)
+                print(f"📊 Arquivo de saída '{fname}' movido para '{ABS_OUTPUTS_FOLDER}'.")
+                # opcional: registre no dicionário de probes, se precisar usar depois
+                sim_probes[fname] = dst
 
-    far_field_probe = Probe(far_field_filename)
+    finally:
+        # 6) Sempre volte para o diretório original
+        os.chdir(CWD_ROOT)
 
-    theta = far_field_probe.data['theta']
-    Es = far_field_probe.data['Wtheta']
-    Ei = 1.0
+    return sim_probes
 
-    rcs = 4 * np.pi * np.abs(Es / Ei)**2
-    rcs_db = 10 * np.log10(rcs)
+def load_probes_from_outputs(outputs_folder: str) -> dict:
+    """
+    Varre `outputs_folder` em busca de todos os arquivos .dat de Point probes
+    e retorna um dicionário {probe_filename: absolute_path}, compatível com
+    o que run_simulation() retornaria.
+    """
+    probes = {}
+    valid_tags = Probe.POINT_PROBE_TAGS  # ex: ['_Ex_', '_Ey_', '_Ez_', ...]
 
-    plt.figure(figsize=(8,5))
-    plt.plot(np.degrees(theta), rcs_db, 'o-')
-    plt.xlabel('Theta (degrees)')
-    plt.ylabel('RCS (dBsm)')
-    plt.title('Radar Cross Section (RCS) vs Theta')
-    plt.grid(True)
-    plt.savefig(os.path.join(OUTPUTS_FOLDER, 'sphere_rcs_RCS_plot.png'))
+    for fname in os.listdir(outputs_folder):
+        if not fname.endswith('.dat'):
+            continue
+        if not any(tag in fname for tag in valid_tags):
+            # pula outros .dat que não sejam sondas pontuais de E-field
+            continue
+
+        path = os.path.join(outputs_folder, fname)
+        try:
+            p = Probe(path)
+        except ValueError:
+            # ignora arquivos com nome estranho
+            continue
+
+        if p.type == 'point' and p.field == 'E':
+            probes[fname] = path
+
+    return probes
+
+def plot_point_probe_fields(probes: dict):
+    """
+    Plota Ex, Ey e Ez (total e incidente) para cada Point probe em `probes`.
+    Se o .dat tiver três colunas, interpreta sempre a 3ª como incidente, 
+    independente do cabeçalho.
+    """
+    valid_tags = Probe.POINT_PROBE_TAGS
+    point_groups = {}
+
+    # 1) Leia cada .dat e agrupe somente os Point probes de E-field
+    for filepath in probes.values():
+        fname = os.path.basename(filepath)
+        if not any(tag in fname for tag in valid_tags):
+            continue
+        try:
+            p = Probe(filepath)
+        except ValueError:
+            continue
+
+        # (Re)leitura simplificada: ignora cabeçalho e força sep por regex
+        raw = pd.read_csv(
+            filepath,
+            sep=r'\s+',
+            header=None,
+            skiprows=1,
+            engine='python'
+        )
+        # atribui nomes conforme nº de colunas
+        if raw.shape[1] == 3:
+            raw.columns = ['time', 'field', 'incident']
+        elif raw.shape[1] == 2:
+            raw.columns = ['time', 'field']
+        else:
+            # fallback nos primeiros rótulos do Probe original
+            raw.columns = p.data.columns[: raw.shape[1]]
+        p.data = raw
+
+        if p.type == 'point' and p.field == 'E':
+            point_groups.setdefault(p.name, {})[p.direction] = p
+
+    # 2) Plot em subplots 3×1 para cada probe
+    for probe_name, dirs in point_groups.items():
+        fig, axs = plt.subplots(3, 1, sharex=True, figsize=(8, 10))
+        for idx, axis in enumerate(('x', 'y', 'z')):
+            ax = axs[idx]
+            if axis in dirs:
+                p = dirs[axis]
+                t_ns = p.data['time'] * 1e9
+
+                ax.plot(t_ns, p.data['field'], label=f"E{axis.upper()} total")
+                if 'incident' in p.data.columns:
+                    ax.plot(
+                        t_ns,
+                        p.data['incident'],
+                        label=f"E{axis.upper()} incidente",
+                        linestyle='--'
+                    )
+
+                ax.set_ylabel(f"E{axis.upper()} [V/m]")
+                ax.legend()
+                ax.grid(True)
+            else:
+                ax.text(
+                    0.5, 0.5,
+                    f"Sem E{axis.upper()}",
+                    ha='center', va='center'
+                )
+                ax.set_ylabel(f"E{axis.upper()}")
+
+        axs[-1].set_xlabel("Tempo [ns]")
+        fig.suptitle(f"Point Probe: {probe_name}")
+        plt.tight_layout(rect=[0, 0.03, 1, 0.95])
+        plt.show()
+
+def plot_rcs_far_field_e_theta(theta_deg: float = 0.0):
+    """
+    Plota |Eθ| vs φ para um dado ângulo de observação θ (em graus),
+    usando o arquivo Far Field gerado pelo FDTD cujo nome comece com
+    CASE_NAME.fdtd_Far_FF*.dat em ABS_OUTPUTS_FOLDER.
+
+    Parâmetros
+    ----------
+    theta_deg : float
+        Ângulo de observação θ em graus (por ex. 0 ou 90). Default = 0.
+    """
+    # 1) Encontre o .dat de Far Field
+    prefix = f"{CASE_NAME}.fdtd_Far_FF"
+    for fname in os.listdir(ABS_OUTPUTS_FOLDER):
+        if fname.startswith(prefix) and fname.endswith(".dat"):
+            dat_path = os.path.join(ABS_OUTPUTS_FOLDER, fname)
+            break
+    else:
+        raise FileNotFoundError(
+            f"Nenhum arquivo começando com '{prefix}' em '{ABS_OUTPUTS_FOLDER}'"
+        )
+
+    # 2) Carrega com Probe
+    p = Probe(dat_path)
+    df = p.data
+
+    # 3) Converte theta para radianos e filtra
+    theta_rad = np.deg2rad(theta_deg)
+    if "Theta" in df.columns:
+        mask = np.isclose(df["Theta"].values, theta_rad)
+    else:
+        mask = np.isclose(df.iloc[:, 1].values, theta_rad)
+    df_theta = df[mask].reset_index(drop=True)
+    if df_theta.empty:
+        raise ValueError(f"Nenhuma linha com Theta={theta_deg}° encontrada.")
+
+    # 4) Extrai phi (já em radianos no arquivo) e |Etheta_mod|
+    if "Phi" in df_theta.columns:
+        phi = df_theta["Phi"].values
+    else:
+        phi = df_theta.iloc[:, 2].values
+
+    if "Etheta_mod" in df_theta.columns:
+        etheta = np.abs(df_theta["Etheta_mod"].values)
+    else:
+        etheta = np.abs(df_theta.iloc[:, 3].values)
+
+    # 5) Plota em projeção polar, mas com ticks em graus
+    _, ax = plt.subplots(subplot_kw={"projection": "polar"}, figsize=(6, 6))
+    ax.plot(phi, etheta, "-", label=f"θ = {theta_deg}°")
+
+    ax.set_theta_zero_location("E")   # 0° à direita
+    ax.set_theta_direction(-1)        # ângulos crescem horário
+
+    # Ticks de ângulo em graus
+    ticks_deg = np.arange(0, 360, 30)
+    ax.set_xticks(np.deg2rad(ticks_deg))
+    ax.set_xticklabels([f"{int(d)}°" for d in ticks_deg])
+
+    ax.set_title(rf"$|E_\theta|$ vs $\phi$ at $\theta={theta_deg}^\circ$")
+    ax.grid(True)
+    ax.legend(loc="upper right")
     plt.show()
 
-if __name__ == "__main__":
-    generate_sphere_rcs_case()
-    run_simulation()
-    analyze_results()
-    print("Análise de resultados concluída.")
+def plot_rcs_far_field_e_phi(theta_deg: float = 0.0):
+    """
+    Plota |Eφ| vs φ para um dado ângulo de observação θ (em graus),
+    usando o arquivo Far Field gerado pelo FDTD cujo nome comece com
+    CASE_NAME.fdtd_Far_FF*.dat em ABS_OUTPUTS_FOLDER.
+
+    Parâmetros
+    ----------
+    theta_deg : float
+        Ângulo de observação θ em graus (por ex. 0 ou 90). Default = 0.
+    """
+
+    # 1) Encontre o .dat de Far Field
+    prefix = f"{CASE_NAME}.fdtd_Far_FF"
+    for fname in os.listdir(ABS_OUTPUTS_FOLDER):
+        if fname.startswith(prefix) and fname.endswith(".dat"):
+            dat_path = os.path.join(ABS_OUTPUTS_FOLDER, fname)
+            break
+    else:
+        raise FileNotFoundError(
+            f"Nenhum arquivo começando com '{prefix}' em '{ABS_OUTPUTS_FOLDER}'"
+        )
+
+    # 2) Carrega com Probe
+    p = Probe(dat_path)
+    df = p.data
+
+    # 3) Converte theta para radianos e filtra
+    theta_rad = np.deg2rad(theta_deg)
+    if "Theta" in df.columns:
+        mask = np.isclose(df["Theta"].values, theta_rad)
+    else:
+        mask = np.isclose(df.iloc[:, 1].values, theta_rad)
+    df_theta = df[mask].reset_index(drop=True)
+    if df_theta.empty:
+        raise ValueError(f"Nenhuma linha com Theta={theta_deg}° encontrada.")
+
+    # 4) Extrai phi (já em radianos no arquivo) e |Ephi_mod|
+    if "Phi" in df_theta.columns:
+        phi = df_theta["Phi"].values
+    else:
+        phi = df_theta.iloc[:, 2].values
+
+    if "Ephi_mod" in df_theta.columns:
+        ephi = np.abs(df_theta["Ephi_mod"].values)
+    else:
+        # fallback para a coluna de módulo Eφ por índice
+        ephi = np.abs(df_theta.iloc[:, 5].values)
+
+    # 5) Plota em projeção polar, mas com ticks em graus
+    _, ax = plt.subplots(subplot_kw={"projection": "polar"}, figsize=(6, 6))
+    ax.plot(phi, ephi, "-", label=f"θ = {theta_deg}°")
+
+    ax.set_theta_zero_location("E")   # 0° à direita
+    ax.set_theta_direction(-1)        # ângulos crescem no sentido horário
+
+    # Ticks de ângulo em graus
+    ticks_deg = np.arange(0, 360, 30)
+    ax.set_xticks(np.deg2rad(ticks_deg))
+    ax.set_xticklabels([f"{int(d)}°" for d in ticks_deg])
+
+    ax.set_title(rf"$|E_\phi|$ vs $\phi$ at $\theta={theta_deg}^\circ$")
+    ax.grid(True)
+    ax.legend(loc="upper right")
+    plt.show()
+
+def plot_rcs_geom(theta_deg: float = 0.0):
+    """
+    Plota RCS_GEOM vs φ para um dado ângulo de observação θ (em graus),
+    usando o arquivo Far Field gerado pelo FDTD cujo nome comece com
+    CASE_NAME.fdtd_Far_FF*.dat em ABS_OUTPUTS_FOLDER.
+
+    Parâmetros
+    ----------
+    theta_deg : float
+        Ângulo de observação θ em graus (por ex. 0 ou 90). Default = 0.
+    """
+
+    # 1) Encontre o arquivo .dat de Far Field
+    prefix = f"{CASE_NAME}.fdtd_Far_FF"
+    for fname in os.listdir(ABS_OUTPUTS_FOLDER):
+        if fname.startswith(prefix) and fname.endswith(".dat"):
+            dat_path = os.path.join(ABS_OUTPUTS_FOLDER, fname)
+            break
+    else:
+        raise FileNotFoundError(
+            f"Nenhum arquivo começando com '{prefix}' em '{ABS_OUTPUTS_FOLDER}'"
+        )
+
+    # 2) Carrega com Probe
+    p = Probe(dat_path)
+    df = p.data
+
+    # 3) Converte theta para radianos e filtra
+    theta_rad = np.deg2rad(theta_deg)
+    if "Theta" in df.columns:
+        mask = np.isclose(df["Theta"].values, theta_rad)
+    else:
+        mask = np.isclose(df.iloc[:, 1].values, theta_rad)
+    df_theta = df[mask].reset_index(drop=True)
+    if df_theta.empty:
+        raise ValueError(f"Nenhuma linha com Theta={theta_deg}° encontrada em {fname}")
+
+    # 4) Extrai φ (já em radianos) e RCS_GEOM
+    if "Phi" in df_theta.columns:
+        phi = df_theta["Phi"].values
+    else:
+        phi = df_theta.iloc[:, 2].values
+
+    if "RCS(GEOM)" in df_theta.columns:
+        rcs = df_theta["RCS(GEOM)"].values
+    else:
+        rcs = df_theta.iloc[:, 8].values
+
+    # 5) Plota em projeção polar com ticks em graus
+    _, ax = plt.subplots(subplot_kw={"projection": "polar"}, figsize=(6, 6))
+    ax.plot(phi, rcs, "-", label=f"θ = {theta_deg}°")
+
+    ax.set_theta_zero_location("E")   # 0° à direita
+    ax.set_theta_direction(-1)        # ângulos crescem horário
+
+    # Ticks de ângulo em graus
+    ticks_deg = np.arange(0, 360, 30)
+    ax.set_xticks(np.deg2rad(ticks_deg))
+    ax.set_xticklabels([f"{int(d)}°" for d in ticks_deg])
+
+    ax.set_title(rf"$\mathrm{{RCS}}_{{\rm GEOM}}$ vs $\phi$ at $\theta={theta_deg}^\circ$")
+    ax.grid(True)
+    ax.legend(loc="upper right")
+    plt.show()
+
+if __name__ == '__main__':
+    # Copia os arquivos do caso {case}\{case}\ugrfdtd para o diretório examplesData\cases
+    copy_case_files(CASE_NAME)
+
+    # Executa a simulação e obtém os arquivos de saída das sondas
+    run_probes = run_simulation()
+
+    # Verifica se os arquivos de saída existem e carrega os dados das sondas
+    # load_probes = load_probes_from_outputs(ABS_OUTPUTS_FOLDER)
+
+    # Plota os resultados das sondas
+    print(f"🔍 Probes encontrados: {list(run_probes.keys())}")
+    plot_point_probe_fields(run_probes)
+
+    # Plota o RCS do far field
+    # plot_rcs_far_field_e_theta(theta_deg=90.0)
+    # plot_rcs_far_field_e_phi(theta_deg=90.0)
+    plot_rcs_geom(theta_deg=90.0)

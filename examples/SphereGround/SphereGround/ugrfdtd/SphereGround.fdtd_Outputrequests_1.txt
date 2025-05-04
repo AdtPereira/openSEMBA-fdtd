@@ -1,0 +1,4 @@
+SphereGround.fdtd_Point probe_1_Ex_50_50_50.dat
+SphereGround.fdtd_Point probe_1_Ey_50_50_50.dat
+SphereGround.fdtd_Point probe_1_Ez_50_50_50.dat
+!END 

@@ -1,0 +1,215 @@
+{
+    "_version": "0.16",
+    "_format": "Semba Data File in JSON format",
+    "analysis": {
+        "solver": "ugrfdtd",
+        "runSimulation": false,
+        "timeStep": 9.6e-11,
+        "forceRestarting": false,
+        "resumeSimulation": false,
+        "flush": 0.0,
+        "compositesModel": "MIBC",
+        "wiresFlavor": "holland",
+        "mtln": false,
+        "minDistanceWires": 0.5,
+        "mesherOptions": {
+            "contourRefinement": false,
+            "unwantedConnectionsInfo": false,
+            "structuredCellsInfo": false,
+            "mesher": "DMesher",
+            "mode": "Structured",
+            "forbiddenLength": 0.25,
+            "slantedWires": false,
+            "vtkExport": true,
+            "postmshExport": false,
+            "postsmbExport": false,
+            "slantedThreshold": 0.25
+        },
+        "cfl": 0.8,
+        "mapVTK": false,
+        "geometryScalingFactor": 0.001,
+        "finalTime": 4e-08
+    },
+    "grids": [
+        {
+            "gridType": "gridCondition",
+            "type": "Number_of_cells",
+            "numberOfCells": "{24 64 24}",
+            "layerBox": "{2200.0 6200.0 2200.0 -200.0 -200.0 -200.0}"
+        }
+    ],
+    "model": {
+        "layers": [
+            {
+                "id": 1,
+                "name": "Wire"
+            },
+            {
+                "id": 2,
+                "name": "Cube"
+            },
+            {
+                "id": 3,
+                "name": "Bulk"
+            }
+        ],
+        "materials": [
+            {
+                "materialId": 1,
+                "name": "IsotropicMaterial",
+                "materialType": "Classic",
+                "permittivity": 1.0,
+                "permeability": 1.0,
+                "electricConductivity": 59170000.0,
+                "magneticConductivity": 0.0
+            },
+            {
+                "materialId": 2,
+                "name": "Wirematerial",
+                "materialType": "Wire",
+                "wireType": "Standard",
+                "radius": 0.015,
+                "resistance": 0.0,
+                "inductance": 0.0
+            },
+            {
+                "materialId": 3,
+                "name": "Terminal_50Ohm",
+                "materialType": "Connector",
+                "connectorType": "Conn_sRLC",
+                "resistance": 50.0,
+                "inductance": 0.0,
+                "capacitance": 1e+22
+            },
+            {
+                "name": "Open",
+                "materialType": "Connector",
+                "connectorType": "Conn_open",
+                "materialId": 4
+            }
+        ],
+        "coordinates": [
+            "      1  +1.00000000e+03  +5.00000000e+03  +5.00000000e+02",
+            "      2  +1.00000000e+03  +1.00000000e+03  +5.00000000e+02",
+            "      3  +1.00000000e+03  +1.00000000e+03  -0.00000000e+00",
+            "      4  +0.00000000e+00  +0.00000000e+00  -1.00000000e+02",
+            "      5  +0.00000000e+00  +0.00000000e+00  +0.00000000e+00",
+            "      6  +0.00000000e+00  +6.00000000e+03  -1.00000000e+02",
+            "      7  +0.00000000e+00  +6.00000000e+03  +0.00000000e+00",
+            "      8  +2.00000000e+03  +0.00000000e+00  +0.00000000e+00",
+            "      9  +2.00000000e+03  +0.00000000e+00  -1.00000000e+02",
+            "      10  +2.00000000e+03  +6.00000000e+03  -1.00000000e+02",
+            "      11  +2.00000000e+03  +6.00000000e+03  +0.00000000e+00",
+            "      12  +1.10000000e+03  +1.10000000e+03  +0.00000000e+00",
+            "      13  +9.00000000e+02  +1.10000000e+03  +0.00000000e+00",
+            "      14  +9.00000000e+02  +9.00000000e+02  +0.00000000e+00",
+            "      15  +1.10000000e+03  +9.00000000e+02  +0.00000000e+00"
+        ],
+        "elements": {
+            "node": [
+                "       16    0    0        3",
+                "       17    0    0        3",
+                "       18    0    0        3",
+                "       19    4    1        1",
+                "       20    3    1        3"
+            ],
+            "line": [],
+            "polyline": [
+                "       1    2    1        1        2        3"
+            ],
+            "triangle": [
+                "       2    1    2        4        5        6",
+                "       3    1    2        6        5        7",
+                "       4    1    2        8        9        10",
+                "       5    1    2        8        10        11",
+                "       6    1    2        9        8        4",
+                "       7    1    2        4        8        5",
+                "       8    1    2        11        10        6",
+                "       9    1    2        11        6        7",
+                "       10    1    2        6        10        4",
+                "       11    1    2        4        10        9",
+                "       12    1    2        11        7        5",
+                "       13    1    2        11        5        8",
+                "       14    0    3        12        13        14",
+                "       15    0    3        12        14        15"
+            ]
+        },
+        "cables": [
+            {
+                "name": "Cable",
+                "materialId": 2,
+                "initialConnectorId": 4,
+                "endConnectorId": 3,
+                "elemIds": [
+                    1
+                ]
+            }
+        ]
+    },
+    "sources": [
+        {
+            "sourceType": "generator",
+            "type": "voltage",
+            "elemIds": [
+                16
+            ],
+            "magnitude": {
+                "type": "File",
+                "filename": "C:\\Users\\adilt\\OneDrive\\05_GIT\\openSEMBA\\fdtd\\examples\\Noda2002\\Noda2002a\\ugrfdtd\\NodaVoltage.exc"
+            }
+        }
+    ],
+    "probes": [
+        {
+            "gidOutputType": "OutRq_on_point",
+            "name": "Point probe",
+            "type": "electricField",
+            "domain": {
+                "initialTime": 0.0,
+                "finalTime": 0.0,
+                "samplingPeriod": 0.0
+            },
+            "elemIds": [
+                17
+            ]
+        },
+        {
+            "gidOutputType": "OutRq_on_point",
+            "name": "Wire probe",
+            "type": "current",
+            "domain": {
+                "initialTime": 0.0,
+                "finalTime": 0.0,
+                "samplingPeriod": 0.0
+            },
+            "elemIds": [
+                18
+            ]
+        },
+        {
+            "name": "Bulk probe",
+            "direction": "x",
+            "type": "bulkCurrentElectric",
+            "gidOutputType": "OutRq_on_layer",
+            "box": "{1100.0 1100.0 0.0 900.0 900.0 0.0}",
+            "skip": 1,
+            "domain": {
+                "initialTime": 0.0,
+                "finalTime": 0.0,
+                "samplingPeriod": 0.0
+            }
+        }
+    ],
+    "boundary": {
+        "lower": [
+            "PML",
+            "PML",
+            "PML"
+        ],
+        "upper": [
+            "PML",
+            "PML",
+            "PML"
+        ]
+    }
+}

@@ -1,0 +1,150 @@
+=========================
+SEMBA-FDTD SOLVER
+=========================
+__________________________________________
+SEMBA-FDTD. Release build, compiled on: Apr 26 2025 16:13:54
+__________________________________________
+All rights reserved by the University of Granada (Spain)
+Contact person: Salvador G. Garcia <salva@ugr.es>
+
+__________________________________________
+Compiled WITH .h5 HDF support
+Compiled WITH MTLN support
+Compiled WITH SMBJSON support
+__________________________________________
+Launched on              04/05/2025 12:29
+Switches C:\Users\adilt\OneDrive\05_GIT\openSEMBA\fdtd\build\bin\semba-fdtd.exe -i SphereRCS.fdtd.json
+__________________________________________
+Closing warning file. Number of messages:            0
+__________________________________________
+Compiled with Single precision (real*4)
+__________________________________________
+Launched on              04/05/2025 12:29
+__________________________________________
+Launched with total options
+C:\Users\adilt\OneDrive\05_GIT\openSEMBA\fdtd\build\bin\semba-fdtd.exe -i SphereRCS.fdtd.json
+If later resuming use compulsory options
+mpirun -n    1
+__________________________________________
+INIT conversion internal ASCII => Binary
+__________________________________________
+__________________________________________
+__________________________________________
+Automatically correcting dt for stability reasons:
+Original dt:   3.847809917911782E-011
+New dt:   3.081333105336981E-011
+__________________________________________
+__________________________________________
+CFLN=   0.8000000
+__________________________________________
+__________________________________________
+Deltat=   3.081333105336981E-011
+__________________________________________
+INIT NFDE --------> GEOM
+INIT UPDATING SHARED INFO. This process may take time!
+Launch with -noshared to skip this process (just relevant for structured NIBC CFCs and Anisot.)
+[OK] END UPDATING SHARED INFO
+[OK] ENDED NFDE --------> GEOM
+!SLICES_120
+_________Spanning from z=    -10 to z=    110
+[OK] Ended conversion internal ASCII => Binary
+[OK] Ended Conformal Mesh
+__________________________________________
+Original Final Time Step=          519
+Corrected Final Time Step=          648
+__________________________________________
+Solver launched with options:
+---> l%mibc    solver for NIBC multilayer: F
+---> l%ade     solver for ADC multilayer: F
+---> sgbc    solver for multilayer: T
+---> sgbc DISPERSIVE solver for multilayer: F
+---> sgbc Crank-Nicolson solver for multilayer: T
+---> sgbc Depth: -1
+---> sgbc Freq: 1.0000000E+09
+---> sgbc Resol: 1.000000
+---> l%skindepthpre preprocessing for multilayer: F
+---> Conformal file external: F
+---> Conformal solver: F
+---> Conformal thin-gap solver: F
+---> DMMA thin-gap solver: T
+---> Wire model: holland
+---> Inductance model: boutayeb
+---> Holland -l%stableradholland automatic correction switch: F
+---> Thin-wire double-tails removed: T
+---> Thin-wire -l%fieldtotl experimental switch: F
+__________________________________________
+Init Reporting...
+__________________________________________
+[OK]
+Init Other Borders...
+----> no PEC, PMC or periodic Borders found
+Init CPML Borders...
+----> there are CPML Borders
+Init PML Bodies...
+----> no PML Bodies found
+Init Mur Borders...
+----> no Mur Borders found
+Init Lumped Elements...
+----> no lumped Structured elements found
+Init Holland Wires...
+----> no Holland/transition wires found
+Init Anisotropic...
+----> no Structured anisotropic elements found
+Init Multi sgbc...
+----> no Structured sgbc elements found
+Init EDispersives...
+----> no Structured Electric dispersive elements found
+Init MDispersives...
+----> no Structured Magnetic dispersive elements found
+Init Multi Plane-Waves...
+----> there are Plane Wave
+Init Nodal Sources...
+----> no Structured Nodal sources are found
+Init Observation...
+----> there are observation requests
+Init Timing...
+Total Mcells:    1.728000
+NO flushing of restarting FIELDS scheduled
+Flushing observation DATA every      10000001  minutes and every         1024  steps
+Reporting simulation info every             1  minutes
+__________________________________________
+Simulation from n=      0, t=   0.000000000E+000 to n=      648, t=   0.199670385E-007
+Date/time 04/05/2025   12:29:22
+__________________________________________
+Closing warning file. Number of messages:            1
+__________________________________________
+END PREPROCESSING. STARTING simulation.
+__________________________________________
+Start Date/time 04/05   12:29:22
+__________________________________________
+Switching plane-wave off at n=         264
+END FDTD time stepping. Beginning posprocessing at n=          648
+__________________________________________
+INIT FINAL OBSERVATION DATA FLUSHING and Near-to-Far field  n=       648
+__________________________________________
+NF2FF: INIT
+NF2FF: Start processing freq (        1/        1)=    0.300000000E+009
+NF2FF: END
+__________________________________________
+DONE FINAL OBSERVATION DATA FLUSHED and Near-to-Far field  n=       648
+__________________________________________
+INIT FINAL Postprocessing frequency domain probes, if any, at n=       648
+__________________________________________
+No FINAL frequency domain probes snapshots found to be postrocessed
+__________________________________________
+INIT FINAL FLUSHING .vtk if any.
+__________________________________________
+No FINAL .vtk snapshots found to be flushed
+__________________________________________
+INIT FINAL FLUSHING .xdmf if any.
+__________________________________________
+No FINAL .xdmf snapshots found to be flushed
+__________________________________________
+END FINAL POSTPROCESSING at n=          648
+__________________________________________
+DONE :  SphereRCS.fdtd UNTIL n=         648
+__________________________________________
+BEGUN SphereRCS.fdtd at 04/05/2025 , 12:29
+ENDED SphereRCS.fdtd at 04/05/2025 , 12:29
+__________________________________________
+__________________________________________

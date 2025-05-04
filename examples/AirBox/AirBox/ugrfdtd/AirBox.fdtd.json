@@ -1,8 +1,8 @@
 {
     "_format": "FDTD Input file",
     "general": {
-        "timeStep": 3.847815e-11,
-        "numberOfSteps": 1039,
+        "timeStep": 3.84781e-11,
+        "numberOfSteps": 519,
         "additionalArguments": ""
     },
     "boundary": {
@@ -17,7 +17,7 @@
         "grid": {
             "numberOfCells": [
                 100,
-                100,
+                3,
                 100
             ],
             "steps": {
@@ -32,32 +32,7 @@
                 ]
             }
         },
-        "coordinates": [
-            {
-                "id": 1,
-                "relativePosition": [
-                    25.0,
-                    50.0,
-                    13.0
-                ]
-            },
-            {
-                "id": 2,
-                "relativePosition": [
-                    50.0,
-                    50.0,
-                    13.0
-                ]
-            },
-            {
-                "id": 3,
-                "relativePosition": [
-                    75.0,
-                    50.0,
-                    13.0
-                ]
-            }
-        ],
+        "coordinates": [],
         "elements": [
             {
                 "id": 1,
@@ -66,36 +41,15 @@
                     [
                         [
                             10,
-                            10,
+                            1,
                             10
                         ],
                         [
                             90,
-                            90,
+                            2,
                             90
                         ]
                     ]
-                ]
-            },
-            {
-                "id": 2,
-                "type": "node",
-                "coordinateIds": [
-                    1
-                ]
-            },
-            {
-                "id": 3,
-                "type": "node",
-                "coordinateIds": [
-                    2
-                ]
-            },
-            {
-                "id": 4,
-                "type": "node",
-                "coordinateIds": [
-                    3
                 ]
             }
         ]
@@ -121,52 +75,11 @@
     ],
     "probes": [
         {
-            "name": "Point probe A",
-            "type": "point",
+            "name": "electric_field_movie",
+            "type": "movie",
             "field": "electric",
-            "elementIds": [
-                2
-            ],
-            "directions": [
-                "x",
-                "y",
-                "z"
-            ],
-            "domain": {
-                "type": "time"
-            }
-        },
-        {
-            "name": "Point probe B",
-            "type": "point",
-            "field": "electric",
-            "elementIds": [
-                3
-            ],
-            "directions": [
-                "x",
-                "y",
-                "z"
-            ],
-            "domain": {
-                "type": "time"
-            }
-        },
-        {
-            "name": "Point probe C",
-            "type": "point",
-            "field": "magnetic",
-            "elementIds": [
-                4
-            ],
-            "directions": [
-                "x",
-                "y",
-                "z"
-            ],
-            "domain": {
-                "type": "time"
-            }
+            "component": "x",
+            "elementIds": [1]
         }
     ]
 }

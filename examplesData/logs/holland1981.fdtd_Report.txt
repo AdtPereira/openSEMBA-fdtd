@@ -12,14 +12,14 @@ Compiled WITH .h5 HDF support
 Compiled WITH MTLN support
 Compiled WITH SMBJSON support
 __________________________________________
-Launched on              29/04/2025 21:18
+Launched on              02/05/2025 11:17
 Switches C:\Users\adilt\OneDrive\05_GIT\openSEMBA\fdtd\build\bin\semba-fdtd.exe -mapvtk -i holland1981.fdtd.json
 __________________________________________
 Closing warning file. Number of messages:            0
 __________________________________________
 Compiled with Single precision (real*4)
 __________________________________________
-Launched on              29/04/2025 21:18
+Launched on              02/05/2025 11:17
 __________________________________________
 Launched with total options
 C:\Users\adilt\OneDrive\05_GIT\openSEMBA\fdtd\build\bin\semba-fdtd.exe -mapvtk -i holland1981.fdtd.json
@@ -101,13 +101,13 @@ Flushing observation DATA every      10000001  minutes and every         1024  s
 Reporting simulation info every             1  minutes
 __________________________________________
 Simulation from n=      0, t=   0.000000000E+000 to n=     1000, t=   0.299999990E-007
-Date/time 29/04/2025   21:18:14
+Date/time 02/05/2025   11:17:44
 __________________________________________
 Closing warning file. Number of messages:           22
 __________________________________________
 END PREPROCESSING. STARTING simulation.
 __________________________________________
-Start Date/time 29/04   21:18:14
+Start Date/time 02/05   11:17:44
 __________________________________________
 __________________________________________
 INIT OBSERVATION DATA FLUSHING n=         5
@@ -152,7 +152,7 @@ END FINAL POSTPROCESSING at n=         1000
 __________________________________________
 DONE :  holland1981.fdtd UNTIL n=        1000
 __________________________________________
-BEGUN holland1981.fdtd at 29/04/2025 , 21:18
-ENDED holland1981.fdtd at 29/04/2025 , 21:18
+BEGUN holland1981.fdtd at 02/05/2025 , 11:17
+ENDED holland1981.fdtd at 02/05/2025 , 11:17
 __________________________________________
 __________________________________________

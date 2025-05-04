@@ -94,16 +94,43 @@ expected_files = [
 - The `examplesData/outputs/` and `examplesData/logs/` folders are automatically created if they do not exist.
 - If any output file is missing after the simulation, a clear message will be printed.
 
----
 
-## Future Improvements (Optional)
+## Future Improvements
 
 - Generalize the script to handle any case (not only `holland1981`).
 - Automatically detect the required excitation files by parsing the `.fdtd.json` input.
 - Automate post-processing (e.g., plotting fields, calculating energy norms).
 - Introduce error handling if simulation fails midway.
 
----
+
+## Examples models
+
+- holland1981.py
+
+    ``` cmd
+    conda activate semba-fdtd
+    cd C:\Users\adilt\OneDrive\05_GIT\openSEMBA\fdtd
+    python examples\holland1981.py
+    ```
+
+- plane_wave.py
+
+    ``` cmd
+    conda activate semba-fdtd
+    cd C:\Users\adilt\OneDrive\05_GIT\openSEMBA\fdtd
+    python examples\plane_wave.py
+    ```
+
+
+## Test cases
+
+- test_casemaker_sphere_rcs_case.py
+
+    ``` cmd
+    conda activate semba-fdtd
+    cd C:\Users\adilt\OneDrive\05_GIT\openSEMBA\fdtd
+    pytest test/pyWrapper/test_pyWrapper.py::test_casemaker_sphere_rcs_case
+    ```
 
 # Summary
 

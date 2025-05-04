@@ -29,10 +29,8 @@ def courant_dt(dx, dy, dz, alfa=0, epsilon_r=1.0, mu_r=1.0):
 
     # Condição de Courant 3D
     inv_sum = (1 / dx**2) + (1 / dy**2) + (1 / dz**2)
-    delta_t = 1 / (v * np.sqrt(inv_sum)) * (1 - alfa)
-
-    return delta_t
+    return 1 / (v * np.sqrt(inv_sum)) * (1 - alfa)
 
 # Exemplo de uso
-delta_t = courant_dt(dx=0.020, dy=0.020, dz=0.020, alfa=0.001, epsilon_r=1, mu_r=1)
+delta_t = courant_dt(dx=0.100, dy=0.100, dz=0.100, alfa=0, epsilon_r=1, mu_r=1)
 print(f"Passo de tempo (delta_t): {delta_t:.6e} s")

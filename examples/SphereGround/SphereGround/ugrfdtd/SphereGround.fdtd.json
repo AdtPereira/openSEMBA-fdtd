@@ -1,0 +1,206 @@
+{
+    "_format": "FDTD Input file",
+    "general": {
+        "timeStep": 3.84781e-11,
+        "numberOfSteps": 519,
+        "additionalArguments": ""
+    },
+    "boundary": {
+        "all": {
+            "type": "pml",
+            "layers": 10,
+            "order": 2,
+            "reflection": 0.001
+        }
+    },
+    "mesh": {
+        "grid": {
+            "numberOfCells": [
+                100,
+                100,
+                100
+            ],
+            "steps": {
+                "x": [
+                    0.02
+                ],
+                "y": [
+                    0.02
+                ],
+                "z": [
+                    0.02
+                ]
+            }
+        },
+        "coordinates": [
+            {
+                "id": 1,
+                "relativePosition": [
+                    50.0,
+                    50.0,
+                    50.0
+                ]
+            }
+        ],
+        "elements": [
+            {
+                "id": 1,
+                "type": "cell",
+                "intervals": [
+                    [
+                        [
+                            10,
+                            10,
+                            10
+                        ],
+                        [
+                            90,
+                            90,
+                            90
+                        ]
+                    ]
+                ]
+            },
+            {
+                "id": 2,
+                "type": "cell",
+                "intervals": [
+                    [
+                        [
+                            35,
+                            35,
+                            35
+                        ],
+                        [
+                            35,
+                            65,
+                            65
+                        ]
+                    ],
+                    [
+                        [
+                            35,
+                            35,
+                            35
+                        ],
+                        [
+                            65,
+                            35,
+                            65
+                        ]
+                    ],
+                    [
+                        [
+                            35,
+                            35,
+                            35
+                        ],
+                        [
+                            65,
+                            65,
+                            35
+                        ]
+                    ],
+                    [
+                        [
+                            65,
+                            35,
+                            35
+                        ],
+                        [
+                            65,
+                            65,
+                            65
+                        ]
+                    ],
+                    [
+                        [
+                            35,
+                            65,
+                            35
+                        ],
+                        [
+                            65,
+                            65,
+                            65
+                        ]
+                    ],
+                    [
+                        [
+                            35,
+                            35,
+                            65
+                        ],
+                        [
+                            65,
+                            65,
+                            65
+                        ]
+                    ]
+                ]
+            },
+            {
+                "id": 3,
+                "type": "node",
+                "coordinateIds": [
+                    1
+                ]
+            }
+        ]
+    },
+    "materials": [
+        {
+            "name": "IsotropicMaterial",
+            "id": 1,
+            "type": "isotropic",
+            "relativePermittivity": 5.0,
+            "relativePermeability": 1.0,
+            "electricConductivity": 0.0,
+            "magneticConductivity": 0.0
+        }
+    ],
+    "materialAssociations": [
+        {
+            "type": "bulk",
+            "materialId": 1,
+            "elementIds": [
+                2
+            ]
+        }
+    ],
+    "sources": [
+        {
+            "type": "planewave",
+            "magnitudeFile": "predefinedExcitation.1.exc",
+            "elementIds": [
+                1
+            ],
+            "direction": {
+                "theta": 0.0,
+                "phi": 0.0
+            },
+            "polarization": {
+                "theta": 1.5707963268,
+                "phi": 0.0
+            }
+        }
+    ],
+    "probes": [
+        {
+            "name": "Point probe_1",
+            "type": "point",
+            "field": "electric",
+            "elementIds": [
+                3
+            ],
+            "directions": [
+                "x",
+                "y",
+                "z"
+            ],
+            "domain": {
+                "type": "time"
+            }
+        }
+    ]
+}

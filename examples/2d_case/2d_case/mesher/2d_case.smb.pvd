@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<VTKFile type="Collection" version="0.1" byte_order="LittleEndian" compressor="vtkZLibDataCompressor">
+  <Collection>
+    <DataSet group="PEC@Cylinder" part="0" file="2d_case.smb.vtk\PEC@Cylinder.vtu" />
+    <DataSet group="EMSource_PlaneWave" part="1" file="2d_case.smb.vtk\EMSource_PlaneWave.vtu" />
+    <DataSet group="OutRq_On_Point_Point_probe_1_0" part="2" file="2d_case.smb.vtk\OutRq_On_Point_Point_probe_1_0.vtu" />
+    <DataSet group="OutRq_Far_Field_Far_field" part="3" file="2d_case.smb.vtk\OutRq_Far_Field_Far_field.vtu" />
+  </Collection>
+</VTKFile>

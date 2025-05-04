@@ -1,10 +1,2 @@
-AirBox.fdtd_Point probe A_Ex_25_50_13.dat
-AirBox.fdtd_Point probe A_Ey_25_50_13.dat
-AirBox.fdtd_Point probe A_Ez_25_50_13.dat
-AirBox.fdtd_Point probe B_Ex_50_50_13.dat
-AirBox.fdtd_Point probe B_Ey_50_50_13.dat
-AirBox.fdtd_Point probe B_Ez_50_50_13.dat
-AirBox.fdtd_Point probe C_Hx_75_50_13.dat
-AirBox.fdtd_Point probe C_Hy_75_50_13.dat
-AirBox.fdtd_Point probe C_Hz_75_50_13.dat
+AirBox.fdtd_electric_field_movie_ExC_10_1_10__89_1_89.bin
 !END 

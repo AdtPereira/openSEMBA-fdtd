@@ -1,8 +1,8 @@
 {
     "_format": "FDTD Input file",
     "general": {
-        "timeStep": 3.042e-11,
-        "numberOfSteps": 1314,
+        "timeStep": 9.6e-11,
+        "numberOfSteps": 416,
         "additionalArguments": ""
     },
     "boundary": {
@@ -16,19 +16,19 @@
     "mesh": {
         "grid": {
             "numberOfCells": [
-                48,
-                144,
-                36
+                24,
+                64,
+                24
             ],
             "steps": {
                 "x": [
-                    0.05000000000000001
+                    0.10000000000000002
                 ],
                 "y": [
-                    0.049999999999999996
+                    0.1
                 ],
                 "z": [
-                    0.049999999999999996
+                    0.10000000000000002
                 ]
             }
         },
@@ -36,25 +36,25 @@
             {
                 "id": 1,
                 "relativePosition": [
-                    24.0,
-                    32.0,
-                    3.0
+                    12.0,
+                    12.0,
+                    2.0
+                ]
+            },
+            {
+                "id": 2,
+                "relativePosition": [
+                    12.0,
+                    52.0,
+                    7.0
                 ]
             },
             {
                 "id": 3,
                 "relativePosition": [
-                    24.0,
-                    112.0,
-                    13.0
-                ]
-            },
-            {
-                "id": 4,
-                "relativePosition": [
-                    24.0,
-                    32.0,
-                    13.0
+                    12.0,
+                    12.0,
+                    7.0
                 ]
             }
         ],
@@ -68,17 +68,39 @@
             },
             {
                 "id": 2,
-                "type": "polyline",
-                "coordinateIds": [
-                    4,
-                    3
+                "type": "cell",
+                "intervals": [
+                    [
+                        [
+                            12,
+                            52,
+                            7
+                        ],
+                        [
+                            12,
+                            52,
+                            7
+                        ]
+                    ],
+                    [
+                        [
+                            12,
+                            52,
+                            7
+                        ],
+                        [
+                            12,
+                            52,
+                            7
+                        ]
+                    ]
                 ]
             },
             {
                 "id": 3,
                 "type": "node",
                 "coordinateIds": [
-                    3
+                    1
                 ]
             },
             {
@@ -94,14 +116,14 @@
                 "intervals": [
                     [
                         [
-                            4,
-                            12,
-                            3
+                            2,
+                            2,
+                            2
                         ],
                         [
-                            44,
-                            132,
-                            3
+                            22,
+                            62,
+                            2
                         ]
                     ]
                 ]
@@ -112,126 +134,37 @@
                 "intervals": [
                     [
                         [
-                            24,
-                            32,
-                            13
+                            12,
+                            12,
+                            2
                         ],
                         [
-                            24,
-                            32,
-                            13
+                            12,
+                            12,
+                            2
                         ]
                     ],
                     [
                         [
-                            24,
-                            32,
-                            13
+                            12,
+                            12,
+                            2
                         ],
                         [
-                            24,
-                            32,
-                            13
+                            12,
+                            12,
+                            2
                         ]
                     ]
                 ]
             },
             {
                 "id": 7,
-                "type": "cell",
-                "intervals": [
-                    [
-                        [
-                            24,
-                            32,
-                            13
-                        ],
-                        [
-                            24,
-                            32,
-                            13
-                        ]
-                    ],
-                    [
-                        [
-                            24,
-                            32,
-                            13
-                        ],
-                        [
-                            24,
-                            32,
-                            13
-                        ]
-                    ]
-                ]
-            },
-            {
-                "id": 8,
-                "type": "cell",
-                "intervals": [
-                    [
-                        [
-                            24,
-                            112,
-                            13
-                        ],
-                        [
-                            24,
-                            112,
-                            13
-                        ]
-                    ],
-                    [
-                        [
-                            24,
-                            112,
-                            13
-                        ],
-                        [
-                            24,
-                            112,
-                            13
-                        ]
-                    ]
-                ]
-            },
-            {
-                "id": 9,
-                "type": "cell",
-                "intervals": [
-                    [
-                        [
-                            24,
-                            32,
-                            3
-                        ],
-                        [
-                            24,
-                            32,
-                            3
-                        ]
-                    ],
-                    [
-                        [
-                            24,
-                            32,
-                            3
-                        ],
-                        [
-                            24,
-                            32,
-                            3
-                        ]
-                    ]
-                ]
-            },
-            {
-                "id": 10,
                 "type": "polyline",
                 "coordinateIds": [
-                    1,
-                    4
+                    2,
+                    3,
+                    1
                 ]
             }
         ]
@@ -242,24 +175,16 @@
             "type": "pec"
         },
         {
-            "name": "Vert_Wirematerial",
+            "name": "Wirematerial",
             "id": 2,
-            "type": "wire",
-            "radius": 0.01,
-            "resistancePerMeter": 0.0,
-            "inductancePerMeter": 0.0
-        },
-        {
-            "name": "Hor_Wirematerial",
-            "id": 3,
             "type": "wire",
             "radius": 0.015,
             "resistancePerMeter": 0.0,
             "inductancePerMeter": 0.0
         },
         {
-            "name": "Terminal_50ohm",
-            "id": 4,
+            "name": "Terminal_50Ohm",
+            "id": 3,
             "type": "terminal",
             "terminations": [
                 {
@@ -270,27 +195,17 @@
             ]
         },
         {
-            "name": "Short",
-            "id": 5,
+            "name": "Open",
+            "id": 4,
             "type": "terminal",
             "terminations": [
                 {
-                    "type": "short"
+                    "type": "open"
                 }
             ]
         }
     ],
     "materialAssociations": [
-        {
-            "name": "Horizontal_Cable",
-            "type": "cable",
-            "elementIds": [
-                2
-            ],
-            "materialId": 3,
-            "initialTerminalId": 5,
-            "endTerminalId": 4
-        },
         {
             "type": "surface",
             "materialId": 1,
@@ -299,21 +214,21 @@
             ]
         },
         {
-            "name": "Vertical_Cable",
+            "name": "Cable",
             "type": "cable",
             "elementIds": [
-                10
+                7
             ],
             "materialId": 2,
             "initialTerminalId": 4,
-            "endTerminalId": 5
+            "endTerminalId": 3
         }
     ],
     "sources": [
         {
             "name": "Generator on line",
             "type": "generator",
-            "magnitudeFile": "predefinedExcitation.1.exc",
+            "magnitudeFile": "NodaVoltage.exc",
             "elementIds": [
                 1
             ],
@@ -326,7 +241,7 @@
             "type": "point",
             "field": "electric",
             "elementIds": [
-                4
+                3
             ],
             "directions": [
                 "x",
@@ -338,16 +253,11 @@
             }
         },
         {
-            "name": "Point probe001",
-            "type": "point",
-            "field": "electric",
+            "name": "Wire probe",
+            "type": "wire",
+            "field": "current",
             "elementIds": [
-                3
-            ],
-            "directions": [
-                "x",
-                "y",
-                "z"
+                4
             ],
             "domain": {
                 "type": "time"

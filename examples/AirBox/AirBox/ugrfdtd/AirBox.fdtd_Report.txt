@@ -11,14 +11,14 @@ __________________________________________
 Compiled WITH .h5 HDF support
 Compiled WITH SMBJSON support
 __________________________________________
-Launched on              01/05/2025 18:06
+Launched on              03/05/2025 11:00
 Switches "C:\Program Files\FreeCAD 0.21\Mod\ElemwaveWorkbench\semba\semba-fdtd.exe" -i AirBox.fdtd.json
 __________________________________________
 Closing warning file. Number of messages:            0
 __________________________________________
 Compiled with Single precision (real*4)
 __________________________________________
-Launched on              01/05/2025 18:06
+Launched on              03/05/2025 11:00
 __________________________________________
 Launched with total options
 "C:\Program Files\FreeCAD 0.21\Mod\ElemwaveWorkbench\semba\semba-fdtd.exe" -i AirBox.fdtd.json
@@ -30,7 +30,7 @@ __________________________________________
 __________________________________________
 __________________________________________
 Automatically correcting dt for stability reasons:
-Original dt:   3.847815122082210E-011
+Original dt:   3.847809917911782E-011
 New dt:   3.081333105336981E-011
 __________________________________________
 __________________________________________
@@ -49,8 +49,8 @@ _________Spanning from z=    -10 to z=    110
 [OK] Ended conversion internal ASCII => Binary
 [OK] Ended Conformal Mesh
 __________________________________________
-Original Final Time Step=         1039
-Corrected Final Time Step=         1297
+Original Final Time Step=          519
+Corrected Final Time Step=          648
 __________________________________________
 Solver launched with options:
 ---> l%mibc    solver for NIBC multilayer: F
@@ -102,29 +102,51 @@ Init Nodal Sources...
 Init Observation...
 ----> there are observation requests
 Init Timing...
-Total Mcells:    1.728000
+Total Mcells:   0.3312000
 NO flushing of restarting FIELDS scheduled
 Flushing observation DATA every      10000001  minutes and every         1024  steps
 Reporting simulation info every             1  minutes
 __________________________________________
-Simulation from n=      0, t=   0.000000000E+000 to n=     1297, t=   0.399648904E-007
-Date/time 01/05/2025   18:06:56
+Simulation from n=      0, t=   0.000000000E+000 to n=      648, t=   0.199670385E-007
+Date/time 03/05/2025   11:01:04
 __________________________________________
 Closing warning file. Number of messages:            1
 __________________________________________
 END PREPROCESSING. STARTING simulation.
 __________________________________________
-Start Date/time 01/05   18:06:56
+Start Date/time 03/05   11:01:04
+__________________________________________
+__________________________________________
+INIT OBSERVATION DATA FLUSHING n=         5
+__________________________________________
+__________________________________________
+Done OBSERVATION DATA FLUSHED n=         5
+__________________________________________
+__________________________________________
+Post-processing .vtk files n=         5
+__________________________________________
+No .vtk snapshots found to be flushed
+__________________________________________
+__________________________________________
+Post-processing .xdmf files n=         5
+__________________________________________
+----> .xdmf file   0.000000000000000E+000 (           1 /           2 )
+----> .xdmf file   3.081333105336981E-011 (           2 /           2 )
+(    1/    1) Written into AirBox.fdtd_electric_field_movie_ExC_10_1_10__89_1_89_time.h5
+End flushing .xdmf snapshots
+__________________________________________
+__________________________________________
+Continuing simulation at n=         5
 __________________________________________
 Switching plane-wave off at n=         264
-END FDTD time stepping. Beginning posprocessing at n=         1297
+END FDTD time stepping. Beginning posprocessing at n=          648
 __________________________________________
-INIT FINAL OBSERVATION DATA FLUSHING n=      1297
+INIT FINAL OBSERVATION DATA FLUSHING n=       648
 __________________________________________
 __________________________________________
-DONE FINAL OBSERVATION  DATA FLUSHED n=      1297
+DONE FINAL OBSERVATION  DATA FLUSHED n=       648
 __________________________________________
-INIT FINAL Postprocessing frequency domain probes, if any, at n=      1297
+INIT FINAL Postprocessing frequency domain probes, if any, at n=       648
 __________________________________________
 No FINAL frequency domain probes snapshots found to be postrocessed
 __________________________________________
@@ -136,11 +158,11 @@ INIT FINAL FLUSHING .xdmf if any.
 __________________________________________
 No FINAL .xdmf snapshots found to be flushed
 __________________________________________
-END FINAL POSTPROCESSING at n=         1297
+END FINAL POSTPROCESSING at n=          648
 __________________________________________
-DONE :  AirBox.fdtd UNTIL n=        1297
+DONE :  AirBox.fdtd UNTIL n=         648
 __________________________________________
-BEGUN AirBox.fdtd at 01/05/2025 , 18:06
-ENDED AirBox.fdtd at 01/05/2025 , 18:07
+BEGUN AirBox.fdtd at 03/05/2025 , 11:00
+ENDED AirBox.fdtd at 03/05/2025 , 11:01
 __________________________________________
 __________________________________________

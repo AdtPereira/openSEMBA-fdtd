@@ -1,0 +1,1 @@
+(    1/    1) WARNING: predefinedExcitation.1.exc undersampled by a factor    0.10E+001

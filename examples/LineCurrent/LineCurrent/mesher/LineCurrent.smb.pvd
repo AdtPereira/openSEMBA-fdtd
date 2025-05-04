@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<VTKFile type="Collection" version="0.1" byte_order="LittleEndian" compressor="vtkZLibDataCompressor">
+  <Collection>
+    <DataSet group="Terminal_50Ohm@Wire_1" part="0" file="LineCurrent.smb.vtk\Terminal_50Ohm@Wire_1.vtu" />
+    <DataSet group="Open@Wire_1" part="1" file="LineCurrent.smb.vtk\Open@Wire_1.vtu" />
+    <DataSet group="Wirematerial_1@Wire_1" part="2" file="LineCurrent.smb.vtk\Wirematerial_1@Wire_1.vtu" />
+    <DataSet group="PEC@Plane" part="3" file="LineCurrent.smb.vtk\PEC@Plane.vtu" />
+    <DataSet group="EMSource_Generator" part="4" file="LineCurrent.smb.vtk\EMSource_Generator.vtu" />
+    <DataSet group="OutRq_On_Point_Probe_Start_0" part="5" file="LineCurrent.smb.vtk\OutRq_On_Point_Probe_Start_0.vtu" />
+    <DataSet group="OutRq_On_Point_Point_probe_0" part="6" file="LineCurrent.smb.vtk\OutRq_On_Point_Point_probe_0.vtu" />
+    <DataSet group="OutRq_On_Point_Wire_probe" part="7" file="LineCurrent.smb.vtk\OutRq_On_Point_Wire_probe.vtu" />
+    <DataSet group="OutRq_Bulk_Current_Bulk_probe" part="8" file="LineCurrent.smb.vtk\OutRq_Bulk_Current_Bulk_probe.vtu" />
+  </Collection>
+</VTKFile>

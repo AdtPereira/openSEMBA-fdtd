@@ -1,6 +1,12 @@
 '''
-Plane wave in a box example.
-This example shows how to run a simulation of a plane wave in a box using the openSEMBA FDTD solver.
+    Plane wave in a box example.
+    This example shows how to run a simulation of a plane wave in a
+    box using the openSEMBA FDTD solver.
+
+    cmd commands:
+    conda activate semba-fdtd
+    cd C:\Users\adilt\OneDrive\05_GIT\openSEMBA\fdtd
+    python examples/plane_wave.py
 
     flowchart TD
     A[Início de run_simulation()] --> B[Verifica se SEMBA_EXE existe]
@@ -17,11 +23,6 @@ This example shows how to run a simulation of a plane wave in a box using the op
     L --> M[Retorna o dicionário probes]
 
 '''
-
-# conda activate semba-fdtd
-# cd C:\Users\adilt\OneDrive\05_GIT\openSEMBA\fdtd
-# python examples/plane_wave.py
-
 import os
 import sys
 import json
