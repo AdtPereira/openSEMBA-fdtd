@@ -1,0 +1,1 @@
+(    1/    1) pre1_INFO:  Bounding Box for WIREs min_x,min_y,min_z, MAX_x,MAX_y,MAX_z          12          12           2          12          51           7

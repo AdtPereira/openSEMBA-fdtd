@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+<VTKFile type="Collection" version="0.1" byte_order="LittleEndian" compressor="vtkZLibDataCompressor">
+  <Collection>
+    <DataSet group="PEC@Sphere" part="0" file="SphericalCavity.smb.vtk\PEC@Sphere.vtu" />
+    <DataSet group="EMSource_OnLine" part="1" file="SphericalCavity.smb.vtk\EMSource_OnLine.vtu" />
+    <DataSet group="OutRq_On_Point_Point_probe_0" part="2" file="SphericalCavity.smb.vtk\OutRq_On_Point_Point_probe_0.vtu" />
+  </Collection>
+</VTKFile>

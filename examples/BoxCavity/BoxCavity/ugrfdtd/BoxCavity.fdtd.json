@@ -1,0 +1,182 @@
+{
+    "_format": "FDTD Input file",
+    "general": {
+        "timeStep": 3.851666e-12,
+        "numberOfSteps": 1557,
+        "additionalArguments": ""
+    },
+    "boundary": {
+        "all": {
+            "type": "pml",
+            "layers": 10,
+            "order": 2,
+            "reflection": 0.001
+        }
+    },
+    "mesh": {
+        "grid": {
+            "numberOfCells": [
+                25,
+                20,
+                15
+            ],
+            "steps": {
+                "x": [
+                    0.002
+                ],
+                "y": [
+                    0.002
+                ],
+                "z": [
+                    0.002
+                ]
+            }
+        },
+        "coordinates": [
+            {
+                "id": 1,
+                "relativePosition": [
+                    1.0,
+                    10.0,
+                    7.0
+                ]
+            },
+            {
+                "id": 2,
+                "relativePosition": [
+                    1.0,
+                    10.0,
+                    8.0
+                ]
+            },
+            {
+                "id": 3,
+                "relativePosition": [
+                    15.0,
+                    10.0,
+                    7.0
+                ]
+            },
+            {
+                "id": 4,
+                "relativePosition": [
+                    24.0,
+                    10.0,
+                    7.0
+                ]
+            },
+            {
+                "id": 5,
+                "relativePosition": [
+                    5.0,
+                    10.0,
+                    7.0
+                ]
+            }
+        ],
+        "elements": [
+            {
+                "id": 1,
+                "type": "cell",
+                "intervals": [
+                    [
+                        [
+                            1.0,
+                            10.0,
+                            7.0
+                        ],
+                        [
+                            1.0,
+                            10.0,
+                            8.0
+                        ]
+                    ]
+                ]
+            },
+            {
+                "id": 2,
+                "type": "node",
+                "coordinateIds": [
+                    3
+                ]
+            },
+            {
+                "id": 3,
+                "type": "node",
+                "coordinateIds": [
+                    4
+                ]
+            },
+            {
+                "id": 4,
+                "type": "node",
+                "coordinateIds": [
+                    5
+                ]
+            }
+        ]
+    },
+    "materials": [],
+    "materialAssociations": [],
+    "sources": [
+        {
+            "name": "nodalSource",
+            "type": "nodalSource",
+            "magnitudeFile": "predefinedExcitation.1.exc",
+            "elementIds": [
+                1
+            ],
+            "field": "electric"
+        }
+    ],
+    "probes": [
+        {
+            "name": "Point probe",
+            "type": "point",
+            "field": "electric",
+            "elementIds": [
+                4
+            ],
+            "directions": [
+                "x",
+                "y",
+                "z"
+            ],
+            "domain": {
+                "type": "time"
+            }
+        },
+        {
+            "name": "Point probe001",
+            "type": "point",
+            "field": "electric",
+            "elementIds": [
+                2
+            ],
+            "directions": [
+                "x",
+                "y",
+                "z"
+            ],
+            "domain": {
+                "type": "time"
+            }
+        },
+        {
+            "name": "Point probe002",
+            "type": "point",
+            "field": "electric",
+            "elementIds": [
+                3
+            ],
+            "directions": [
+                "x",
+                "y",
+                "z"
+            ],
+            "domain": {
+                "type": "time"
+            }
+        }
+    ]
+}

@@ -1,0 +1,4 @@
+SphericalCavity.fdtd_Point probe_Ex_50_25_50.dat
+SphericalCavity.fdtd_Point probe_Ey_50_25_50.dat
+SphericalCavity.fdtd_Point probe_Ez_50_25_50.dat
+!END 

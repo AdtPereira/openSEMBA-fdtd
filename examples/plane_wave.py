@@ -1,4 +1,4 @@
-'''
+r'''
     Plane wave in a box example.
     This example shows how to run a simulation of a plane wave in a
     box using the openSEMBA FDTD solver.

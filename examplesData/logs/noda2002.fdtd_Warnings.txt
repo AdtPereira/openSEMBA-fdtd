@@ -1,0 +1,57 @@
+(    1/    1) pre1_INFO:  Bounding Box for WIREs min_x,min_y,min_z, MAX_x,MAX_y,MAX_z          12          12           2          12          51           7
+(    1/    1) ----------------------------------------------------------------
+(    1/    1) wir1_WARNING: Series RLC in terminal RightEnd segment       1     12     12      2      3
+(    1/    1) wir1_WARNING:  Lossy, pec,  2.: A wire is connected at some ending both to a lossy and to a PEC edge. Assuming it PEC            12          51           7  0.000000000000000E+000 F F F F
+(    1/    1) wir1_WARNING:  Lossy, pec,  2.: A wire is connected at some ending both to a lossy and to a PEC edge. Assuming it PEC            12          50           7  0.000000000000000E+000 F F F F
+(    1/    1) wir1_WARNING:  Lossy, pec,  2.: A wire is connected at some ending both to a lossy and to a PEC edge. Assuming it PEC            12          49           7  0.000000000000000E+000 F F F F
+(    1/    1) wir1_WARNING:  Lossy, pec,  2.: A wire is connected at some ending both to a lossy and to a PEC edge. Assuming it PEC            12          48           7  0.000000000000000E+000 F F F F
+(    1/    1) wir1_WARNING:  Lossy, pec,  2.: A wire is connected at some ending both to a lossy and to a PEC edge. Assuming it PEC            12          47           7  0.000000000000000E+000 F F F F
+(    1/    1) wir1_WARNING:  Lossy, pec,  2.: A wire is connected at some ending both to a lossy and to a PEC edge. Assuming it PEC            12          46           7  0.000000000000000E+000 F F F F
+(    1/    1) wir1_WARNING:  Lossy, pec,  2.: A wire is connected at some ending both to a lossy and to a PEC edge. Assuming it PEC            12          45           7  0.000000000000000E+000 F F F F
+(    1/    1) wir1_WARNING:  Lossy, pec,  2.: A wire is connected at some ending both to a lossy and to a PEC edge. Assuming it PEC            12          44           7  0.000000000000000E+000 F F F F
+(    1/    1) wir1_WARNING:  Lossy, pec,  2.: A wire is connected at some ending both to a lossy and to a PEC edge. Assuming it PEC            12          43           7  0.000000000000000E+000 F F F F
+(    1/    1) wir1_WARNING:  Lossy, pec,  2.: A wire is connected at some ending both to a lossy and to a PEC edge. Assuming it PEC            12          42           7  0.000000000000000E+000 F F F F
+(    1/    1) wir1_WARNING:  Lossy, pec,  2.: A wire is connected at some ending both to a lossy and to a PEC edge. Assuming it PEC            12          41           7  0.000000000000000E+000 F F F F
+(    1/    1) wir1_WARNING:  Lossy, pec,  2.: A wire is connected at some ending both to a lossy and to a PEC edge. Assuming it PEC            12          40           7  0.000000000000000E+000 F F F F
+(    1/    1) wir1_WARNING:  Lossy, pec,  2.: A wire is connected at some ending both to a lossy and to a PEC edge. Assuming it PEC            12          39           7  0.000000000000000E+000 F F F F
+(    1/    1) wir1_WARNING:  Lossy, pec,  2.: A wire is connected at some ending both to a lossy and to a PEC edge. Assuming it PEC            12          38           7  0.000000000000000E+000 F F F F
+(    1/    1) wir1_WARNING:  Lossy, pec,  2.: A wire is connected at some ending both to a lossy and to a PEC edge. Assuming it PEC            12          37           7  0.000000000000000E+000 F F F F
+(    1/    1) wir1_WARNING:  Lossy, pec,  2.: A wire is connected at some ending both to a lossy and to a PEC edge. Assuming it PEC            12          36           7  0.000000000000000E+000 F F F F
+(    1/    1) wir1_WARNING:  Lossy, pec,  2.: A wire is connected at some ending both to a lossy and to a PEC edge. Assuming it PEC            12          35           7  0.000000000000000E+000 F F F F
+(    1/    1) wir1_WARNING:  Lossy, pec,  2.: A wire is connected at some ending both to a lossy and to a PEC edge. Assuming it PEC            12          34           7  0.000000000000000E+000 F F F F
+(    1/    1) wir1_WARNING:  Lossy, pec,  2.: A wire is connected at some ending both to a lossy and to a PEC edge. Assuming it PEC            12          33           7  0.000000000000000E+000 F F F F
+(    1/    1) wir1_WARNING:  Lossy, pec,  2.: A wire is connected at some ending both to a lossy and to a PEC edge. Assuming it PEC            12          32           7  0.000000000000000E+000 F F F F
+(    1/    1) wir1_WARNING:  Lossy, pec,  2.: A wire is connected at some ending both to a lossy and to a PEC edge. Assuming it PEC            12          31           7  0.000000000000000E+000 F F F F
+(    1/    1) wir1_WARNING:  Lossy, pec,  2.: A wire is connected at some ending both to a lossy and to a PEC edge. Assuming it PEC            12          30           7  0.000000000000000E+000 F F F F
+(    1/    1) wir1_WARNING:  Lossy, pec,  2.: A wire is connected at some ending both to a lossy and to a PEC edge. Assuming it PEC            12          29           7  0.000000000000000E+000 F F F F
+(    1/    1) wir1_WARNING:  Lossy, pec,  2.: A wire is connected at some ending both to a lossy and to a PEC edge. Assuming it PEC            12          28           7  0.000000000000000E+000 F F F F
+(    1/    1) wir1_WARNING:  Lossy, pec,  2.: A wire is connected at some ending both to a lossy and to a PEC edge. Assuming it PEC            12          27           7  0.000000000000000E+000 F F F F
+(    1/    1) wir1_WARNING:  Lossy, pec,  2.: A wire is connected at some ending both to a lossy and to a PEC edge. Assuming it PEC            12          26           7  0.000000000000000E+000 F F F F
+(    1/    1) wir1_WARNING:  Lossy, pec,  2.: A wire is connected at some ending both to a lossy and to a PEC edge. Assuming it PEC            12          25           7  0.000000000000000E+000 F F F F
+(    1/    1) wir1_WARNING:  Lossy, pec,  2.: A wire is connected at some ending both to a lossy and to a PEC edge. Assuming it PEC            12          24           7  0.000000000000000E+000 F F F F
+(    1/    1) wir1_WARNING:  Lossy, pec,  2.: A wire is connected at some ending both to a lossy and to a PEC edge. Assuming it PEC            12          23           7  0.000000000000000E+000 F F F F
+(    1/    1) wir1_WARNING:  Lossy, pec,  2.: A wire is connected at some ending both to a lossy and to a PEC edge. Assuming it PEC            12          22           7  0.000000000000000E+000 F F F F
+(    1/    1) wir1_WARNING:  Lossy, pec,  2.: A wire is connected at some ending both to a lossy and to a PEC edge. Assuming it PEC            12          21           7  0.000000000000000E+000 F F F F
+(    1/    1) wir1_WARNING:  Lossy, pec,  2.: A wire is connected at some ending both to a lossy and to a PEC edge. Assuming it PEC            12          20           7  0.000000000000000E+000 F F F F
+(    1/    1) wir1_WARNING:  Lossy, pec,  2.: A wire is connected at some ending both to a lossy and to a PEC edge. Assuming it PEC            12          19           7  0.000000000000000E+000 F F F F
+(    1/    1) wir1_WARNING:  Lossy, pec,  2.: A wire is connected at some ending both to a lossy and to a PEC edge. Assuming it PEC            12          18           7  0.000000000000000E+000 F F F F
+(    1/    1) wir1_WARNING:  Lossy, pec,  2.: A wire is connected at some ending both to a lossy and to a PEC edge. Assuming it PEC            12          17           7  0.000000000000000E+000 F F F F
+(    1/    1) wir1_WARNING:  Lossy, pec,  2.: A wire is connected at some ending both to a lossy and to a PEC edge. Assuming it PEC            12          16           7  0.000000000000000E+000 F F F F
+(    1/    1) wir1_WARNING:  Lossy, pec,  2.: A wire is connected at some ending both to a lossy and to a PEC edge. Assuming it PEC            12          15           7  0.000000000000000E+000 F F F F
+(    1/    1) wir1_WARNING:  Lossy, pec,  2.: A wire is connected at some ending both to a lossy and to a PEC edge. Assuming it PEC            12          14           7  0.000000000000000E+000 F F F F
+(    1/    1) wir1_WARNING:  Lossy, pec,  2.: A wire is connected at some ending both to a lossy and to a PEC edge. Assuming it PEC            12          13           7  0.000000000000000E+000 F F F F
+(    1/    1) wir1_WARNING:  Lossy, pec,  2.: A wire is connected at some ending both to a lossy and to a PEC edge. Assuming it PEC            12          12           7  0.000000000000000E+000 F F F F
+(    1/    1) wir1_WARNING:  Lossy, pec,  2.: A wire is connected at some ending both to a lossy and to a PEC edge. Assuming it PEC            12          12           6  0.000000000000000E+000 F F F F
+(    1/    1) wir1_WARNING:  Lossy, pec,  2.: A wire is connected at some ending both to a lossy and to a PEC edge. Assuming it PEC            12          12           5  0.000000000000000E+000 F F F F
+(    1/    1) wir1_WARNING:  Lossy, pec,  2.: A wire is connected at some ending both to a lossy and to a PEC edge. Assuming it PEC            12          12           4  0.000000000000000E+000 F F F F
+(    1/    1) wir1_WARNING:  Lossy, pec,  2.: A wire is connected at some ending both to a lossy and to a PEC edge. Assuming it PEC            12          12           3  0.000000000000000E+000 F F F F
+(    1/    1) wir1_WARNING:  Lossy, pec,  2.: A wire is connected at some ending both to a lossy and to a PEC edge. Assuming it PEC            12          12           2  0.000000000000000E+000 F F F T
+(    1/    1) ----------------------------------------------------------------
+(    1/    1) ----------------------------------------------------------------
+(    1/    1) wir1_INFO: (SHOULD BE REDUNDANT) Terminal Node embedded in air           12          52           7
+(    1/    1) wir1_INFO: (SHOULD BE REDUNDANT) Terminal Node embedded in air           12          52           7
+(    1/    1) wir1_INFO: (SHOULD BE REDUNDANT) Terminal Node grounded to PEC           12          12           2
+(    1/    1) wir1_INFO: (SHOULD BE REDUNDANT) Terminal Node grounded to PEC           12          12           2
+(    1/    1) ----------------------------------------------------------------
+(    1/    1) wir3_INFO: BBOX for Holland WIREs           12          12           2          12          51           7
+(    1/    1) wir3_WARNING: Node open to air       2     12     52      7

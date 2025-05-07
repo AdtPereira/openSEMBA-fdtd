@@ -228,7 +228,7 @@
         {
             "name": "Generator on line",
             "type": "generator",
-            "magnitudeFile": "NodaVoltage.exc",
+            "magnitudeFile": "noda2002.exc",
             "elementIds": [
                 1
             ],
@@ -262,6 +262,6 @@
             "domain": {
                 "type": "time"
             }
-        }
+        }        
     ]
 }

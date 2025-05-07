@@ -1,0 +1,151 @@
+{
+    "_version": "0.16",
+    "_format": "Semba Data File in JSON format",
+    "analysis": {
+        "solver": "ugrfdtd",
+        "runSimulation": false,
+        "timeStep": 3.851666e-12,
+        "forceRestarting": false,
+        "resumeSimulation": false,
+        "flush": 0.0,
+        "compositesModel": "MIBC",
+        "wiresFlavor": "holland",
+        "mtln": false,
+        "minDistanceWires": 0.5,
+        "mesherOptions": {
+            "contourRefinement": false,
+            "unwantedConnectionsInfo": false,
+            "structuredCellsInfo": false,
+            "mesher": "DMesher",
+            "mode": "Structured",
+            "forbiddenLength": 0.25,
+            "slantedWires": false,
+            "vtkExport": true,
+            "postmshExport": false,
+            "postsmbExport": false,
+            "slantedThreshold": 0.25
+        },
+        "cfl": 0.8,
+        "mapVTK": false,
+        "geometryScalingFactor": 0.001,
+        "finalTime": 6e-09
+    },
+    "grids": [
+        {
+            "gridType": "gridCondition",
+            "type": "Number_of_cells",
+            "numberOfCells": "{25 20 15}",
+            "layerBox": "{50.0 40.0 30.0 0.0 0.0 0.0}"
+        }
+    ],
+    "model": {
+        "layers": [
+            {
+                "id": 1,
+                "name": "Line"
+            },
+            {
+                "id": 2,
+                "name": "Point_A"
+            },
+            {
+                "id": 3,
+                "name": "Point_B"
+            },
+            {
+                "id": 4,
+                "name": "Point_C"
+            }
+        ],
+        "materials": [],
+        "coordinates": [
+            "      1  +2.00000000e+00  +2.00000000e+01  +1.40000000e+01",
+            "      2  +2.00000000e+00  +2.00000000e+01  +1.60000000e+01",
+            "      3  +1.00000000e+01  +2.00000000e+01  +1.40000000e+01",
+            "      4  +3.00000000e+01  +2.00000000e+01  +1.40000000e+01",
+            "      5  +4.80000000e+01  +2.00000000e+01  +1.40000000e+01"
+        ],
+        "elements": {
+            "node": [
+                "       2    0    2        3",
+                "       3    0    3        4",
+                "       4    0    4        5",
+                "       5    0    0        3",
+                "       6    0    0        4",
+                "       7    0    0        5"
+            ],
+            "line": [
+                "       1    0    1        1        2"
+            ],
+            "polyline": [],
+            "triangle": []
+        }
+    },
+    "sources": [
+        {
+            "sourceType": "sourceOnLine",
+            "type": "electricField",
+            "hardness": "soft",
+            "elemIds": [
+                1
+            ],
+            "magnitude": {
+                "type": "Gaussian",
+                "frequencyMaximum": 1000000000.0
+            }
+        }
+    ],
+    "probes": [
+        {
+            "gidOutputType": "OutRq_on_point",
+            "name": "Point probe",
+            "type": "electricField",
+            "domain": {
+                "initialTime": 0.0,
+                "finalTime": 0.0,
+                "samplingPeriod": 0.0
+            },
+            "elemIds": [
+                5
+            ]
+        },
+        {
+            "gidOutputType": "OutRq_on_point",
+            "name": "Point probe001",
+            "type": "electricField",
+            "domain": {
+                "initialTime": 0.0,
+                "finalTime": 0.0,
+                "samplingPeriod": 0.0
+            },
+            "elemIds": [
+                6
+            ]
+        },
+        {
+            "gidOutputType": "OutRq_on_point",
+            "name": "Point probe002",
+            "type": "electricField",
+            "domain": {
+                "initialTime": 0.0,
+                "finalTime": 0.0,
+                "samplingPeriod": 0.0
+            },
+            "elemIds": [
+                7
+            ]
+        }
+    ],
+    "boundary": {
+        "lower": [
+            "PML",
+            "PML",
+            "PML"
+        ],
+        "upper": [
+            "PML",
+            "PML",
+            "PML"
+        ]
+    }
+}

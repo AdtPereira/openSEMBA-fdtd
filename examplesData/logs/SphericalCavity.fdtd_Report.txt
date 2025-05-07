@@ -1,0 +1,180 @@
+=========================
+SEMBA-FDTD SOLVER
+=========================
+__________________________________________
+SEMBA-FDTD. Release build, compiled on: Apr 26 2025 16:13:54
+__________________________________________
+All rights reserved by the University of Granada (Spain)
+Contact person: Salvador G. Garcia <salva@ugr.es>
+
+__________________________________________
+Compiled WITH .h5 HDF support
+Compiled WITH MTLN support
+Compiled WITH SMBJSON support
+__________________________________________
+Launched on              07/05/2025 11:57
+Switches C:\Users\adilt\OneDrive\05_GIT\openSEMBA\fdtd\build\bin\semba-fdtd.exe -i SphericalCavity.fdtd.json
+__________________________________________
+Closing warning file. Number of messages:            0
+__________________________________________
+Compiled with Single precision (real*4)
+__________________________________________
+Launched on              07/05/2025 11:57
+__________________________________________
+Launched with total options
+C:\Users\adilt\OneDrive\05_GIT\openSEMBA\fdtd\build\bin\semba-fdtd.exe -i SphericalCavity.fdtd.json
+If later resuming use compulsory options
+mpirun -n    1
+__________________________________________
+INIT conversion internal ASCII => Binary
+__________________________________________
+__________________________________________
+__________________________________________
+Automatically correcting dt for stability reasons:
+Original dt:   3.847809917911782E-011
+New dt:   1.848799585646432E-011
+__________________________________________
+__________________________________________
+CFLN=   0.8000000
+__________________________________________
+__________________________________________
+Deltat=   1.848799585646432E-011
+__________________________________________
+INIT NFDE --------> GEOM
+INIT UPDATING SHARED INFO. This process may take time!
+Launch with -noshared to skip this process (just relevant for structured NIBC CFCs and Anisot.)
+[OK] END UPDATING SHARED INFO
+[OK] ENDED NFDE --------> GEOM
+!SLICES_120
+_________Spanning from z=    -10 to z=    110
+[OK] Ended conversion internal ASCII => Binary
+[OK] Ended Conformal Mesh
+__________________________________________
+Original Final Time Step=         3118
+Corrected Final Time Step=         6489
+__________________________________________
+Solver launched with options:
+---> l%mibc    solver for NIBC multilayer: F
+---> l%ade     solver for ADC multilayer: F
+---> sgbc    solver for multilayer: T
+---> sgbc DISPERSIVE solver for multilayer: F
+---> sgbc Crank-Nicolson solver for multilayer: T
+---> sgbc Depth: -1
+---> sgbc Freq: 1.0000000E+09
+---> sgbc Resol: 1.000000
+---> l%skindepthpre preprocessing for multilayer: F
+---> Conformal file external: F
+---> Conformal solver: F
+---> Conformal thin-gap solver: F
+---> DMMA thin-gap solver: T
+---> Wire model: holland
+---> Inductance model: boutayeb
+---> Holland -l%stableradholland automatic correction switch: F
+---> Thin-wire double-tails removed: T
+---> Thin-wire -l%fieldtotl experimental switch: F
+__________________________________________
+Init Reporting...
+__________________________________________
+[OK]
+Init Other Borders...
+----> no PEC, PMC or periodic Borders found
+Init CPML Borders...
+----> there are CPML Borders
+Init PML Bodies...
+----> no PML Bodies found
+Init Mur Borders...
+----> no Mur Borders found
+Init Lumped Elements...
+----> no lumped Structured elements found
+Init Holland Wires...
+----> no Holland/transition wires found
+Init Anisotropic...
+----> no Structured anisotropic elements found
+Init Multi sgbc...
+----> no Structured sgbc elements found
+Init EDispersives...
+----> no Structured Electric dispersive elements found
+Init MDispersives...
+----> no Structured Magnetic dispersive elements found
+Init Multi Plane-Waves...
+----> no Plane waves are found
+Init Nodal Sources...
+----> there are Structured Nodal sources
+Init Observation...
+----> there are observation requests
+Init Timing...
+Total Mcells:    1.728000
+NO flushing of restarting FIELDS scheduled
+Flushing observation DATA every      10000001  minutes and every         1024  steps
+Reporting simulation info every             1  minutes
+__________________________________________
+Simulation from n=      0, t=   0.000000000E+000 to n=     6489, t=   0.119968605E-006
+Date/time 07/05/2025   11:57:57
+__________________________________________
+Closing warning file. Number of messages:            1
+__________________________________________
+END PREPROCESSING. STARTING simulation.
+__________________________________________
+Start Date/time 07/05   11:57:57
+__________________________________________
+______________SphericalCavity.fdtd______________
+Switches: C:\Users\adilt\OneDrive\05_GIT\openSEMBA\fdtd\build\bin\semba-fdtd.exe -i SphericalCavity.fdtd.json
+MPI Processes:            1
+Date/Time 07/05/2025   11:58:57
+Simulated:        2690 /        6489  steps
+Time=    0.497327089E-007, dt0 =    0.184879959E-010
+Total Energy (inc) :  3.4924980E-02
+Max field:   0.3811E-002 at (   50   50   52)=( 0.6000E+000, 0.6000E+000, 0.6240E+000)
+Mins. since start  :           2
+Mins. until end    :           2
+Never flushed resuming fields.
+Will Never flush resuming fields.
+Next info at step:         5380
+Total Mcells:   1.728000
+Mcells/sec  :   77.45691     (           0  to         2690 )
+Mcells/sec  :   77.45691     (           0  to         2690 )
+__________________________________________
+______________SphericalCavity.fdtd______________
+Switches: C:\Users\adilt\OneDrive\05_GIT\openSEMBA\fdtd\build\bin\semba-fdtd.exe -i SphericalCavity.fdtd.json
+MPI Processes:            1
+Date/Time 07/05/2025   11:59:58
+Simulated:        5750 /        6489  steps
+Time=    0.106305976E-006, dt0 =    0.184879959E-010
+Total Energy (inc) :  6.5890707E-02
+Max field:   0.2918E-002 at (   42   50   50)=( 0.5040E+000, 0.6000E+000, 0.6000E+000)
+Mins. since start  :           3
+Mins. until end    :           1
+Never flushed resuming fields.
+Will Never flush resuming fields.
+Next info at step:         8809
+Total Mcells:   1.728000
+Mcells/sec  :   88.07955     (        2691  to         5750 )
+Mcells/sec  :   82.75440     (           0  to         5750 )
+__________________________________________
+END FDTD time stepping. Beginning posprocessing at n=         6489
+__________________________________________
+INIT FINAL OBSERVATION DATA FLUSHING n=      6489
+__________________________________________
+__________________________________________
+DONE FINAL OBSERVATION  DATA FLUSHED n=      6489
+__________________________________________
+INIT FINAL Postprocessing frequency domain probes, if any, at n=      6489
+__________________________________________
+No FINAL frequency domain probes snapshots found to be postrocessed
+__________________________________________
+INIT FINAL FLUSHING .vtk if any.
+__________________________________________
+No FINAL .vtk snapshots found to be flushed
+__________________________________________
+INIT FINAL FLUSHING .xdmf if any.
+__________________________________________
+No FINAL .xdmf snapshots found to be flushed
+__________________________________________
+END FINAL POSTPROCESSING at n=         6489
+__________________________________________
+DONE :  SphericalCavity.fdtd UNTIL n=        6489
+__________________________________________
+BEGUN SphericalCavity.fdtd at 07/05/2025 , 11:57
+ENDED SphericalCavity.fdtd at 07/05/2025 , 12:00
+__________________________________________
+__________________________________________

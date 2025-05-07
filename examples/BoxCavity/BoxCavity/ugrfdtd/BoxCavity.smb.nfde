@@ -1,0 +1,80 @@
+* mesher\ugrfdtd\BoxCavity.smb.nfde
+* 07-05-25 06:19:47
+
+********************* SOLVER OPTIONS ***********************
+
+!SIMULATION
+ -mibc -wiresflavor holland 
+************************* GENERAL **************************
+
+!TIMESTEPS
+3.85167e-12 1558
+
+*********************** SPACE STEPS ************************
+
+!NEWSPACESTEPS
+!!XCONS
+0
+0 25
+0.002
+!!YCONS
+0
+0 20
+0.002
+!!ZCONS
+0
+0 15
+0.002
+
+************************ BACKGROUND ************************
+
+!BACKGROUND
+!!LINEAR
+0 8.85419e-12 1.25664e-06 0
+
+******************* BOUNDARY CONDITIONS ********************
+
+!BOUNDARY CONDITION
+PML ALL
+8 2 0.001
+
+********************** NODAL SOURCES ***********************
+
+!CURRENT DENSITY SOURCE
+!!ELECT
+!!!1PNT
+predefinedExcitation.1.exc
+1 10 7 0 0 1 
+
+************************** PROBES **************************
+
+** NEW PROBES **
+
+* Point_probe_0
+!NEW PROBE
+!!NUMER
+!!!TIME
+0 6e-09 3.85167e-12
+EX 5 10 7 
+EY 5 10 7 
+EZ 5 10 7 
+
+* Point_probe001_0
+!NEW PROBE
+!!NUMER
+!!!TIME
+0 6e-09 3.85167e-12
+EX 15 10 7 
+EY 15 10 7 
+EZ 15 10 7 
+
+* Point_probe002_0
+!NEW PROBE
+!!NUMER
+!!!TIME
+0 6e-09 3.85167e-12
+EX 24 10 7 
+EY 24 10 7 
+EZ 24 10 7 
+
+!END

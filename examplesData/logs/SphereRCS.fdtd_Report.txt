@@ -12,14 +12,14 @@ Compiled WITH .h5 HDF support
 Compiled WITH MTLN support
 Compiled WITH SMBJSON support
 __________________________________________
-Launched on              04/05/2025 12:29
+Launched on              04/05/2025 15:02
 Switches C:\Users\adilt\OneDrive\05_GIT\openSEMBA\fdtd\build\bin\semba-fdtd.exe -i SphereRCS.fdtd.json
 __________________________________________
 Closing warning file. Number of messages:            0
 __________________________________________
 Compiled with Single precision (real*4)
 __________________________________________
-Launched on              04/05/2025 12:29
+Launched on              04/05/2025 15:02
 __________________________________________
 Launched with total options
 C:\Users\adilt\OneDrive\05_GIT\openSEMBA\fdtd\build\bin\semba-fdtd.exe -i SphereRCS.fdtd.json
@@ -109,13 +109,13 @@ Flushing observation DATA every      10000001  minutes and every         1024  s
 Reporting simulation info every             1  minutes
 __________________________________________
 Simulation from n=      0, t=   0.000000000E+000 to n=      648, t=   0.199670385E-007
-Date/time 04/05/2025   12:29:22
+Date/time 04/05/2025   15:02:55
 __________________________________________
 Closing warning file. Number of messages:            1
 __________________________________________
 END PREPROCESSING. STARTING simulation.
 __________________________________________
-Start Date/time 04/05   12:29:22
+Start Date/time 04/05   15:02:55
 __________________________________________
 Switching plane-wave off at n=         264
 END FDTD time stepping. Beginning posprocessing at n=          648
@@ -144,7 +144,7 @@ END FINAL POSTPROCESSING at n=          648
 __________________________________________
 DONE :  SphereRCS.fdtd UNTIL n=         648
 __________________________________________
-BEGUN SphereRCS.fdtd at 04/05/2025 , 12:29
-ENDED SphereRCS.fdtd at 04/05/2025 , 12:29
+BEGUN SphereRCS.fdtd at 04/05/2025 , 15:02
+ENDED SphereRCS.fdtd at 04/05/2025 , 15:03
 __________________________________________
 __________________________________________
