@@ -4,5 +4,6 @@ TwoCables.fdtd_Probe_Start_Ez_10_25_10.dat
 TwoCables.fdtd_Probe_End_Ex_50_25_10.dat
 TwoCables.fdtd_Probe_End_Ey_50_25_10.dat
 TwoCables.fdtd_Probe_End_Ez_50_25_10.dat
+TwoCables.fdtd_Wire probe_Wx_10_25_30_s3.dat
 TwoCables.fdtd_Bulk probe_Jx_30_23_25__30_26_34.dat
 !END 

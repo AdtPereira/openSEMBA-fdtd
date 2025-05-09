@@ -4,7 +4,7 @@
     "analysis": {
         "solver": "ugrfdtd",
         "runSimulation": false,
-        "timeStep": 1.5406665612371765e-12,
+        "timeStep": 1.5407e-12,
         "forceRestarting": false,
         "resumeSimulation": false,
         "flush": 0.0,
@@ -109,10 +109,11 @@
                 "       7    0    0        4",
                 "       8    0    0        4",
                 "       9    0    0        3",
-                "       10    3    2        4",
-                "       11    4    2        6",
-                "       12    4    1        1",
-                "       13    3    1        3"
+                "       10    0    0        5",
+                "       11    3    2        4",
+                "       12    4    2        6",
+                "       13    4    1        1",
+                "       14    3    1        3"
             ],
             "line": [],
             "polyline": [
@@ -199,11 +200,24 @@
             ]
         },
         {
+            "gidOutputType": "OutRq_on_point",
+            "name": "Wire probe",
+            "type": "current",
+            "domain": {
+                "initialTime": 0.0,
+                "finalTime": 0.0,
+                "samplingPeriod": 0.0
+            },
+            "elemIds": [
+                10
+            ]
+        },
+        {
             "name": "Bulk probe",
             "direction": "x",
             "type": "bulkCurrentElectric",
             "gidOutputType": "OutRq_on_layer",
-            "box": "{100.0 54.99999999999999 25.0 100.0 45.0 15.0}",
+            "box": "{100.0 55.0 25.0 100.0 45.0 15.0}",
             "skip": 1,
             "domain": {
                 "initialTime": 0.0,

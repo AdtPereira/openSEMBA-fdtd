@@ -45,8 +45,8 @@
                 "id": 2,
                 "relativePosition": [
                     12.0,
-                    52.0,
-                    7.0
+                    12.0,
+                    3.0
                 ]
             },
             {
@@ -54,6 +54,14 @@
                 "relativePosition": [
                     12.0,
                     12.0,
+                    7.0
+                ]
+            },
+            {
+                "id": 4,
+                "relativePosition": [
+                    12.0,
+                    52.0,
                     7.0
                 ]
             }
@@ -68,6 +76,16 @@
             },
             {
                 "id": 2,
+                "type": "polyline",
+                "coordinateIds": [
+                    1,
+                    2,
+                    3,
+                    4
+                ]
+            },
+            {
+                "id": 3,
                 "type": "cell",
                 "intervals": [
                     [
@@ -97,13 +115,6 @@
                 ]
             },
             {
-                "id": 3,
-                "type": "node",
-                "coordinateIds": [
-                    1
-                ]
-            },
-            {
                 "id": 4,
                 "type": "node",
                 "coordinateIds": [
@@ -112,6 +123,13 @@
             },
             {
                 "id": 5,
+                "type": "node",
+                "coordinateIds": [
+                    2
+                ]
+            },
+            {
+                "id": 6,
                 "type": "cell",
                 "intervals": [
                     [
@@ -129,7 +147,7 @@
                 ]
             },
             {
-                "id": 6,
+                "id": 7,
                 "type": "cell",
                 "intervals": [
                     [
@@ -159,11 +177,9 @@
                 ]
             },
             {
-                "id": 7,
-                "type": "polyline",
+                "id": 8,
+                "type": "node",
                 "coordinateIds": [
-                    2,
-                    3,
                     1
                 ]
             }
@@ -175,10 +191,10 @@
             "type": "pec"
         },
         {
-            "name": "Wirematerial",
+            "name": "LeadWirematerial",
             "id": 2,
             "type": "wire",
-            "radius": 0.015,
+            "radius": 0.01,
             "resistancePerMeter": 0.0,
             "inductancePerMeter": 0.0
         },
@@ -207,21 +223,21 @@
     ],
     "materialAssociations": [
         {
+            "name": "lead_Cable",
+            "type": "cable",
+            "elementIds": [
+                2
+            ],
+            "materialId": 2,
+            "initialTerminalId": 3,
+            "endTerminalId": 4
+        },
+        {
             "type": "surface",
             "materialId": 1,
             "elementIds": [
-                5
+                6
             ]
-        },
-        {
-            "name": "Cable",
-            "type": "cable",
-            "elementIds": [
-                7
-            ],
-            "materialId": 2,
-            "initialTerminalId": 4,
-            "endTerminalId": 3
         }
     ],
     "sources": [
@@ -237,23 +253,7 @@
     ],
     "probes": [
         {
-            "name": "Point probe",
-            "type": "point",
-            "field": "electric",
-            "elementIds": [
-                3
-            ],
-            "directions": [
-                "x",
-                "y",
-                "z"
-            ],
-            "domain": {
-                "type": "time"
-            }
-        },
-        {
-            "name": "Wire probe",
+            "name": "Wire_probe_A",
             "type": "wire",
             "field": "current",
             "elementIds": [
@@ -262,6 +262,17 @@
             "domain": {
                 "type": "time"
             }
-        }        
+        },
+        {
+            "name": "Wire_probe_B",
+            "type": "wire",
+            "field": "current",
+            "elementIds": [
+                5
+            ],
+            "domain": {
+                "type": "time"
+            }
+        }
     ]
 }

@@ -15,9 +15,9 @@ outp.ShallowCopy(thresh.GetOutput())
 # Replace the thresh.ThresholdBetween numbers by tag intervals below to filter by tags
 # ( -1e21    , -1e-3    ) Candidates for undesired free-space slots
 # (  0       ,  63      ) Nodal sources, etc.
-# (       64 ,       127) material1@layer5
-# (      128 ,       191) 10
-# (      192 ,       255) 11
+# (       64 ,       127) material1@layer6
+# (      128 ,       191) 11
+# (      192 ,       255) 12
 ###
 ###
 ### FOR MAP VTK PROBES select the "mediatype" layer

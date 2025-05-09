@@ -1,0 +1,29 @@
+=========================
+SEMBA-FDTD SOLVER
+=========================
+__________________________________________
+SEMBA-FDTD. Release build, compiled on: Apr 26 2025 16:13:54
+__________________________________________
+All rights reserved by the University of Granada (Spain)
+Contact person: Salvador G. Garcia <salva@ugr.es>
+
+__________________________________________
+Compiled WITH .h5 HDF support
+Compiled WITH MTLN support
+Compiled WITH SMBJSON support
+__________________________________________
+Launched on              09/05/2025 13:52
+Switches C:\Users\adilt\OneDrive\05_GIT\openSEMBA\fdtd\build\bin\semba-fdtd.exe -i paul_8_6_square.fdtd.json
+__________________________________________
+Closing warning file. Number of messages:            0
+__________________________________________
+Compiled with Single precision (real*4)
+__________________________________________
+Launched on              09/05/2025 13:52
+__________________________________________
+Launched with total options
+C:\Users\adilt\OneDrive\05_GIT\openSEMBA\fdtd\build\bin\semba-fdtd.exe -i paul_8_6_square.fdtd.json
+If later resuming use compulsory options
+mpirun -n    1
+__________________________________________
+MTLN simulation finished. Init flusing probe data to output files

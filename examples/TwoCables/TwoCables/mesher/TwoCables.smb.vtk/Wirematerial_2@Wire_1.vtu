@@ -2,12 +2,12 @@
   <UnstructuredGrid NumberOfPoints="3" NumberOfCells="2" >
       <Points>
         <DataArray type="Float32" NumberOfComponents="3" format="ascii">
-          20 50 0 20 50 20 100 50 20
+          20 50 20 100 50 20 20 50 0
         </DataArray>
       </Points>
       <Cells>
         <DataArray type="Int32" Name="connectivity" format="ascii">
-          0 1 1 2
+          0 1 2 0
         </DataArray>
         <DataArray type="Int32" Name="offsets" format="ascii">
           2 4

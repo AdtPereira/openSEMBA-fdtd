@@ -1,5 +1,5 @@
 * mesher\ugrfdtd\TwoCables.smb.nfde
-* 29-04-25 09:03:55
+* 09-05-25 12:10:49
 
 ********************* SOLVER OPTIONS ***********************
 
@@ -8,7 +8,7 @@
 ************************* GENERAL **************************
 
 !TIMESTEPS
-1.54067e-12 12982
+1.5407e-12 12982
 
 *********************** SPACE STEPS ************************
 
@@ -143,7 +143,7 @@ VOLT predefinedExcitation.1.exc
 !BULK CURRENT PROBE
 !!ELECT
 !!!TIME
-0 2e-08 1.54067e-12
+0 2e-08 1.5407e-12
 30 23 25 X 1
 30 27 35 
 
@@ -154,7 +154,7 @@ VOLT predefinedExcitation.1.exc
 !NEW PROBE
 !!NUMER
 !!!TIME
-0 2e-08 1.54067e-12
+0 2e-08 1.5407e-12
 EX 10 25 10 
 EY 10 25 10 
 EZ 10 25 10 
@@ -163,9 +163,16 @@ EZ 10 25 10
 !NEW PROBE
 !!NUMER
 !!!TIME
-0 2e-08 1.54067e-12
+0 2e-08 1.5407e-12
 EX 50 25 10 
 EY 50 25 10 
 EZ 50 25 10 
+
+* Wire_probe
+!NEW PROBE
+!!NUMER
+!!!TIME
+0 2e-08 1.5407e-12
+IW 23 0 0
 
 !END

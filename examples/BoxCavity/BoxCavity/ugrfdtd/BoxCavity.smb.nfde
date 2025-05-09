@@ -1,5 +1,5 @@
 * mesher\ugrfdtd\BoxCavity.smb.nfde
-* 07-05-25 06:19:47
+* 07-05-25 07:16:50
 
 ********************* SOLVER OPTIONS ***********************
 
@@ -14,17 +14,17 @@
 
 !NEWSPACESTEPS
 !!XCONS
-0
-0 25
-0.002
+-0.01
+0 70
+0.001
 !!YCONS
-0
-0 20
-0.002
+-0.01
+0 60
+0.001
 !!ZCONS
-0
-0 15
-0.002
+-0.01
+0 50
+0.001
 
 ************************ BACKGROUND ************************
 
@@ -35,16 +35,16 @@
 ******************* BOUNDARY CONDITIONS ********************
 
 !BOUNDARY CONDITION
-PML ALL
-8 2 0.001
+PEC ALL
 
 ********************** NODAL SOURCES ***********************
 
-!CURRENT DENSITY SOURCE
+!FIELD SOURCE
 !!ELECT
 !!!1PNT
 predefinedExcitation.1.exc
-1 10 7 0 0 1 
+12 30 24 1 0 0 
+13 30 24 1 0 0 
 
 ************************** PROBES **************************
 
@@ -55,26 +55,26 @@ predefinedExcitation.1.exc
 !!NUMER
 !!!TIME
 0 6e-09 3.85167e-12
-EX 5 10 7 
-EY 5 10 7 
-EZ 5 10 7 
+EX 20 30 24 
+EY 20 30 24 
+EZ 20 30 24 
 
 * Point_probe001_0
 !NEW PROBE
 !!NUMER
 !!!TIME
 0 6e-09 3.85167e-12
-EX 15 10 7 
-EY 15 10 7 
-EZ 15 10 7 
+EX 40 30 24 
+EY 40 30 24 
+EZ 40 30 24 
 
 * Point_probe002_0
 !NEW PROBE
 !!NUMER
 !!!TIME
 0 6e-09 3.85167e-12
-EX 24 10 7 
-EY 24 10 7 
-EZ 24 10 7 
+EX 58 30 24 
+EY 58 30 24 
+EZ 58 30 24 
 
 !END

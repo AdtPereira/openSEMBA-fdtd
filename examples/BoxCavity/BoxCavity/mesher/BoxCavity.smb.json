@@ -34,8 +34,8 @@
         {
             "gridType": "gridCondition",
             "type": "Number_of_cells",
-            "numberOfCells": "{25 20 15}",
-            "layerBox": "{50.0 40.0 30.0 0.0 0.0 0.0}"
+            "numberOfCells": "{70 60 50}",
+            "layerBox": "{60.00000000000001 50.0 40.0 -10.0 -10.0 -10.0}"
         }
     ],
     "model": {
@@ -60,7 +60,7 @@
         "materials": [],
         "coordinates": [
             "      1  +2.00000000e+00  +2.00000000e+01  +1.40000000e+01",
-            "      2  +2.00000000e+00  +2.00000000e+01  +1.60000000e+01",
+            "      2  +4.00000000e+00  +2.00000000e+01  +1.40000000e+01",
             "      3  +1.00000000e+01  +2.00000000e+01  +1.40000000e+01",
             "      4  +3.00000000e+01  +2.00000000e+01  +1.40000000e+01",
             "      5  +4.80000000e+01  +2.00000000e+01  +1.40000000e+01"
@@ -85,7 +85,7 @@
         {
             "sourceType": "sourceOnLine",
             "type": "electricField",
-            "hardness": "soft",
+            "hardness": "hard",
             "elemIds": [
                 1
             ],
@@ -138,14 +138,14 @@
     ],
     "boundary": {
         "lower": [
-            "PML",
-            "PML",
-            "PML"
+            "PEC",
+            "PEC",
+            "PEC"
         ],
         "upper": [
-            "PML",
-            "PML",
-            "PML"
+            "PEC",
+            "PEC",
+            "PEC"
         ]
     }
 }

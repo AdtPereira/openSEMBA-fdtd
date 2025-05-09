@@ -1,6 +1,0 @@
-Noda2002a.fdtd_Point probe_Ex_12_12_2.dat
-Noda2002a.fdtd_Point probe_Ey_12_12_2.dat
-Noda2002a.fdtd_Point probe_Ez_12_12_2.dat
-Noda2002a.fdtd_Wire probe_Wz_12_12_2_s1.dat
-Noda2002a.fdtd_Bulk probe_Jz_11_11_2__12_12_2.dat
-!END 

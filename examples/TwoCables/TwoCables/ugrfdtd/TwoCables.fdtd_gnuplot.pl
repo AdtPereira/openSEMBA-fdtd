@@ -11,4 +11,6 @@ plot 'TwoCables.fdtd_Probe_End_Ey_50_25_10.dat' using 1:2 every 1::2 with lines
 set term x11 persist           6
 plot 'TwoCables.fdtd_Probe_End_Ez_50_25_10.dat' using 1:2 every 1::2 with lines
 set term x11 persist           7
+plot 'TwoCables.fdtd_Wire probe_Wx_10_25_30_s3.dat' using 1:2 every 1::2 with lines
+set term x11 persist           8
 plot 'TwoCables.fdtd_Bulk probe_Jx_30_23_25__30_26_34.dat' using 1:2 every 1::2 with lines

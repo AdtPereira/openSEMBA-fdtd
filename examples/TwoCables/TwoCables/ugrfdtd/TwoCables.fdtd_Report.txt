@@ -11,14 +11,14 @@ __________________________________________
 Compiled WITH .h5 HDF support
 Compiled WITH SMBJSON support
 __________________________________________
-Launched on              30/04/2025 20:40
+Launched on              09/05/2025 12:10
 Switches "C:\Program Files\FreeCAD 0.21\Mod\ElemwaveWorkbench\semba\semba-fdtd.exe" -i TwoCables.fdtd.json
 __________________________________________
 Closing warning file. Number of messages:            0
 __________________________________________
 Compiled with Single precision (real*4)
 __________________________________________
-Launched on              30/04/2025 20:40
+Launched on              09/05/2025 12:10
 __________________________________________
 Launched with total options
 "C:\Program Files\FreeCAD 0.21\Mod\ElemwaveWorkbench\semba\semba-fdtd.exe" -i TwoCables.fdtd.json
@@ -29,10 +29,10 @@ INIT conversion internal ASCII => Binary
 __________________________________________
 __________________________________________
 __________________________________________
-CFLN=   0.5135210
+CFLN=   0.5135321
 __________________________________________
 __________________________________________
-Deltat=   1.540666574352534E-012
+Deltat=   1.540699967779446E-012
 __________________________________________
 INIT NFDE --------> GEOM
 INIT UPDATING SHARED INFO. This process may take time!
@@ -99,14 +99,31 @@ NO flushing of restarting FIELDS scheduled
 Flushing observation DATA every      10000001  minutes and every         1024  steps
 Reporting simulation info every             1  minutes
 __________________________________________
-Simulation from n=      0, t=   0.000000000E+000 to n=    12981, t=   0.199993928E-007
-Date/time 30/04/2025   20:40:34
+Simulation from n=      0, t=   0.000000000E+000 to n=    12981, t=   0.199998263E-007
+Date/time 09/05/2025   12:11:02
 __________________________________________
 Closing warning file. Number of messages:           94
 __________________________________________
 END PREPROCESSING. STARTING simulation.
 __________________________________________
-Start Date/time 30/04   20:40:35
+Start Date/time 09/05   12:11:02
+__________________________________________
+______________TwoCables.fdtd______________
+Switches: "C:\Program Files\FreeCAD 0.21\Mod\ElemwaveWorkbench\semba\semba-fdtd.exe" -i TwoCables.fdtd.json
+MPI Processes:            1
+Date/Time 09/05/2025   12:12:02
+Simulated:        8690 /       12981  steps
+Time=    0.133886827E-007, dt0 =    0.154069997E-011
+Total Energy (inc) :   456686.3
+Max field:   0.4843E+002 at (   31   25   30)=( 0.1240E+000, 0.6000E-001, 0.3000E-001)
+Mins. since start  :           2
+Mins. until end    :           1
+Never flushed resuming fields.
+Will Never flush resuming fields.
+Next info at step:        17379
+Total Mcells:  0.3360000
+Mcells/sec  :   48.65501     (           0  to         8690 )
+Mcells/sec  :   48.65501     (           0  to         8690 )
 __________________________________________
 END FDTD time stepping. Beginning posprocessing at n=        12981
 __________________________________________
@@ -131,7 +148,7 @@ END FINAL POSTPROCESSING at n=        12981
 __________________________________________
 DONE :  TwoCables.fdtd UNTIL n=       12981
 __________________________________________
-BEGUN TwoCables.fdtd at 30/04/2025 , 20:40
-ENDED TwoCables.fdtd at 30/04/2025 , 20:40
+BEGUN TwoCables.fdtd at 09/05/2025 , 12:10
+ENDED TwoCables.fdtd at 09/05/2025 , 12:12
 __________________________________________
 __________________________________________

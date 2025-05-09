@@ -12,14 +12,14 @@ Compiled WITH .h5 HDF support
 Compiled WITH MTLN support
 Compiled WITH SMBJSON support
 __________________________________________
-Launched on              04/05/2025 19:40
+Launched on              09/05/2025 18:01
 Switches C:\Users\adilt\OneDrive\05_GIT\openSEMBA\fdtd\build\bin\semba-fdtd.exe -i noda2002.fdtd.json
 __________________________________________
 Closing warning file. Number of messages:            0
 __________________________________________
 Compiled with Single precision (real*4)
 __________________________________________
-Launched on              04/05/2025 19:40
+Launched on              09/05/2025 18:01
 __________________________________________
 Launched with total options
 C:\Users\adilt\OneDrive\05_GIT\openSEMBA\fdtd\build\bin\semba-fdtd.exe -i noda2002.fdtd.json
@@ -101,13 +101,13 @@ Flushing observation DATA every      10000001  minutes and every         1024  s
 Reporting simulation info every             1  minutes
 __________________________________________
 Simulation from n=      0, t=   0.000000000E+000 to n=      416, t=   0.399359998E-007
-Date/time 04/05/2025   19:40:48
+Date/time 09/05/2025   18:01:16
 __________________________________________
 Closing warning file. Number of messages:           57
 __________________________________________
 END PREPROCESSING. STARTING simulation.
 __________________________________________
-Start Date/time 04/05   19:40:49
+Start Date/time 09/05   18:01:16
 __________________________________________
 END FDTD time stepping. Beginning posprocessing at n=          416
 __________________________________________
@@ -132,7 +132,7 @@ END FINAL POSTPROCESSING at n=          416
 __________________________________________
 DONE :  noda2002.fdtd UNTIL n=         416
 __________________________________________
-BEGUN noda2002.fdtd at 04/05/2025 , 19:40
-ENDED noda2002.fdtd at 04/05/2025 , 19:40
+BEGUN noda2002.fdtd at 09/05/2025 , 18:01
+ENDED noda2002.fdtd at 09/05/2025 , 18:01
 __________________________________________
 __________________________________________

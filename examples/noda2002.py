@@ -77,12 +77,12 @@ import os
 import sys
 import shutil
 import json
-import glob
 from pathlib import Path
 import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
 from scipy.interpolate import interp1d
+from typing import Dict
 
 # Insere o diretório atual no início da lista sys.path, com prioridade 0.
 sys.path.insert(0, os.getcwd())
@@ -96,6 +96,7 @@ CASES       = (Path.cwd() / 'examplesData' / 'cases').resolve()
 EXCITATIONS = (Path.cwd() / 'examplesData' / 'excitations').resolve()
 LOGS        = (Path.cwd() / 'examplesData' / 'logs').resolve()
 OUTPUTS     = (Path.cwd() / 'examplesData' / 'outputs' / CASE_NAME).resolve()
+INPUTS      = (Path.cwd() / 'examplesData' / 'inputs' / CASE_NAME).resolve()
 JSON_FILE   = CASES / f'{CASE_NAME}.fdtd.json'
 
 def ensure_folders_exist(*folders: list[Path]) -> None:
@@ -245,40 +246,6 @@ def run_simulation() -> dict[str, str]:
 
     return probes
 
-def plot_excitation_file(exc_name: str = f"{CASE_NAME}.exc") -> None:
-    """
-    Plota a curva de tensão do arquivo .exc.
-
-    Parâmetros
-    ----------
-    exc_name : str, opcional
-        Nome do arquivo de excitação. Por padrão, 'NodaVoltage.exc'.
-
-    O arquivo será lido da pasta EXCITATIONS (onde o run_simulation()
-    move o arquivo após a simulação).
-    """
-    exc_path = EXCITATIONS / exc_name
-
-    if not exc_path.is_file():
-        raise FileNotFoundError(f"Arquivo de excitação não encontrado: {exc_path}")
-
-    # Carrega os dados
-    data = np.loadtxt(exc_path)
-    time = data[:, 0] * 1e9  # converter para ns
-    voltage = data[:, 1]
-
-    plt.figure(figsize=(8, 4))
-    plt.plot(time, voltage, label=f'{exc_name}.exc', color='blue')
-    plt.xlabel("Tempo [ns]")
-    plt.ylabel("Tensão [V]")
-    plt.xlim(0, time[-1])
-    plt.ylim(0, 100)
-    plt.title("Curva de excitação de tensão")
-    plt.grid(False)
-    plt.legend()
-    plt.tight_layout()
-    plt.show()
-
 def load_probes_from_outputs() -> dict[str, str]:
     """
     Varre `outputs_folder` em busca de todos os arquivos .dat de Point probes
@@ -307,7 +274,7 @@ def load_probes_from_outputs() -> dict[str, str]:
 
     return probes
 
-def extract_point_probe_fields(probes: dict[str, str]) -> dict[str, dict[str, pd.DataFrame]]:
+def extract_point_probe_data(probes: dict[str, str]) -> dict[str, dict[str, pd.DataFrame]]:
     """
     Lê todos os probes do tipo 'point' com campo 'E' e agrupa os dados por nome e direção.
 
@@ -349,7 +316,7 @@ def extract_point_probe_fields(probes: dict[str, str]) -> dict[str, dict[str, pd
 
     return point_groups
 
-def plot_point_probe_fields(point_groups: dict[str, dict[str, pd.DataFrame]]) -> None:
+def plot_point_probe_data(point_groups: dict[str, dict[str, pd.DataFrame]]) -> None:
     """
     Plota os campos E total e incidente para cada direção de cada sonda.
 
@@ -391,47 +358,150 @@ def plot_point_probe_fields(point_groups: dict[str, dict[str, pd.DataFrame]]) ->
         plt.tight_layout(rect=[0, 0.03, 1, 0.95])
         plt.show()
 
-def plot_point_probe_currents():
+def extract_probe_wire_data(
+    outputs_folder: str = OUTPUTS
+) -> Dict[str, Dict[str, np.ndarray]]:
     """
-    Plota as curvas das sondas de corrente (Wx, Wy, Wz) localizadas em OUTPUTS.
+    Varre a pasta de saídas em busca de todos os arquivos de corrente de fio
+    (*.fdtd_Wire probe_*.dat), carrega todas as colunas de cada um e retorna
+    um dict onde as chaves são os nomes de arquivo e os valores são, por sua vez,
+    dicts com arrays numpy para cada coluna.
 
-    Busca arquivos com nomes no padrão:
-    - {CASE_NAME}.fdtd_Wire probe_Wx_*.dat
-    - {CASE_NAME}.fdtd_Wire probe_Wy_*.dat
-    - {CASE_NAME}.fdtd_Wire probe_Wz_*.dat
+    Parameters
+    ----------
+    outputs_folder : str
+        Caminho para a pasta onde estão os .dat (por padrão, OUTPUTS_FOLDER).
 
-    Cada componente é plotada em um gráfico separado.
+    Returns
+    -------
+    all_data : Dict[str, Dict[str, np.ndarray]]
+        Exemplo de estrutura de retorno:
+        {
+            'noda2002.fdtd_Wire probe_Wz_12_12_3_s2.dat': {
+                'time'          : array([...]),
+                'current'       : array([...]),
+                'E_dl'          : array([...]),
+                'Vplus'         : array([...]),
+                'Vminus'        : array([...]),
+                'Vplus-Vminus'  : array([...]),
+            },
+            'outroCaso.fdtd_Wire probe_Wy_...' : { … },
+            ...
+        }
     """
-    # --- 1. Busca arquivos de corrente
-    wx_files = sorted(OUTPUTS.glob(f"{CASE_NAME}.fdtd_Wire probe_Wx_*.dat"))
-    wy_files = sorted(OUTPUTS.glob(f"{CASE_NAME}.fdtd_Wire probe_Wy_*.dat"))
-    wz_files = sorted(OUTPUTS.glob(f"{CASE_NAME}.fdtd_Wire probe_Wz_*.dat"))
-    probes  = {'Wx': wx_files, 'Wy': wy_files, 'Wz': wz_files}
+    all_data: Dict[str, Dict[str, np.ndarray]] = {}
 
-    # --- 2. Plota cada componente se houver arquivo correspondente
-    for component, files in probes.items():
-        if not files:
-            print(f"⚠ Nenhum arquivo de sonda {component} encontrado.")
-            continue
+    for fname in os.listdir(outputs_folder):
+        if fname.endswith('.dat') and 'fdtd_Wire_probe_' in fname:
+            path = os.path.join(outputs_folder, fname)
+            # carrega tudo, pulando o header de uma linha
+            arr = np.loadtxt(path, skiprows=1)
+            if arr.ndim == 1:
+                arr = arr.reshape(1, -1)
 
-        plt.figure(figsize=(8, 4))
-        for file in files:
-            data = np.loadtxt(file, skiprows=1)
-            time = data[:, 0] * 1e9  # Tempo em ns
-            current = - data[:, 1]
-            plt.plot(time, current, label=file.name)
+            all_data[fname] = {
+                'time'          : arr[:, 0],
+                'current'       : arr[:, 1],
+                'E_dl'          : arr[:, 2],
+                'Vplus'         : arr[:, 3],
+                'Vminus'        : arr[:, 4],
+                'Vplus-Vminus'  : arr[:, 5],
+            }
 
-        plt.xlabel("Tempo [ns]")
-        plt.ylabel("Corrente [A]")
-        plt.title(f"Sondas de corrente - componente {component}")
-        plt.grid(False)
-        plt.xlim(0, time[-1])
-        plt.ylim(-0.1, 0.3)
-        plt.legend()
-        plt.tight_layout()
-        plt.show()
+    return all_data
 
-def calcular_impedancia_surto(exc_name: str = f"{CASE_NAME}.exc", t_in_ns: float = 15.0, t_fi_ns: float = 20.0):
+def plot_probe_wire_data(
+    field: str,
+) -> None:
+    """
+    Plota o campo especificado ('current', 'E_dl', 'Vplus', 'Vminus', ou 'Vplus-Vminus')
+    em função do tempo para todos os arquivos de corrente de fio encontrados
+    em OUTPUTS.
+
+    Parâmetros
+    ----------
+    field : str
+        Nome do campo a ser plotado. Deve ser uma das chaves:
+        'current', 'E_dl', 'Vplus', 'Vminus', 'Vplus-Vminus'.
+
+    Exemplo de uso
+    -------------
+    >>> plot_point_probe_field('current')
+    >>> plot_point_probe_field('E_dl')
+    """
+    data_dict = extract_probe_wire_data(OUTPUTS)
+    if not data_dict:
+        raise RuntimeError(f"Nenhum arquivo de corrente encontrado em '{OUTPUTS}'")
+
+    # verifica se o campo existe em pelo menos um arquivo
+    sample = next(iter(data_dict.values()))
+    if field not in sample:
+        raise ValueError(f"Campo '{field}' inválido. Escolha entre {list(sample.keys())}")
+
+    plt.figure(figsize=(8, 5))
+    for fname, d in data_dict.items():
+        plt.plot(d['time'], d[field], label=fname.replace('.dat', ''))
+
+    plt.xlabel('Tempo (s)')
+    ylabel_map = {
+        'current': 'Corrente (A)',
+        'E_dl'   : r'$\int E \cdot dl$ (V)',
+    }
+    plt.ylabel(ylabel_map.get(field, field))
+    plt.title(f"{ylabel_map.get(field, field)} vs Tempo")
+    plt.grid(True)
+    plt.legend(loc='best', fontsize='small')
+    plt.tight_layout()
+    plt.show()
+
+def plot_excitation_vs_Edl(
+    exc_name: str = f"{CASE_NAME}.exc",
+) -> None:
+    """
+    Compara a curva de excitação (.exc) com a coluna E_dl de todas as sondas
+    de fio encontradas em `outputs_folder`.
+
+    Parâmetros
+    ----------
+    excitation_path : Path
+        Caminho para o arquivo .exc contendo duas colunas (tempo, amplitude).
+    outputs_folder : Path
+        Pasta onde estão os .dat das sondas de corrente (padrão: OUTPUTS).
+    skiprows_exc : int
+        Quantas linhas de cabeçalho pular ao ler o .exc (padrão: 1).
+    """
+    # 1) Carrega excitação
+    exc_path = EXCITATIONS / exc_name
+    if not exc_path.is_file():
+        raise FileNotFoundError(f"Arquivo de excitação não encontrado: {exc_path}")
+
+    # Carrega os dados
+    data = np.loadtxt(exc_path)
+    exc_time = data[:, 0] * 1e9  # converter para ns
+    exc_voltage = data[:, 1]
+
+    # 2) Carrega E_dl de cada sonda
+    all_data: Dict[str, Dict[str, np.ndarray]] = extract_probe_wire_data(OUTPUTS)
+    if not all_data:
+        raise RuntimeError(f"Nenhum arquivo de fio encontrado em '{OUTPUTS}'")
+
+    # 3) Plota tudo em um único gráfico
+    plt.figure(figsize=(8, 5))
+    # Curva de excitação (pontilhada)
+    plt.plot(exc_time, exc_voltage, '--', label=EXCITATIONS.name)
+
+    # Curvas E_dl de cada probe
+    for fname, cols in all_data.items():
+        plt.plot(cols['time'] * 1e9, cols['E_dl'], label=fname.replace('.dat', ''))
+    plt.xlabel("Tempo [ns]")
+    plt.grid(True)
+    plt.legend(loc='best', fontsize='small')
+    plt.tight_layout()
+    plt.show()
+
+def surge_impedance(
+        exc_name: str = f"{CASE_NAME}.exc", t_in_ns: float = 15.0, t_fi_ns: float = 20.0
+        ) -> float:
     """
     Calcula a impedância de surto como a razão entre as médias
     de V e I no intervalo de tempo especificado (padrão 15-20 ns).
@@ -487,33 +557,142 @@ def calcular_impedancia_surto(exc_name: str = f"{CASE_NAME}.exc", t_in_ns: float
 
     return Zs
 
+def extract_webdigitized_data(
+    json_file_name: str,
+    inputs_folder: Path = INPUTS
+    ) -> tuple[np.ndarray, np.ndarray]:
+    """
+    Lê um arquivo JSON exportado pelo WebPlotDigitizer, extrai
+    o primeiro dataset, ordena por X e retorna dois arrays: X e Y.
+    
+    Parâmetros
+    ----------
+    json_file_name : str
+        Nome do arquivo JSON (deve estar em `inputs_folder`).
+    inputs_folder : Path
+        Pasta onde está o JSON.
+    
+    Retorno
+    -------
+    x, y : tuple de np.ndarray
+        Vetores com as coordenadas ordenadas.
+    """
+    json_path = inputs_folder / json_file_name
+    if not json_path.is_file():
+        raise FileNotFoundError(f"JSON não encontrado: {json_path}")
+    
+    with open(json_path, 'r', encoding='utf-8') as f:
+        obj = json.load(f)
+    
+    data_points = obj['datasetColl'][0]['data']
+    # ordena pelo valor calibrado em X
+    data_sorted = sorted(data_points, key=lambda pt: pt['value'][0])
+    
+    x = np.array([pt['value'][0] for pt in data_sorted])
+    y = np.array([pt['value'][1] for pt in data_sorted])
+    return x, y
+
+def plot_excitation_file(
+    json_file_name: str,
+    exc_name: str = f"{CASE_NAME}.exc"
+) -> None:
+    """
+    Sobrepõe o arquivo .exc gerado pela simulação com os pontos
+    extraídos do JSON do WebPlotDigitizer (Figura 5 de Noda).
+    """
+    # extrai pontos de referência
+    x_ref, y_ref = extract_webdigitized_data(json_file_name)
+    
+    # carrega .exc da simulação
+    exc_path = EXCITATIONS / exc_name
+    if not exc_path.is_file():
+        raise FileNotFoundError(f"Arquivo de excitação não encontrado: {exc_path}")
+    data = np.loadtxt(exc_path)
+    exc_time    = data[:, 0] * 1e9  # converte para ns
+    exc_voltage = data[:, 1]
+    
+    # plot
+    plt.figure(figsize=(8, 4))
+    plt.plot(exc_time,    exc_voltage, label=exc_name,   color='blue')
+    plt.scatter(x_ref,     y_ref,        s=15, marker='o',
+                label='Noda (2002)',   color='red')
+    plt.xlabel('Tempo (ns)')
+    plt.ylabel('Tensão (V)')
+    plt.title('Fig. 6a. Waveform of voltage source')
+    plt.xlim(-10, 40)
+    plt.ylim(-10, 100)
+    plt.grid(False)
+    plt.legend()
+    plt.tight_layout()
+    plt.show()
+
+def plot_wire_data_current(
+    probe_name: str,
+    json_file_name: str
+) -> None:
+    """
+    Sobrepõe a corrente medida na sonda de fio (simulação)
+    com os pontos extraídos do JSON do WebPlotDigitizer (Fig. 6c).
+    Ignora o último valor da série simulada.
+    """
+    # extrai pontos de referência
+    x_ref, y_ref = extract_webdigitized_data(json_file_name)
+    
+    # carrega dados de corrente da simulação
+    data_dict = extract_probe_wire_data(OUTPUTS)
+    if not data_dict:
+        raise RuntimeError(f"Nenhum arquivo de corrente encontrado em '{OUTPUTS}'")
+    if probe_name not in data_dict:
+        raise ValueError(f"Probe '{probe_name}' não encontrada. Escolha entre {list(data_dict.keys())}")
+    
+    time_full = data_dict[probe_name]['time']
+    curr_full = data_dict[probe_name]['current']
+    # descarta último ponto e converte para ns
+    time = time_full[:-1] * 1e9
+    curr = curr_full[:-1]
+    
+    # plot
+    plt.figure(figsize=(8, 5))
+    plt.plot(time, curr,                  label=probe_name, color='blue')
+    plt.scatter(x_ref, y_ref, s=15,       marker='o',
+                label='Noda (2002)',      color='red')
+    plt.xlabel('Tempo (ns)')
+    plt.ylabel('Corrente (A)')
+    plt.title('Fig. 6c. Current in wire probe')
+    plt.xlim(-10, 40)
+    plt.ylim(-0.1, 0.3)
+    plt.xticks(np.arange(-10, 41, 5))
+    plt.yticks(np.arange(-0.1, 0.31, 0.05))
+    plt.grid(False)
+    plt.legend(loc='best', fontsize='small')
+    plt.tight_layout()
+    plt.show()
+    
 if __name__ == '__main__':
     # Garante a existência dos diretórios de saída e logs
     ensure_folders_exist(OUTPUTS, LOGS, EXCITATIONS)
 
-    # Copia os arquivos de examples\{CASE_NAME}\{CASE_NAME}\ugrfdtd para
-    # o diretório examplesData\cases
-    # copy_json_file_from_ugrfdtd()
+    # Copia examples\{CASE_NAME}\{CASE_NAME}\ugrfdtd para examplesData\cases
+    copy_json_file_from_ugrfdtd()
 
     # Cria o arquivo de excitação com base no JSON
-    # create_excitation_file()
+    create_excitation_file()
 
-    # Executa a simulação e obtém os arquivos de saída das sondas
+    # # Executa a simulação e obtém os arquivos de saída das sondas
     # run_probes = run_simulation()
 
-    # Plota a curva de excitação
-    # plot_excitation_file()
+    # # Plota a curva de excitação
+    plot_excitation_file(json_file_name='noda2002_fig_6a.json')
 
-    # Carrega os arquivos de saída das sondas do diretório de saída
-    # run_probes = load_probes_from_outputs()
+    # # Plota os resultados das sondas de corrente
+    # probe_wire_data = extract_probe_wire_data()
+    # print(f"🔍 Probe_wire_data: {list(probe_wire_data.keys())}")
+    # plot_probe_wire_data('current')
 
-    # Plota os resultados das sondas
-    # print(f"🔍 Probes encontrados: {list(run_probes.keys())}")
-    # point_data = extract_point_probe_fields(run_probes)
-    # plot_point_probe_fields(point_data)
+    # # Plota as curvas de corrente das sondas Wx, Wy e Wz
+    plot_wire_data_current(
+        probe_name='noda2002.fdtd_Wire_probe_A_Wz_12_12_2_s1.dat',
+        json_file_name='noda2002_fig_6c.json')
 
-    # Plota as curvas de corrente das sondas Wx, Wy e Wz
-    # plot_point_probe_currents()
-
-    # Calcula a impedância de surto
-    Zs = calcular_impedancia_surto()
+    # # Plota a comparação entre a excitação e E_dl
+    # plot_excitation_vs_Edl()

@@ -11,6 +11,7 @@
     <DataSet group="EMSource_Generator" part="7" file="TwoCables.smb.vtk\EMSource_Generator.vtu" />
     <DataSet group="OutRq_On_Point_Probe_Start_0" part="8" file="TwoCables.smb.vtk\OutRq_On_Point_Probe_Start_0.vtu" />
     <DataSet group="OutRq_On_Point_Probe_End_0" part="9" file="TwoCables.smb.vtk\OutRq_On_Point_Probe_End_0.vtu" />
-    <DataSet group="OutRq_Bulk_Current_Bulk_probe" part="10" file="TwoCables.smb.vtk\OutRq_Bulk_Current_Bulk_probe.vtu" />
+    <DataSet group="OutRq_On_Point_Wire_probe" part="10" file="TwoCables.smb.vtk\OutRq_On_Point_Wire_probe.vtu" />
+    <DataSet group="OutRq_Bulk_Current_Bulk_probe" part="11" file="TwoCables.smb.vtk\OutRq_Bulk_Current_Bulk_probe.vtu" />
   </Collection>
 </VTKFile>
