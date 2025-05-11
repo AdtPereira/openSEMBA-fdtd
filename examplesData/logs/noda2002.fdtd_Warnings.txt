@@ -1,57 +1,192 @@
-(    1/    1) pre1_INFO:  Bounding Box for WIREs min_x,min_y,min_z, MAX_x,MAX_y,MAX_z          12          12           2          12          51           7
+(    1/    1) pre1_INFO:  Bounding Box for WIREs min_x,min_y,min_z, MAX_x,MAX_y,MAX_z          24          24           4          24         103          14
 (    1/    1) ----------------------------------------------------------------
-(    1/    1) wir1_WARNING: Series RLC in terminal LeftEnd segment       1     12     12      2      3
-(    1/    1) wir1_WARNING:  Lossy, pec,  2.: A wire is connected at some ending both to a lossy and to a PEC edge. Assuming it PEC            12          12           2  0.000000000000000E+000 F F F T
-(    1/    1) wir1_WARNING:  Lossy, pec,  2.: A wire is connected at some ending both to a lossy and to a PEC edge. Assuming it PEC            12          12           3  0.000000000000000E+000 F F F F
-(    1/    1) wir1_WARNING:  Lossy, pec,  2.: A wire is connected at some ending both to a lossy and to a PEC edge. Assuming it PEC            12          12           4  0.000000000000000E+000 F F F F
-(    1/    1) wir1_WARNING:  Lossy, pec,  2.: A wire is connected at some ending both to a lossy and to a PEC edge. Assuming it PEC            12          12           5  0.000000000000000E+000 F F F F
-(    1/    1) wir1_WARNING:  Lossy, pec,  2.: A wire is connected at some ending both to a lossy and to a PEC edge. Assuming it PEC            12          12           6  0.000000000000000E+000 F F F F
-(    1/    1) wir1_WARNING:  Lossy, pec,  2.: A wire is connected at some ending both to a lossy and to a PEC edge. Assuming it PEC            12          12           7  0.000000000000000E+000 F F F F
-(    1/    1) wir1_WARNING:  Lossy, pec,  2.: A wire is connected at some ending both to a lossy and to a PEC edge. Assuming it PEC            12          13           7  0.000000000000000E+000 F F F F
-(    1/    1) wir1_WARNING:  Lossy, pec,  2.: A wire is connected at some ending both to a lossy and to a PEC edge. Assuming it PEC            12          14           7  0.000000000000000E+000 F F F F
-(    1/    1) wir1_WARNING:  Lossy, pec,  2.: A wire is connected at some ending both to a lossy and to a PEC edge. Assuming it PEC            12          15           7  0.000000000000000E+000 F F F F
-(    1/    1) wir1_WARNING:  Lossy, pec,  2.: A wire is connected at some ending both to a lossy and to a PEC edge. Assuming it PEC            12          16           7  0.000000000000000E+000 F F F F
-(    1/    1) wir1_WARNING:  Lossy, pec,  2.: A wire is connected at some ending both to a lossy and to a PEC edge. Assuming it PEC            12          17           7  0.000000000000000E+000 F F F F
-(    1/    1) wir1_WARNING:  Lossy, pec,  2.: A wire is connected at some ending both to a lossy and to a PEC edge. Assuming it PEC            12          18           7  0.000000000000000E+000 F F F F
-(    1/    1) wir1_WARNING:  Lossy, pec,  2.: A wire is connected at some ending both to a lossy and to a PEC edge. Assuming it PEC            12          19           7  0.000000000000000E+000 F F F F
-(    1/    1) wir1_WARNING:  Lossy, pec,  2.: A wire is connected at some ending both to a lossy and to a PEC edge. Assuming it PEC            12          20           7  0.000000000000000E+000 F F F F
-(    1/    1) wir1_WARNING:  Lossy, pec,  2.: A wire is connected at some ending both to a lossy and to a PEC edge. Assuming it PEC            12          21           7  0.000000000000000E+000 F F F F
-(    1/    1) wir1_WARNING:  Lossy, pec,  2.: A wire is connected at some ending both to a lossy and to a PEC edge. Assuming it PEC            12          22           7  0.000000000000000E+000 F F F F
-(    1/    1) wir1_WARNING:  Lossy, pec,  2.: A wire is connected at some ending both to a lossy and to a PEC edge. Assuming it PEC            12          23           7  0.000000000000000E+000 F F F F
-(    1/    1) wir1_WARNING:  Lossy, pec,  2.: A wire is connected at some ending both to a lossy and to a PEC edge. Assuming it PEC            12          24           7  0.000000000000000E+000 F F F F
-(    1/    1) wir1_WARNING:  Lossy, pec,  2.: A wire is connected at some ending both to a lossy and to a PEC edge. Assuming it PEC            12          25           7  0.000000000000000E+000 F F F F
-(    1/    1) wir1_WARNING:  Lossy, pec,  2.: A wire is connected at some ending both to a lossy and to a PEC edge. Assuming it PEC            12          26           7  0.000000000000000E+000 F F F F
-(    1/    1) wir1_WARNING:  Lossy, pec,  2.: A wire is connected at some ending both to a lossy and to a PEC edge. Assuming it PEC            12          27           7  0.000000000000000E+000 F F F F
-(    1/    1) wir1_WARNING:  Lossy, pec,  2.: A wire is connected at some ending both to a lossy and to a PEC edge. Assuming it PEC            12          28           7  0.000000000000000E+000 F F F F
-(    1/    1) wir1_WARNING:  Lossy, pec,  2.: A wire is connected at some ending both to a lossy and to a PEC edge. Assuming it PEC            12          29           7  0.000000000000000E+000 F F F F
-(    1/    1) wir1_WARNING:  Lossy, pec,  2.: A wire is connected at some ending both to a lossy and to a PEC edge. Assuming it PEC            12          30           7  0.000000000000000E+000 F F F F
-(    1/    1) wir1_WARNING:  Lossy, pec,  2.: A wire is connected at some ending both to a lossy and to a PEC edge. Assuming it PEC            12          31           7  0.000000000000000E+000 F F F F
-(    1/    1) wir1_WARNING:  Lossy, pec,  2.: A wire is connected at some ending both to a lossy and to a PEC edge. Assuming it PEC            12          32           7  0.000000000000000E+000 F F F F
-(    1/    1) wir1_WARNING:  Lossy, pec,  2.: A wire is connected at some ending both to a lossy and to a PEC edge. Assuming it PEC            12          33           7  0.000000000000000E+000 F F F F
-(    1/    1) wir1_WARNING:  Lossy, pec,  2.: A wire is connected at some ending both to a lossy and to a PEC edge. Assuming it PEC            12          34           7  0.000000000000000E+000 F F F F
-(    1/    1) wir1_WARNING:  Lossy, pec,  2.: A wire is connected at some ending both to a lossy and to a PEC edge. Assuming it PEC            12          35           7  0.000000000000000E+000 F F F F
-(    1/    1) wir1_WARNING:  Lossy, pec,  2.: A wire is connected at some ending both to a lossy and to a PEC edge. Assuming it PEC            12          36           7  0.000000000000000E+000 F F F F
-(    1/    1) wir1_WARNING:  Lossy, pec,  2.: A wire is connected at some ending both to a lossy and to a PEC edge. Assuming it PEC            12          37           7  0.000000000000000E+000 F F F F
-(    1/    1) wir1_WARNING:  Lossy, pec,  2.: A wire is connected at some ending both to a lossy and to a PEC edge. Assuming it PEC            12          38           7  0.000000000000000E+000 F F F F
-(    1/    1) wir1_WARNING:  Lossy, pec,  2.: A wire is connected at some ending both to a lossy and to a PEC edge. Assuming it PEC            12          39           7  0.000000000000000E+000 F F F F
-(    1/    1) wir1_WARNING:  Lossy, pec,  2.: A wire is connected at some ending both to a lossy and to a PEC edge. Assuming it PEC            12          40           7  0.000000000000000E+000 F F F F
-(    1/    1) wir1_WARNING:  Lossy, pec,  2.: A wire is connected at some ending both to a lossy and to a PEC edge. Assuming it PEC            12          41           7  0.000000000000000E+000 F F F F
-(    1/    1) wir1_WARNING:  Lossy, pec,  2.: A wire is connected at some ending both to a lossy and to a PEC edge. Assuming it PEC            12          42           7  0.000000000000000E+000 F F F F
-(    1/    1) wir1_WARNING:  Lossy, pec,  2.: A wire is connected at some ending both to a lossy and to a PEC edge. Assuming it PEC            12          43           7  0.000000000000000E+000 F F F F
-(    1/    1) wir1_WARNING:  Lossy, pec,  2.: A wire is connected at some ending both to a lossy and to a PEC edge. Assuming it PEC            12          44           7  0.000000000000000E+000 F F F F
-(    1/    1) wir1_WARNING:  Lossy, pec,  2.: A wire is connected at some ending both to a lossy and to a PEC edge. Assuming it PEC            12          45           7  0.000000000000000E+000 F F F F
-(    1/    1) wir1_WARNING:  Lossy, pec,  2.: A wire is connected at some ending both to a lossy and to a PEC edge. Assuming it PEC            12          46           7  0.000000000000000E+000 F F F F
-(    1/    1) wir1_WARNING:  Lossy, pec,  2.: A wire is connected at some ending both to a lossy and to a PEC edge. Assuming it PEC            12          47           7  0.000000000000000E+000 F F F F
-(    1/    1) wir1_WARNING:  Lossy, pec,  2.: A wire is connected at some ending both to a lossy and to a PEC edge. Assuming it PEC            12          48           7  0.000000000000000E+000 F F F F
-(    1/    1) wir1_WARNING:  Lossy, pec,  2.: A wire is connected at some ending both to a lossy and to a PEC edge. Assuming it PEC            12          49           7  0.000000000000000E+000 F F F F
-(    1/    1) wir1_WARNING:  Lossy, pec,  2.: A wire is connected at some ending both to a lossy and to a PEC edge. Assuming it PEC            12          50           7  0.000000000000000E+000 F F F F
-(    1/    1) wir1_WARNING:  Lossy, pec,  2.: A wire is connected at some ending both to a lossy and to a PEC edge. Assuming it PEC            12          51           7  0.000000000000000E+000 F F F F
+(    1/    1) wir0_WARNING: AUTOMATIC CORRECTION OF L/mu0= 0.52E-001 for r0= 0.10E-001 0.10E-001         1 wires at        24       24        4 to L/mu0= 0.24E+000 for newr0= 0.30E-002
+(    1/    1) wir0_WARNING: AUTOMATIC CORRECTION OF L/mu0= 0.52E-001 for r0= 0.10E-001 0.10E-001         1 wires at        24       24        5 to L/mu0= 0.24E+000 for newr0= 0.30E-002
+(    1/    1) wir0_WARNING: AUTOMATIC CORRECTION OF L/mu0= 0.52E-001 for r0= 0.10E-001 0.10E-001         1 wires at        24       24        6 to L/mu0= 0.24E+000 for newr0= 0.30E-002
+(    1/    1) wir0_WARNING: AUTOMATIC CORRECTION OF L/mu0= 0.52E-001 for r0= 0.10E-001 0.10E-001         1 wires at        24       24        7 to L/mu0= 0.24E+000 for newr0= 0.30E-002
+(    1/    1) wir0_WARNING: AUTOMATIC CORRECTION OF L/mu0= 0.52E-001 for r0= 0.10E-001 0.10E-001         1 wires at        24       24        8 to L/mu0= 0.24E+000 for newr0= 0.30E-002
+(    1/    1) wir0_WARNING: AUTOMATIC CORRECTION OF L/mu0= 0.52E-001 for r0= 0.10E-001 0.10E-001         1 wires at        24       24        9 to L/mu0= 0.24E+000 for newr0= 0.30E-002
+(    1/    1) wir0_WARNING: AUTOMATIC CORRECTION OF L/mu0= 0.52E-001 for r0= 0.10E-001 0.10E-001         1 wires at        24       24       10 to L/mu0= 0.24E+000 for newr0= 0.30E-002
+(    1/    1) wir0_WARNING: AUTOMATIC CORRECTION OF L/mu0= 0.52E-001 for r0= 0.10E-001 0.10E-001         1 wires at        24       24       11 to L/mu0= 0.24E+000 for newr0= 0.30E-002
+(    1/    1) wir0_WARNING: AUTOMATIC CORRECTION OF L/mu0= 0.52E-001 for r0= 0.10E-001 0.10E-001         1 wires at        24       24       12 to L/mu0= 0.24E+000 for newr0= 0.30E-002
+(    1/    1) wir0_WARNING: AUTOMATIC CORRECTION OF L/mu0= 0.52E-001 for r0= 0.10E-001 0.10E-001         1 wires at        24       24       13 to L/mu0= 0.24E+000 for newr0= 0.30E-002
+(    1/    1) wir0_WARNING: AUTOMATIC CORRECTION OF L/mu0= 0.52E-001 for r0= 0.10E-001 0.10E-001         1 wires at        24       24       14 to L/mu0= 0.24E+000 for newr0= 0.30E-002
+(    1/    1) wir0_WARNING: AUTOMATIC CORRECTION OF L/mu0= 0.52E-001 for r0= 0.10E-001 0.10E-001         1 wires at        24       25       14 to L/mu0= 0.24E+000 for newr0= 0.30E-002
+(    1/    1) wir0_WARNING: AUTOMATIC CORRECTION OF L/mu0= 0.52E-001 for r0= 0.10E-001 0.10E-001         1 wires at        24       26       14 to L/mu0= 0.24E+000 for newr0= 0.30E-002
+(    1/    1) wir0_WARNING: AUTOMATIC CORRECTION OF L/mu0= 0.52E-001 for r0= 0.10E-001 0.10E-001         1 wires at        24       27       14 to L/mu0= 0.24E+000 for newr0= 0.30E-002
+(    1/    1) wir0_WARNING: AUTOMATIC CORRECTION OF L/mu0= 0.52E-001 for r0= 0.10E-001 0.10E-001         1 wires at        24       28       14 to L/mu0= 0.24E+000 for newr0= 0.30E-002
+(    1/    1) wir0_WARNING: AUTOMATIC CORRECTION OF L/mu0= 0.52E-001 for r0= 0.10E-001 0.10E-001         1 wires at        24       29       14 to L/mu0= 0.24E+000 for newr0= 0.30E-002
+(    1/    1) wir0_WARNING: AUTOMATIC CORRECTION OF L/mu0= 0.52E-001 for r0= 0.10E-001 0.10E-001         1 wires at        24       30       14 to L/mu0= 0.24E+000 for newr0= 0.30E-002
+(    1/    1) wir0_WARNING: AUTOMATIC CORRECTION OF L/mu0= 0.52E-001 for r0= 0.10E-001 0.10E-001         1 wires at        24       31       14 to L/mu0= 0.24E+000 for newr0= 0.30E-002
+(    1/    1) wir0_WARNING: AUTOMATIC CORRECTION OF L/mu0= 0.52E-001 for r0= 0.10E-001 0.10E-001         1 wires at        24       32       14 to L/mu0= 0.24E+000 for newr0= 0.30E-002
+(    1/    1) wir0_WARNING: AUTOMATIC CORRECTION OF L/mu0= 0.52E-001 for r0= 0.10E-001 0.10E-001         1 wires at        24       33       14 to L/mu0= 0.24E+000 for newr0= 0.30E-002
+(    1/    1) wir0_WARNING: AUTOMATIC CORRECTION OF L/mu0= 0.52E-001 for r0= 0.10E-001 0.10E-001         1 wires at        24       34       14 to L/mu0= 0.24E+000 for newr0= 0.30E-002
+(    1/    1) wir0_WARNING: AUTOMATIC CORRECTION OF L/mu0= 0.52E-001 for r0= 0.10E-001 0.10E-001         1 wires at        24       35       14 to L/mu0= 0.24E+000 for newr0= 0.30E-002
+(    1/    1) wir0_WARNING: AUTOMATIC CORRECTION OF L/mu0= 0.52E-001 for r0= 0.10E-001 0.10E-001         1 wires at        24       36       14 to L/mu0= 0.24E+000 for newr0= 0.30E-002
+(    1/    1) wir0_WARNING: AUTOMATIC CORRECTION OF L/mu0= 0.52E-001 for r0= 0.10E-001 0.10E-001         1 wires at        24       37       14 to L/mu0= 0.24E+000 for newr0= 0.30E-002
+(    1/    1) wir0_WARNING: AUTOMATIC CORRECTION OF L/mu0= 0.52E-001 for r0= 0.10E-001 0.10E-001         1 wires at        24       38       14 to L/mu0= 0.24E+000 for newr0= 0.30E-002
+(    1/    1) wir0_WARNING: AUTOMATIC CORRECTION OF L/mu0= 0.52E-001 for r0= 0.10E-001 0.10E-001         1 wires at        24       39       14 to L/mu0= 0.24E+000 for newr0= 0.30E-002
+(    1/    1) wir0_WARNING: AUTOMATIC CORRECTION OF L/mu0= 0.52E-001 for r0= 0.10E-001 0.10E-001         1 wires at        24       40       14 to L/mu0= 0.24E+000 for newr0= 0.30E-002
+(    1/    1) wir0_WARNING: AUTOMATIC CORRECTION OF L/mu0= 0.52E-001 for r0= 0.10E-001 0.10E-001         1 wires at        24       41       14 to L/mu0= 0.24E+000 for newr0= 0.30E-002
+(    1/    1) wir0_WARNING: AUTOMATIC CORRECTION OF L/mu0= 0.52E-001 for r0= 0.10E-001 0.10E-001         1 wires at        24       42       14 to L/mu0= 0.24E+000 for newr0= 0.30E-002
+(    1/    1) wir0_WARNING: AUTOMATIC CORRECTION OF L/mu0= 0.52E-001 for r0= 0.10E-001 0.10E-001         1 wires at        24       43       14 to L/mu0= 0.24E+000 for newr0= 0.30E-002
+(    1/    1) wir0_WARNING: AUTOMATIC CORRECTION OF L/mu0= 0.52E-001 for r0= 0.10E-001 0.10E-001         1 wires at        24       44       14 to L/mu0= 0.24E+000 for newr0= 0.30E-002
+(    1/    1) wir0_WARNING: AUTOMATIC CORRECTION OF L/mu0= 0.52E-001 for r0= 0.10E-001 0.10E-001         1 wires at        24       45       14 to L/mu0= 0.24E+000 for newr0= 0.30E-002
+(    1/    1) wir0_WARNING: AUTOMATIC CORRECTION OF L/mu0= 0.52E-001 for r0= 0.10E-001 0.10E-001         1 wires at        24       46       14 to L/mu0= 0.24E+000 for newr0= 0.30E-002
+(    1/    1) wir0_WARNING: AUTOMATIC CORRECTION OF L/mu0= 0.52E-001 for r0= 0.10E-001 0.10E-001         1 wires at        24       47       14 to L/mu0= 0.24E+000 for newr0= 0.30E-002
+(    1/    1) wir0_WARNING: AUTOMATIC CORRECTION OF L/mu0= 0.52E-001 for r0= 0.10E-001 0.10E-001         1 wires at        24       48       14 to L/mu0= 0.24E+000 for newr0= 0.30E-002
+(    1/    1) wir0_WARNING: AUTOMATIC CORRECTION OF L/mu0= 0.52E-001 for r0= 0.10E-001 0.10E-001         1 wires at        24       49       14 to L/mu0= 0.24E+000 for newr0= 0.30E-002
+(    1/    1) wir0_WARNING: AUTOMATIC CORRECTION OF L/mu0= 0.52E-001 for r0= 0.10E-001 0.10E-001         1 wires at        24       50       14 to L/mu0= 0.24E+000 for newr0= 0.30E-002
+(    1/    1) wir0_WARNING: AUTOMATIC CORRECTION OF L/mu0= 0.52E-001 for r0= 0.10E-001 0.10E-001         1 wires at        24       51       14 to L/mu0= 0.24E+000 for newr0= 0.30E-002
+(    1/    1) wir0_WARNING: AUTOMATIC CORRECTION OF L/mu0= 0.52E-001 for r0= 0.10E-001 0.10E-001         1 wires at        24       52       14 to L/mu0= 0.24E+000 for newr0= 0.30E-002
+(    1/    1) wir0_WARNING: AUTOMATIC CORRECTION OF L/mu0= 0.52E-001 for r0= 0.10E-001 0.10E-001         1 wires at        24       53       14 to L/mu0= 0.24E+000 for newr0= 0.30E-002
+(    1/    1) wir0_WARNING: AUTOMATIC CORRECTION OF L/mu0= 0.52E-001 for r0= 0.10E-001 0.10E-001         1 wires at        24       54       14 to L/mu0= 0.24E+000 for newr0= 0.30E-002
+(    1/    1) wir0_WARNING: AUTOMATIC CORRECTION OF L/mu0= 0.52E-001 for r0= 0.10E-001 0.10E-001         1 wires at        24       55       14 to L/mu0= 0.24E+000 for newr0= 0.30E-002
+(    1/    1) wir0_WARNING: AUTOMATIC CORRECTION OF L/mu0= 0.52E-001 for r0= 0.10E-001 0.10E-001         1 wires at        24       56       14 to L/mu0= 0.24E+000 for newr0= 0.30E-002
+(    1/    1) wir0_WARNING: AUTOMATIC CORRECTION OF L/mu0= 0.52E-001 for r0= 0.10E-001 0.10E-001         1 wires at        24       57       14 to L/mu0= 0.24E+000 for newr0= 0.30E-002
+(    1/    1) wir0_WARNING: AUTOMATIC CORRECTION OF L/mu0= 0.52E-001 for r0= 0.10E-001 0.10E-001         1 wires at        24       58       14 to L/mu0= 0.24E+000 for newr0= 0.30E-002
+(    1/    1) wir0_WARNING: AUTOMATIC CORRECTION OF L/mu0= 0.52E-001 for r0= 0.10E-001 0.10E-001         1 wires at        24       59       14 to L/mu0= 0.24E+000 for newr0= 0.30E-002
+(    1/    1) wir0_WARNING: AUTOMATIC CORRECTION OF L/mu0= 0.52E-001 for r0= 0.10E-001 0.10E-001         1 wires at        24       60       14 to L/mu0= 0.24E+000 for newr0= 0.30E-002
+(    1/    1) wir0_WARNING: AUTOMATIC CORRECTION OF L/mu0= 0.52E-001 for r0= 0.10E-001 0.10E-001         1 wires at        24       61       14 to L/mu0= 0.24E+000 for newr0= 0.30E-002
+(    1/    1) wir0_WARNING: AUTOMATIC CORRECTION OF L/mu0= 0.52E-001 for r0= 0.10E-001 0.10E-001         1 wires at        24       62       14 to L/mu0= 0.24E+000 for newr0= 0.30E-002
+(    1/    1) wir0_WARNING: AUTOMATIC CORRECTION OF L/mu0= 0.52E-001 for r0= 0.10E-001 0.10E-001         1 wires at        24       63       14 to L/mu0= 0.24E+000 for newr0= 0.30E-002
+(    1/    1) wir0_WARNING: AUTOMATIC CORRECTION OF L/mu0= 0.52E-001 for r0= 0.10E-001 0.10E-001         1 wires at        24       64       14 to L/mu0= 0.24E+000 for newr0= 0.30E-002
+(    1/    1) wir0_WARNING: AUTOMATIC CORRECTION OF L/mu0= 0.52E-001 for r0= 0.10E-001 0.10E-001         1 wires at        24       65       14 to L/mu0= 0.24E+000 for newr0= 0.30E-002
+(    1/    1) wir0_WARNING: AUTOMATIC CORRECTION OF L/mu0= 0.52E-001 for r0= 0.10E-001 0.10E-001         1 wires at        24       66       14 to L/mu0= 0.24E+000 for newr0= 0.30E-002
+(    1/    1) wir0_WARNING: AUTOMATIC CORRECTION OF L/mu0= 0.52E-001 for r0= 0.10E-001 0.10E-001         1 wires at        24       67       14 to L/mu0= 0.24E+000 for newr0= 0.30E-002
+(    1/    1) wir0_WARNING: AUTOMATIC CORRECTION OF L/mu0= 0.52E-001 for r0= 0.10E-001 0.10E-001         1 wires at        24       68       14 to L/mu0= 0.24E+000 for newr0= 0.30E-002
+(    1/    1) wir0_WARNING: AUTOMATIC CORRECTION OF L/mu0= 0.52E-001 for r0= 0.10E-001 0.10E-001         1 wires at        24       69       14 to L/mu0= 0.24E+000 for newr0= 0.30E-002
+(    1/    1) wir0_WARNING: AUTOMATIC CORRECTION OF L/mu0= 0.52E-001 for r0= 0.10E-001 0.10E-001         1 wires at        24       70       14 to L/mu0= 0.24E+000 for newr0= 0.30E-002
+(    1/    1) wir0_WARNING: AUTOMATIC CORRECTION OF L/mu0= 0.52E-001 for r0= 0.10E-001 0.10E-001         1 wires at        24       71       14 to L/mu0= 0.24E+000 for newr0= 0.30E-002
+(    1/    1) wir0_WARNING: AUTOMATIC CORRECTION OF L/mu0= 0.52E-001 for r0= 0.10E-001 0.10E-001         1 wires at        24       72       14 to L/mu0= 0.24E+000 for newr0= 0.30E-002
+(    1/    1) wir0_WARNING: AUTOMATIC CORRECTION OF L/mu0= 0.52E-001 for r0= 0.10E-001 0.10E-001         1 wires at        24       73       14 to L/mu0= 0.24E+000 for newr0= 0.30E-002
+(    1/    1) wir0_WARNING: AUTOMATIC CORRECTION OF L/mu0= 0.52E-001 for r0= 0.10E-001 0.10E-001         1 wires at        24       74       14 to L/mu0= 0.24E+000 for newr0= 0.30E-002
+(    1/    1) wir0_WARNING: AUTOMATIC CORRECTION OF L/mu0= 0.52E-001 for r0= 0.10E-001 0.10E-001         1 wires at        24       75       14 to L/mu0= 0.24E+000 for newr0= 0.30E-002
+(    1/    1) wir0_WARNING: AUTOMATIC CORRECTION OF L/mu0= 0.52E-001 for r0= 0.10E-001 0.10E-001         1 wires at        24       76       14 to L/mu0= 0.24E+000 for newr0= 0.30E-002
+(    1/    1) wir0_WARNING: AUTOMATIC CORRECTION OF L/mu0= 0.52E-001 for r0= 0.10E-001 0.10E-001         1 wires at        24       77       14 to L/mu0= 0.24E+000 for newr0= 0.30E-002
+(    1/    1) wir0_WARNING: AUTOMATIC CORRECTION OF L/mu0= 0.52E-001 for r0= 0.10E-001 0.10E-001         1 wires at        24       78       14 to L/mu0= 0.24E+000 for newr0= 0.30E-002
+(    1/    1) wir0_WARNING: AUTOMATIC CORRECTION OF L/mu0= 0.52E-001 for r0= 0.10E-001 0.10E-001         1 wires at        24       79       14 to L/mu0= 0.24E+000 for newr0= 0.30E-002
+(    1/    1) wir0_WARNING: AUTOMATIC CORRECTION OF L/mu0= 0.52E-001 for r0= 0.10E-001 0.10E-001         1 wires at        24       80       14 to L/mu0= 0.24E+000 for newr0= 0.30E-002
+(    1/    1) wir0_WARNING: AUTOMATIC CORRECTION OF L/mu0= 0.52E-001 for r0= 0.10E-001 0.10E-001         1 wires at        24       81       14 to L/mu0= 0.24E+000 for newr0= 0.30E-002
+(    1/    1) wir0_WARNING: AUTOMATIC CORRECTION OF L/mu0= 0.52E-001 for r0= 0.10E-001 0.10E-001         1 wires at        24       82       14 to L/mu0= 0.24E+000 for newr0= 0.30E-002
+(    1/    1) wir0_WARNING: AUTOMATIC CORRECTION OF L/mu0= 0.52E-001 for r0= 0.10E-001 0.10E-001         1 wires at        24       83       14 to L/mu0= 0.24E+000 for newr0= 0.30E-002
+(    1/    1) wir0_WARNING: AUTOMATIC CORRECTION OF L/mu0= 0.52E-001 for r0= 0.10E-001 0.10E-001         1 wires at        24       84       14 to L/mu0= 0.24E+000 for newr0= 0.30E-002
+(    1/    1) wir0_WARNING: AUTOMATIC CORRECTION OF L/mu0= 0.52E-001 for r0= 0.10E-001 0.10E-001         1 wires at        24       85       14 to L/mu0= 0.24E+000 for newr0= 0.30E-002
+(    1/    1) wir0_WARNING: AUTOMATIC CORRECTION OF L/mu0= 0.52E-001 for r0= 0.10E-001 0.10E-001         1 wires at        24       86       14 to L/mu0= 0.24E+000 for newr0= 0.30E-002
+(    1/    1) wir0_WARNING: AUTOMATIC CORRECTION OF L/mu0= 0.52E-001 for r0= 0.10E-001 0.10E-001         1 wires at        24       87       14 to L/mu0= 0.24E+000 for newr0= 0.30E-002
+(    1/    1) wir0_WARNING: AUTOMATIC CORRECTION OF L/mu0= 0.52E-001 for r0= 0.10E-001 0.10E-001         1 wires at        24       88       14 to L/mu0= 0.24E+000 for newr0= 0.30E-002
+(    1/    1) wir0_WARNING: AUTOMATIC CORRECTION OF L/mu0= 0.52E-001 for r0= 0.10E-001 0.10E-001         1 wires at        24       89       14 to L/mu0= 0.24E+000 for newr0= 0.30E-002
+(    1/    1) wir0_WARNING: AUTOMATIC CORRECTION OF L/mu0= 0.52E-001 for r0= 0.10E-001 0.10E-001         1 wires at        24       90       14 to L/mu0= 0.24E+000 for newr0= 0.30E-002
+(    1/    1) wir0_WARNING: AUTOMATIC CORRECTION OF L/mu0= 0.52E-001 for r0= 0.10E-001 0.10E-001         1 wires at        24       91       14 to L/mu0= 0.24E+000 for newr0= 0.30E-002
+(    1/    1) wir0_WARNING: AUTOMATIC CORRECTION OF L/mu0= 0.52E-001 for r0= 0.10E-001 0.10E-001         1 wires at        24       92       14 to L/mu0= 0.24E+000 for newr0= 0.30E-002
+(    1/    1) wir0_WARNING: AUTOMATIC CORRECTION OF L/mu0= 0.52E-001 for r0= 0.10E-001 0.10E-001         1 wires at        24       93       14 to L/mu0= 0.24E+000 for newr0= 0.30E-002
+(    1/    1) wir0_WARNING: AUTOMATIC CORRECTION OF L/mu0= 0.52E-001 for r0= 0.10E-001 0.10E-001         1 wires at        24       94       14 to L/mu0= 0.24E+000 for newr0= 0.30E-002
+(    1/    1) wir0_WARNING: AUTOMATIC CORRECTION OF L/mu0= 0.52E-001 for r0= 0.10E-001 0.10E-001         1 wires at        24       95       14 to L/mu0= 0.24E+000 for newr0= 0.30E-002
+(    1/    1) wir0_WARNING: AUTOMATIC CORRECTION OF L/mu0= 0.52E-001 for r0= 0.10E-001 0.10E-001         1 wires at        24       96       14 to L/mu0= 0.24E+000 for newr0= 0.30E-002
+(    1/    1) wir0_WARNING: AUTOMATIC CORRECTION OF L/mu0= 0.52E-001 for r0= 0.10E-001 0.10E-001         1 wires at        24       97       14 to L/mu0= 0.24E+000 for newr0= 0.30E-002
+(    1/    1) wir0_WARNING: AUTOMATIC CORRECTION OF L/mu0= 0.52E-001 for r0= 0.10E-001 0.10E-001         1 wires at        24       98       14 to L/mu0= 0.24E+000 for newr0= 0.30E-002
+(    1/    1) wir0_WARNING: AUTOMATIC CORRECTION OF L/mu0= 0.52E-001 for r0= 0.10E-001 0.10E-001         1 wires at        24       99       14 to L/mu0= 0.24E+000 for newr0= 0.30E-002
+(    1/    1) wir0_WARNING: AUTOMATIC CORRECTION OF L/mu0= 0.52E-001 for r0= 0.10E-001 0.10E-001         1 wires at        24      100       14 to L/mu0= 0.24E+000 for newr0= 0.30E-002
+(    1/    1) wir0_WARNING: AUTOMATIC CORRECTION OF L/mu0= 0.52E-001 for r0= 0.10E-001 0.10E-001         1 wires at        24      101       14 to L/mu0= 0.24E+000 for newr0= 0.30E-002
+(    1/    1) wir0_WARNING: AUTOMATIC CORRECTION OF L/mu0= 0.52E-001 for r0= 0.10E-001 0.10E-001         1 wires at        24      102       14 to L/mu0= 0.24E+000 for newr0= 0.30E-002
+(    1/    1) wir0_WARNING: AUTOMATIC CORRECTION OF L/mu0= 0.52E-001 for r0= 0.10E-001 0.10E-001         1 wires at        24      103       14 to L/mu0= 0.24E+000 for newr0= 0.30E-002
+(    1/    1) wir1_WARNING: Series RLC in terminal LeftEnd segment       1     24     24      4      3
+(    1/    1) wir1_WARNING:  Lossy, pec,  2.: A wire is connected at some ending both to a lossy and to a PEC edge. Assuming it PEC            24          24           4   59171596.0000000      F F F F
+(    1/    1) wir1_WARNING:  Lossy, pec,  2.: A wire is connected at some ending both to a lossy and to a PEC edge. Assuming it PEC            24          24           5  0.000000000000000E+000 F F F F
+(    1/    1) wir1_WARNING:  Lossy, pec,  2.: A wire is connected at some ending both to a lossy and to a PEC edge. Assuming it PEC            24          24           6  0.000000000000000E+000 F F F F
+(    1/    1) wir1_WARNING:  Lossy, pec,  2.: A wire is connected at some ending both to a lossy and to a PEC edge. Assuming it PEC            24          24           7  0.000000000000000E+000 F F F F
+(    1/    1) wir1_WARNING:  Lossy, pec,  2.: A wire is connected at some ending both to a lossy and to a PEC edge. Assuming it PEC            24          24           8  0.000000000000000E+000 F F F F
+(    1/    1) wir1_WARNING:  Lossy, pec,  2.: A wire is connected at some ending both to a lossy and to a PEC edge. Assuming it PEC            24          24           9  0.000000000000000E+000 F F F F
+(    1/    1) wir1_WARNING:  Lossy, pec,  2.: A wire is connected at some ending both to a lossy and to a PEC edge. Assuming it PEC            24          24          10  0.000000000000000E+000 F F F F
+(    1/    1) wir1_WARNING:  Lossy, pec,  2.: A wire is connected at some ending both to a lossy and to a PEC edge. Assuming it PEC            24          24          11  0.000000000000000E+000 F F F F
+(    1/    1) wir1_WARNING:  Lossy, pec,  2.: A wire is connected at some ending both to a lossy and to a PEC edge. Assuming it PEC            24          24          12  0.000000000000000E+000 F F F F
+(    1/    1) wir1_WARNING:  Lossy, pec,  2.: A wire is connected at some ending both to a lossy and to a PEC edge. Assuming it PEC            24          24          13  0.000000000000000E+000 F F F F
+(    1/    1) wir1_WARNING:  Lossy, pec,  2.: A wire is connected at some ending both to a lossy and to a PEC edge. Assuming it PEC            24          24          14  0.000000000000000E+000 F F F F
+(    1/    1) wir1_WARNING:  Lossy, pec,  2.: A wire is connected at some ending both to a lossy and to a PEC edge. Assuming it PEC            24          25          14  0.000000000000000E+000 F F F F
+(    1/    1) wir1_WARNING:  Lossy, pec,  2.: A wire is connected at some ending both to a lossy and to a PEC edge. Assuming it PEC            24          26          14  0.000000000000000E+000 F F F F
+(    1/    1) wir1_WARNING:  Lossy, pec,  2.: A wire is connected at some ending both to a lossy and to a PEC edge. Assuming it PEC            24          27          14  0.000000000000000E+000 F F F F
+(    1/    1) wir1_WARNING:  Lossy, pec,  2.: A wire is connected at some ending both to a lossy and to a PEC edge. Assuming it PEC            24          28          14  0.000000000000000E+000 F F F F
+(    1/    1) wir1_WARNING:  Lossy, pec,  2.: A wire is connected at some ending both to a lossy and to a PEC edge. Assuming it PEC            24          29          14  0.000000000000000E+000 F F F F
+(    1/    1) wir1_WARNING:  Lossy, pec,  2.: A wire is connected at some ending both to a lossy and to a PEC edge. Assuming it PEC            24          30          14  0.000000000000000E+000 F F F F
+(    1/    1) wir1_WARNING:  Lossy, pec,  2.: A wire is connected at some ending both to a lossy and to a PEC edge. Assuming it PEC            24          31          14  0.000000000000000E+000 F F F F
+(    1/    1) wir1_WARNING:  Lossy, pec,  2.: A wire is connected at some ending both to a lossy and to a PEC edge. Assuming it PEC            24          32          14  0.000000000000000E+000 F F F F
+(    1/    1) wir1_WARNING:  Lossy, pec,  2.: A wire is connected at some ending both to a lossy and to a PEC edge. Assuming it PEC            24          33          14  0.000000000000000E+000 F F F F
+(    1/    1) wir1_WARNING:  Lossy, pec,  2.: A wire is connected at some ending both to a lossy and to a PEC edge. Assuming it PEC            24          34          14  0.000000000000000E+000 F F F F
+(    1/    1) wir1_WARNING:  Lossy, pec,  2.: A wire is connected at some ending both to a lossy and to a PEC edge. Assuming it PEC            24          35          14  0.000000000000000E+000 F F F F
+(    1/    1) wir1_WARNING:  Lossy, pec,  2.: A wire is connected at some ending both to a lossy and to a PEC edge. Assuming it PEC            24          36          14  0.000000000000000E+000 F F F F
+(    1/    1) wir1_WARNING:  Lossy, pec,  2.: A wire is connected at some ending both to a lossy and to a PEC edge. Assuming it PEC            24          37          14  0.000000000000000E+000 F F F F
+(    1/    1) wir1_WARNING:  Lossy, pec,  2.: A wire is connected at some ending both to a lossy and to a PEC edge. Assuming it PEC            24          38          14  0.000000000000000E+000 F F F F
+(    1/    1) wir1_WARNING:  Lossy, pec,  2.: A wire is connected at some ending both to a lossy and to a PEC edge. Assuming it PEC            24          39          14  0.000000000000000E+000 F F F F
+(    1/    1) wir1_WARNING:  Lossy, pec,  2.: A wire is connected at some ending both to a lossy and to a PEC edge. Assuming it PEC            24          40          14  0.000000000000000E+000 F F F F
+(    1/    1) wir1_WARNING:  Lossy, pec,  2.: A wire is connected at some ending both to a lossy and to a PEC edge. Assuming it PEC            24          41          14  0.000000000000000E+000 F F F F
+(    1/    1) wir1_WARNING:  Lossy, pec,  2.: A wire is connected at some ending both to a lossy and to a PEC edge. Assuming it PEC            24          42          14  0.000000000000000E+000 F F F F
+(    1/    1) wir1_WARNING:  Lossy, pec,  2.: A wire is connected at some ending both to a lossy and to a PEC edge. Assuming it PEC            24          43          14  0.000000000000000E+000 F F F F
+(    1/    1) wir1_WARNING:  Lossy, pec,  2.: A wire is connected at some ending both to a lossy and to a PEC edge. Assuming it PEC            24          44          14  0.000000000000000E+000 F F F F
+(    1/    1) wir1_WARNING:  Lossy, pec,  2.: A wire is connected at some ending both to a lossy and to a PEC edge. Assuming it PEC            24          45          14  0.000000000000000E+000 F F F F
+(    1/    1) wir1_WARNING:  Lossy, pec,  2.: A wire is connected at some ending both to a lossy and to a PEC edge. Assuming it PEC            24          46          14  0.000000000000000E+000 F F F F
+(    1/    1) wir1_WARNING:  Lossy, pec,  2.: A wire is connected at some ending both to a lossy and to a PEC edge. Assuming it PEC            24          47          14  0.000000000000000E+000 F F F F
+(    1/    1) wir1_WARNING:  Lossy, pec,  2.: A wire is connected at some ending both to a lossy and to a PEC edge. Assuming it PEC            24          48          14  0.000000000000000E+000 F F F F
+(    1/    1) wir1_WARNING:  Lossy, pec,  2.: A wire is connected at some ending both to a lossy and to a PEC edge. Assuming it PEC            24          49          14  0.000000000000000E+000 F F F F
+(    1/    1) wir1_WARNING:  Lossy, pec,  2.: A wire is connected at some ending both to a lossy and to a PEC edge. Assuming it PEC            24          50          14  0.000000000000000E+000 F F F F
+(    1/    1) wir1_WARNING:  Lossy, pec,  2.: A wire is connected at some ending both to a lossy and to a PEC edge. Assuming it PEC            24          51          14  0.000000000000000E+000 F F F F
+(    1/    1) wir1_WARNING:  Lossy, pec,  2.: A wire is connected at some ending both to a lossy and to a PEC edge. Assuming it PEC            24          52          14  0.000000000000000E+000 F F F F
+(    1/    1) wir1_WARNING:  Lossy, pec,  2.: A wire is connected at some ending both to a lossy and to a PEC edge. Assuming it PEC            24          53          14  0.000000000000000E+000 F F F F
+(    1/    1) wir1_WARNING:  Lossy, pec,  2.: A wire is connected at some ending both to a lossy and to a PEC edge. Assuming it PEC            24          54          14  0.000000000000000E+000 F F F F
+(    1/    1) wir1_WARNING:  Lossy, pec,  2.: A wire is connected at some ending both to a lossy and to a PEC edge. Assuming it PEC            24          55          14  0.000000000000000E+000 F F F F
+(    1/    1) wir1_WARNING:  Lossy, pec,  2.: A wire is connected at some ending both to a lossy and to a PEC edge. Assuming it PEC            24          56          14  0.000000000000000E+000 F F F F
+(    1/    1) wir1_WARNING:  Lossy, pec,  2.: A wire is connected at some ending both to a lossy and to a PEC edge. Assuming it PEC            24          57          14  0.000000000000000E+000 F F F F
+(    1/    1) wir1_WARNING:  Lossy, pec,  2.: A wire is connected at some ending both to a lossy and to a PEC edge. Assuming it PEC            24          58          14  0.000000000000000E+000 F F F F
+(    1/    1) wir1_WARNING:  Lossy, pec,  2.: A wire is connected at some ending both to a lossy and to a PEC edge. Assuming it PEC            24          59          14  0.000000000000000E+000 F F F F
+(    1/    1) wir1_WARNING:  Lossy, pec,  2.: A wire is connected at some ending both to a lossy and to a PEC edge. Assuming it PEC            24          60          14  0.000000000000000E+000 F F F F
+(    1/    1) wir1_WARNING:  Lossy, pec,  2.: A wire is connected at some ending both to a lossy and to a PEC edge. Assuming it PEC            24          61          14  0.000000000000000E+000 F F F F
+(    1/    1) wir1_WARNING:  Lossy, pec,  2.: A wire is connected at some ending both to a lossy and to a PEC edge. Assuming it PEC            24          62          14  0.000000000000000E+000 F F F F
+(    1/    1) wir1_WARNING:  Lossy, pec,  2.: A wire is connected at some ending both to a lossy and to a PEC edge. Assuming it PEC            24          63          14  0.000000000000000E+000 F F F F
+(    1/    1) wir1_WARNING:  Lossy, pec,  2.: A wire is connected at some ending both to a lossy and to a PEC edge. Assuming it PEC            24          64          14  0.000000000000000E+000 F F F F
+(    1/    1) wir1_WARNING:  Lossy, pec,  2.: A wire is connected at some ending both to a lossy and to a PEC edge. Assuming it PEC            24          65          14  0.000000000000000E+000 F F F F
+(    1/    1) wir1_WARNING:  Lossy, pec,  2.: A wire is connected at some ending both to a lossy and to a PEC edge. Assuming it PEC            24          66          14  0.000000000000000E+000 F F F F
+(    1/    1) wir1_WARNING:  Lossy, pec,  2.: A wire is connected at some ending both to a lossy and to a PEC edge. Assuming it PEC            24          67          14  0.000000000000000E+000 F F F F
+(    1/    1) wir1_WARNING:  Lossy, pec,  2.: A wire is connected at some ending both to a lossy and to a PEC edge. Assuming it PEC            24          68          14  0.000000000000000E+000 F F F F
+(    1/    1) wir1_WARNING:  Lossy, pec,  2.: A wire is connected at some ending both to a lossy and to a PEC edge. Assuming it PEC            24          69          14  0.000000000000000E+000 F F F F
+(    1/    1) wir1_WARNING:  Lossy, pec,  2.: A wire is connected at some ending both to a lossy and to a PEC edge. Assuming it PEC            24          70          14  0.000000000000000E+000 F F F F
+(    1/    1) wir1_WARNING:  Lossy, pec,  2.: A wire is connected at some ending both to a lossy and to a PEC edge. Assuming it PEC            24          71          14  0.000000000000000E+000 F F F F
+(    1/    1) wir1_WARNING:  Lossy, pec,  2.: A wire is connected at some ending both to a lossy and to a PEC edge. Assuming it PEC            24          72          14  0.000000000000000E+000 F F F F
+(    1/    1) wir1_WARNING:  Lossy, pec,  2.: A wire is connected at some ending both to a lossy and to a PEC edge. Assuming it PEC            24          73          14  0.000000000000000E+000 F F F F
+(    1/    1) wir1_WARNING:  Lossy, pec,  2.: A wire is connected at some ending both to a lossy and to a PEC edge. Assuming it PEC            24          74          14  0.000000000000000E+000 F F F F
+(    1/    1) wir1_WARNING:  Lossy, pec,  2.: A wire is connected at some ending both to a lossy and to a PEC edge. Assuming it PEC            24          75          14  0.000000000000000E+000 F F F F
+(    1/    1) wir1_WARNING:  Lossy, pec,  2.: A wire is connected at some ending both to a lossy and to a PEC edge. Assuming it PEC            24          76          14  0.000000000000000E+000 F F F F
+(    1/    1) wir1_WARNING:  Lossy, pec,  2.: A wire is connected at some ending both to a lossy and to a PEC edge. Assuming it PEC            24          77          14  0.000000000000000E+000 F F F F
+(    1/    1) wir1_WARNING:  Lossy, pec,  2.: A wire is connected at some ending both to a lossy and to a PEC edge. Assuming it PEC            24          78          14  0.000000000000000E+000 F F F F
+(    1/    1) wir1_WARNING:  Lossy, pec,  2.: A wire is connected at some ending both to a lossy and to a PEC edge. Assuming it PEC            24          79          14  0.000000000000000E+000 F F F F
+(    1/    1) wir1_WARNING:  Lossy, pec,  2.: A wire is connected at some ending both to a lossy and to a PEC edge. Assuming it PEC            24          80          14  0.000000000000000E+000 F F F F
+(    1/    1) wir1_WARNING:  Lossy, pec,  2.: A wire is connected at some ending both to a lossy and to a PEC edge. Assuming it PEC            24          81          14  0.000000000000000E+000 F F F F
+(    1/    1) wir1_WARNING:  Lossy, pec,  2.: A wire is connected at some ending both to a lossy and to a PEC edge. Assuming it PEC            24          82          14  0.000000000000000E+000 F F F F
+(    1/    1) wir1_WARNING:  Lossy, pec,  2.: A wire is connected at some ending both to a lossy and to a PEC edge. Assuming it PEC            24          83          14  0.000000000000000E+000 F F F F
+(    1/    1) wir1_WARNING:  Lossy, pec,  2.: A wire is connected at some ending both to a lossy and to a PEC edge. Assuming it PEC            24          84          14  0.000000000000000E+000 F F F F
+(    1/    1) wir1_WARNING:  Lossy, pec,  2.: A wire is connected at some ending both to a lossy and to a PEC edge. Assuming it PEC            24          85          14  0.000000000000000E+000 F F F F
+(    1/    1) wir1_WARNING:  Lossy, pec,  2.: A wire is connected at some ending both to a lossy and to a PEC edge. Assuming it PEC            24          86          14  0.000000000000000E+000 F F F F
+(    1/    1) wir1_WARNING:  Lossy, pec,  2.: A wire is connected at some ending both to a lossy and to a PEC edge. Assuming it PEC            24          87          14  0.000000000000000E+000 F F F F
+(    1/    1) wir1_WARNING:  Lossy, pec,  2.: A wire is connected at some ending both to a lossy and to a PEC edge. Assuming it PEC            24          88          14  0.000000000000000E+000 F F F F
+(    1/    1) wir1_WARNING:  Lossy, pec,  2.: A wire is connected at some ending both to a lossy and to a PEC edge. Assuming it PEC            24          89          14  0.000000000000000E+000 F F F F
+(    1/    1) wir1_WARNING:  Lossy, pec,  2.: A wire is connected at some ending both to a lossy and to a PEC edge. Assuming it PEC            24          90          14  0.000000000000000E+000 F F F F
+(    1/    1) wir1_WARNING:  Lossy, pec,  2.: A wire is connected at some ending both to a lossy and to a PEC edge. Assuming it PEC            24          91          14  0.000000000000000E+000 F F F F
+(    1/    1) wir1_WARNING:  Lossy, pec,  2.: A wire is connected at some ending both to a lossy and to a PEC edge. Assuming it PEC            24          92          14  0.000000000000000E+000 F F F F
+(    1/    1) wir1_WARNING:  Lossy, pec,  2.: A wire is connected at some ending both to a lossy and to a PEC edge. Assuming it PEC            24          93          14  0.000000000000000E+000 F F F F
+(    1/    1) wir1_WARNING:  Lossy, pec,  2.: A wire is connected at some ending both to a lossy and to a PEC edge. Assuming it PEC            24          94          14  0.000000000000000E+000 F F F F
+(    1/    1) wir1_WARNING:  Lossy, pec,  2.: A wire is connected at some ending both to a lossy and to a PEC edge. Assuming it PEC            24          95          14  0.000000000000000E+000 F F F F
+(    1/    1) wir1_WARNING:  Lossy, pec,  2.: A wire is connected at some ending both to a lossy and to a PEC edge. Assuming it PEC            24          96          14  0.000000000000000E+000 F F F F
+(    1/    1) wir1_WARNING:  Lossy, pec,  2.: A wire is connected at some ending both to a lossy and to a PEC edge. Assuming it PEC            24          97          14  0.000000000000000E+000 F F F F
+(    1/    1) wir1_WARNING:  Lossy, pec,  2.: A wire is connected at some ending both to a lossy and to a PEC edge. Assuming it PEC            24          98          14  0.000000000000000E+000 F F F F
+(    1/    1) wir1_WARNING:  Lossy, pec,  2.: A wire is connected at some ending both to a lossy and to a PEC edge. Assuming it PEC            24          99          14  0.000000000000000E+000 F F F F
+(    1/    1) wir1_WARNING:  Lossy, pec,  2.: A wire is connected at some ending both to a lossy and to a PEC edge. Assuming it PEC            24         100          14  0.000000000000000E+000 F F F F
+(    1/    1) wir1_WARNING:  Lossy, pec,  2.: A wire is connected at some ending both to a lossy and to a PEC edge. Assuming it PEC            24         101          14  0.000000000000000E+000 F F F F
+(    1/    1) wir1_WARNING:  Lossy, pec,  2.: A wire is connected at some ending both to a lossy and to a PEC edge. Assuming it PEC            24         102          14  0.000000000000000E+000 F F F F
+(    1/    1) wir1_WARNING:  Lossy, pec,  2.: A wire is connected at some ending both to a lossy and to a PEC edge. Assuming it PEC            24         103          14  0.000000000000000E+000 F F F F
 (    1/    1) ----------------------------------------------------------------
 (    1/    1) ----------------------------------------------------------------
-(    1/    1) wir1_INFO: (SHOULD BE REDUNDANT) Terminal Node grounded to PEC           12          12           2
-(    1/    1) wir1_INFO: (SHOULD BE REDUNDANT) Terminal Node grounded to PEC           12          12           2
-(    1/    1) wir1_INFO: (SHOULD BE REDUNDANT) Terminal Node embedded in air           12          52           7
-(    1/    1) wir1_INFO: (SHOULD BE REDUNDANT) Terminal Node embedded in air           12          52           7
+(    1/    1) wir1_INFO: (SHOULD BE REDUNDANT) Terminal Node grounded to Lossy           24          24           4
+(    1/    1) wir1_INFO: (SHOULD BE REDUNDANT) Terminal Node grounded to Lossy           24          24           4
+(    1/    1) wir1_INFO: (SHOULD BE REDUNDANT) Terminal Node embedded in air           24         104          14
+(    1/    1) wir1_INFO: (SHOULD BE REDUNDANT) Terminal Node embedded in air           24         104          14
 (    1/    1) ----------------------------------------------------------------
-(    1/    1) wir3_INFO: BBOX for Holland WIREs           12          12           2          12          51           7
-(    1/    1) wir3_WARNING: Node open to air       4     12     52      7
+(    1/    1) wir3_INFO: BBOX for Holland WIREs           24          24           4          24         103          14
+(    1/    1) wir3_WARNING: Node open to air       3     24    104     14

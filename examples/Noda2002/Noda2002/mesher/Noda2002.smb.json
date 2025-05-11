@@ -4,7 +4,7 @@
     "analysis": {
         "solver": "ugrfdtd",
         "runSimulation": false,
-        "timeStep": 9.6e-11,
+        "timeStep": 7.70333e-11,
         "forceRestarting": false,
         "resumeSimulation": false,
         "flush": 0.0,
@@ -34,7 +34,7 @@
         {
             "gridType": "gridCondition",
             "type": "Number_of_cells",
-            "numberOfCells": "{24 64 24}",
+            "numberOfCells": "{48 128 48}",
             "layerBox": "{2200.0 6200.0 2200.0 -200.0 -200.0 -200.0}"
         }
     ],
@@ -46,18 +46,26 @@
             },
             {
                 "id": 2,
-                "name": "Plane"
+                "name": "Cube"
+            },
+            {
+                "id": 3,
+                "name": "Bulk001"
             }
         ],
         "materials": [
             {
                 "materialId": 1,
-                "name": "PEC",
-                "materialType": "PEC"
+                "name": "IsotropicMaterial",
+                "materialType": "Classic",
+                "permittivity": 1.0,
+                "permeability": 1.0,
+                "electricConductivity": 59171597.0,
+                "magneticConductivity": 0.0
             },
             {
                 "materialId": 2,
-                "name": "LeadWirematerial",
+                "name": "Wirematerial",
                 "materialType": "Wire",
                 "wireType": "Standard",
                 "radius": 0.01,
@@ -66,7 +74,7 @@
             },
             {
                 "materialId": 3,
-                "name": "Terminal_50Ohm",
+                "name": "Terminal50Ohm",
                 "materialType": "Connector",
                 "connectorType": "Conn_sRLC",
                 "resistance": 50.0,
@@ -82,34 +90,52 @@
         ],
         "coordinates": [
             "      1  +1.00000000e+03  +1.00000000e+03  +0.00000000e+00",
-            "      2  +1.00000000e+03  +1.00000000e+03  +1.00000000e+02",
-            "      3  +1.00000000e+03  +1.00000000e+03  +5.00000000e+02",
-            "      4  +1.00000000e+03  +5.00000000e+03  +5.00000000e+02",
-            "      5  +2.00000000e+03  +6.00000000e+03  +0.00000000e+00",
-            "      6  +0.00000000e+00  +6.00000000e+03  +0.00000000e+00",
-            "      7  +0.00000000e+00  +0.00000000e+00  +0.00000000e+00",
-            "      8  +2.00000000e+03  +0.00000000e+00  +0.00000000e+00"
+            "      2  +1.00000000e+03  +1.00000000e+03  +5.00000000e+02",
+            "      3  +1.00000000e+03  +5.00000000e+03  +5.00000000e+02",
+            "      4  +0.00000000e+00  +0.00000000e+00  -1.00000000e+02",
+            "      5  +0.00000000e+00  +0.00000000e+00  +0.00000000e+00",
+            "      6  +0.00000000e+00  +6.00000000e+03  -1.00000000e+02",
+            "      7  +0.00000000e+00  +6.00000000e+03  +0.00000000e+00",
+            "      8  +2.00000000e+03  +0.00000000e+00  +0.00000000e+00",
+            "      9  +2.00000000e+03  +0.00000000e+00  -1.00000000e+02",
+            "      10  +2.00000000e+03  +6.00000000e+03  -1.00000000e+02",
+            "      11  +2.00000000e+03  +6.00000000e+03  +0.00000000e+00",
+            "      12  +1.05000000e+03  +1.05000000e+03  +0.00000000e+00",
+            "      13  +9.50000000e+02  +1.05000000e+03  +0.00000000e+00",
+            "      14  +9.50000000e+02  +9.50000000e+02  +0.00000000e+00",
+            "      15  +1.05000000e+03  +9.50000000e+02  +0.00000000e+00"
         ],
         "elements": {
             "node": [
-                "       4    0    0        1",
-                "       5    0    0        1",
-                "       6    0    0        2",
-                "       7    3    1        1",
-                "       8    4    1        4"
+                "       16    0    0        1",
+                "       17    0    0        1",
+                "       18    3    1        1",
+                "       19    4    1        3"
             ],
             "line": [],
             "polyline": [
-                "       1    2    1        1        2        3        4"
+                "       1    2    1        1        2        3"
             ],
             "triangle": [
-                "       2    1    2        5        6        7",
-                "       3    1    2        5        7        8"
+                "       2    1    2        4        5        6",
+                "       3    1    2        6        5        7",
+                "       4    1    2        8        9        10",
+                "       5    1    2        8        10        11",
+                "       6    1    2        9        8        4",
+                "       7    1    2        4        8        5",
+                "       8    1    2        11        10        6",
+                "       9    1    2        11        6        7",
+                "       10    1    2        6        10        4",
+                "       11    1    2        4        10        9",
+                "       12    1    2        11        7        5",
+                "       13    1    2        11        5        8",
+                "       14    0    3        12        13        14",
+                "       15    0    3        12        14        15"
             ]
         },
         "cables": [
             {
-                "name": "lead_Cable",
+                "name": "Cable",
                 "materialId": 2,
                 "initialConnectorId": 3,
                 "endConnectorId": 4,
@@ -124,7 +150,7 @@
             "sourceType": "generator",
             "type": "voltage",
             "elemIds": [
-                4
+                16
             ],
             "magnitude": {
                 "type": "File",
@@ -143,21 +169,21 @@
                 "samplingPeriod": 0.0
             },
             "elemIds": [
-                5
+                17
             ]
         },
         {
-            "gidOutputType": "OutRq_on_point",
-            "name": "Wire_probe_B",
-            "type": "current",
+            "name": "Bulk_probe",
+            "direction": "x",
+            "type": "bulkCurrentElectric",
+            "gidOutputType": "OutRq_on_layer",
+            "box": "{1050.0 1050.0 0.0 950.0 950.0 0.0}",
+            "skip": 1,
             "domain": {
                 "initialTime": 0.0,
                 "finalTime": 0.0,
                 "samplingPeriod": 0.0
-            },
-            "elemIds": [
-                6
-            ]
+            }
         }
     ],
     "boundary": {

@@ -1,19 +1,19 @@
 <VTKFile type="UnstructuredGrid" version="0.1" byte_order="LittleEndian">
-  <UnstructuredGrid NumberOfPoints="1" NumberOfCells="1" >
+  <UnstructuredGrid NumberOfPoints="8" NumberOfCells="6" >
       <Points>
         <DataArray type="Float32" NumberOfComponents="3" format="ascii">
-          1000 1000 100
+          0 0 -100 0 6000 -100 2000 6000 -100 2000 0 -100 0 0 0 0 6000 0 2000 0 0 2000 6000 0
         </DataArray>
       </Points>
       <Cells>
         <DataArray type="Int32" Name="connectivity" format="ascii">
-          0
+          0 1 2 3 0 4 5 1 0 3 6 4 4 6 7 5 3 2 7 6 1 5 7 2
         </DataArray>
         <DataArray type="Int32" Name="offsets" format="ascii">
-          1
+          4 8 12 16 20 24
         </DataArray>
         <DataArray type="UInt8" Name="types" format="ascii">
-          1
+          9 9 9 9 9 9
         </DataArray>
       </Cells>
   </UnstructuredGrid>

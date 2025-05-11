@@ -12,36 +12,36 @@ Compiled WITH .h5 HDF support
 Compiled WITH MTLN support
 Compiled WITH SMBJSON support
 __________________________________________
-Launched on              09/05/2025 18:01
-Switches C:\Users\adilt\OneDrive\05_GIT\openSEMBA\fdtd\build\bin\semba-fdtd.exe -i noda2002.fdtd.json
+Launched on              11/05/2025 13:12
+Switches C:\Users\adilt\OneDrive\05_GIT\openSEMBA\fdtd\build\bin\semba-fdtd.exe -i noda2002.fdtd.json -stableradholland
 __________________________________________
 Closing warning file. Number of messages:            0
 __________________________________________
 Compiled with Single precision (real*4)
 __________________________________________
-Launched on              09/05/2025 18:01
+Launched on              11/05/2025 13:12
 __________________________________________
 Launched with total options
-C:\Users\adilt\OneDrive\05_GIT\openSEMBA\fdtd\build\bin\semba-fdtd.exe -i noda2002.fdtd.json
+C:\Users\adilt\OneDrive\05_GIT\openSEMBA\fdtd\build\bin\semba-fdtd.exe -i noda2002.fdtd.json -stableradholland
 If later resuming use compulsory options
-mpirun -n    1
+mpirun -n    1 -stableradholland
 __________________________________________
 INIT conversion internal ASCII => Binary
 __________________________________________
 __________________________________________
 __________________________________________
-CFLN=   0.4984856
+CFLN=   0.7999998
 __________________________________________
 __________________________________________
-Deltat=   9.599999961640293E-011
+Deltat=   7.703330334729586E-011
 __________________________________________
 INIT NFDE --------> GEOM
 INIT UPDATING SHARED INFO. This process may take time!
 Launch with -noshared to skip this process (just relevant for structured NIBC CFCs and Anisot.)
 [OK] END UPDATING SHARED INFO
 [OK] ENDED NFDE --------> GEOM
-!SLICES_44
-_________Spanning from z=    -10 to z=     34
+!SLICES_68
+_________Spanning from z=    -10 to z=     58
 [OK] Ended conversion internal ASCII => Binary
 [OK] Ended Conformal Mesh
 __________________________________________
@@ -61,7 +61,7 @@ Solver launched with options:
 ---> DMMA thin-gap solver: T
 ---> Wire model: holland
 ---> Inductance model: boutayeb
----> Holland -l%stableradholland automatic correction switch: F
+---> Holland -l%stableradholland automatic correction switch: T
 ---> Thin-wire double-tails removed: T
 ---> Thin-wire -l%fieldtotl experimental switch: F
 __________________________________________
@@ -95,28 +95,28 @@ Init Nodal Sources...
 Init Observation...
 ----> there are observation requests
 Init Timing...
-Total Mcells:   0.1626240
+Total Mcells:   0.6843520
 NO flushing of restarting FIELDS scheduled
 Flushing observation DATA every      10000001  minutes and every         1024  steps
 Reporting simulation info every             1  minutes
 __________________________________________
-Simulation from n=      0, t=   0.000000000E+000 to n=      416, t=   0.399359998E-007
-Date/time 09/05/2025   18:01:16
+Simulation from n=      0, t=   0.000000000E+000 to n=      519, t=   0.399802844E-007
+Date/time 11/05/2025   13:12:40
 __________________________________________
-Closing warning file. Number of messages:           57
+Closing warning file. Number of messages:          192
 __________________________________________
 END PREPROCESSING. STARTING simulation.
 __________________________________________
-Start Date/time 09/05   18:01:16
+Start Date/time 11/05   13:12:40
 __________________________________________
-END FDTD time stepping. Beginning posprocessing at n=          416
+END FDTD time stepping. Beginning posprocessing at n=          519
 __________________________________________
-INIT FINAL OBSERVATION DATA FLUSHING n=       416
+INIT FINAL OBSERVATION DATA FLUSHING n=       519
 __________________________________________
 __________________________________________
-DONE FINAL OBSERVATION  DATA FLUSHED n=       416
+DONE FINAL OBSERVATION  DATA FLUSHED n=       519
 __________________________________________
-INIT FINAL Postprocessing frequency domain probes, if any, at n=       416
+INIT FINAL Postprocessing frequency domain probes, if any, at n=       519
 __________________________________________
 No FINAL frequency domain probes snapshots found to be postrocessed
 __________________________________________
@@ -128,11 +128,11 @@ INIT FINAL FLUSHING .xdmf if any.
 __________________________________________
 No FINAL .xdmf snapshots found to be flushed
 __________________________________________
-END FINAL POSTPROCESSING at n=          416
+END FINAL POSTPROCESSING at n=          519
 __________________________________________
-DONE :  noda2002.fdtd UNTIL n=         416
+DONE :  noda2002.fdtd UNTIL n=         519
 __________________________________________
-BEGUN noda2002.fdtd at 09/05/2025 , 18:01
-ENDED noda2002.fdtd at 09/05/2025 , 18:01
+BEGUN noda2002.fdtd at 11/05/2025 , 13:12
+ENDED noda2002.fdtd at 11/05/2025 , 13:12
 __________________________________________
 __________________________________________

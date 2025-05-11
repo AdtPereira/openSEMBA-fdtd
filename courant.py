@@ -1,5 +1,5 @@
 import numpy as np
-from scipy.constants import c, mu_0, epsilon_0
+from scipy.constants import c
 
 def courant_dt(dx, dy, dz, alfa=0, epsilon_r=1.0, mu_r=1.0):
     """
@@ -32,5 +32,5 @@ def courant_dt(dx, dy, dz, alfa=0, epsilon_r=1.0, mu_r=1.0):
     return 1 / (v * np.sqrt(inv_sum)) * (1 - alfa)
 
 # Exemplo de uso
-delta_t = courant_dt(dx=0.002, dy=0.002, dz=0.002, alfa=0, epsilon_r=1, mu_r=1)
+delta_t = courant_dt(dx=0.050, dy=0.050, dz=0.050, alfa=0.001, epsilon_r=1, mu_r=1)
 print(f"Passo de tempo (delta_t): {delta_t:.6e} s")

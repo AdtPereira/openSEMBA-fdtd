@@ -2,7 +2,7 @@
   <UnstructuredGrid NumberOfPoints="4" NumberOfCells="1" >
       <Points>
         <DataArray type="Float32" NumberOfComponents="3" format="ascii">
-          0 0 0 2000 0 0 2000 6000 0 0 6000 0
+          950 950 0 1050 950 0 1050 1050 0 950 1050 0
         </DataArray>
       </Points>
       <Cells>
