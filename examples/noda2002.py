@@ -1,8 +1,8 @@
 r"""
 cmd commands:
-    conda activate semba-fdtd
-    cd C:\Users\adilt\OneDrive\05_GIT\openSEMBA\fdtd
-    python examples/noda2002.py
+conda activate semba-fdtd
+cd C:\Users\adilt\OneDrive\05_GIT\openSEMBA\fdtd
+python examples/noda2002.py
 
 Simulação FDTD para cálculo da impedância de surto de uma configuração
 de horizontal de condutor.
@@ -255,6 +255,7 @@ def run_simulation(
     if not JSON_FILE.is_file():
         raise FileNotFoundError(JSON_FILE)
 
+    # 1) Executa o solver SEMBA-FDTD
     solver = FDTD(input_filename=str(JSON_FILE.resolve()),
               path_to_exe=str(SEMBA_EXE),
               flags=['-stableradholland'])
@@ -263,8 +264,15 @@ def run_simulation(
     if not solver.hasFinishedSuccessfully():
         raise RuntimeError("Solver não terminou com sucesso. Verifique o log.")
 
-    probes = {}
+    # 2) Limpa arquivos antigos em OUTPUTS
+    for f in OUTPUTS.glob("*.dat"):
+        try:
+            f.unlink()
+            print(f"🧹 Arquivo antigo removido: {f.name}")
+        except Exception as e:
+            print(f"⚠ Falha ao remover '{f.name}': {e}")
 
+    probes = {}
     for fname in os.listdir(CASES):
         src = (CASES / fname).resolve()
 
@@ -404,7 +412,7 @@ def extract_wire_probe_data(
     wire_data: Dict[str, Dict[str, np.ndarray]] = {}
 
     for fname in os.listdir(OUTPUTS):
-        if fname.endswith('.dat') and 'fdtd_Wire_probe_' in fname:
+        if fname.endswith('.dat') and 'fdtd_Wire probe' in fname:
             path = os.path.join(OUTPUTS, fname)
             # carrega tudo, pulando o header de uma linha
             arr = np.loadtxt(path, skiprows=1)
@@ -455,7 +463,7 @@ def extract_bulk_probe_data(
     bulk_data: Dict[str, Dict[str, np.ndarray]] = {}
 
     for fname in os.listdir(OUTPUTS):
-        if fname.endswith('.dat') and 'fdtd_Bulk_probe_' in fname:
+        if fname.endswith('.dat') and 'fdtd_Bulk probe' in fname:
             path = os.path.join(OUTPUTS, fname)
             # carrega tudo, pulando o header de uma linha
             arr = np.loadtxt(path, skiprows=1)
@@ -531,8 +539,8 @@ def plot_current_data(
 
     # plot
     plt.figure(figsize=(8, 5))
-    for wire_name, d in wire_dict.items():
-        plt.plot(d['time'][:-1]*1e9, -d['current'][:-1], label=wire_name.replace('.dat', ''))
+    # for wire_name, d in wire_dict.items():
+    #     plt.plot(d['time'][:-1]*1e9, d['current'][:-1], label=wire_name.replace('.dat', ''))
     for bulk_name, d in bulk_dict.items():
         plt.plot(d['time'][:-1]*1e9, d['current'][:-1], label=bulk_name.replace('.dat', ''))
 
@@ -554,18 +562,16 @@ def plot_voltage_data(
 ) -> None:
     """
     Compara a curva de excitação (.exc) com a coluna E_dl de todas as sondas
-    de fio encontradas em `outputs_folder`.
+    de fio encontradas em `OUTPUTS`.
+
+    Além disso, plota a soma de todas as curvas E_dl para comparação.
 
     Parâmetros
     ----------
-    excitation_path : Path
-        Caminho para o arquivo .exc contendo duas colunas (tempo, amplitude).
-    outputs_folder : Path
-        Pasta onde estão os .dat das sondas de corrente (padrão: OUTPUTS).
-    skiprows_exc : int
-        Quantas linhas de cabeçalho pular ao ler o .exc (padrão: 1).
+    json_file_name : str
+        Nome do arquivo JSON com os pontos digitalizados da curva de Noda (2002).
     """
-    # 1) extrai pontos de referência
+    # 1) Extrai pontos de referência digitalizados
     noda_time_ns, noda_voltage = extract_webdigitized_data(json_file_name)
 
     # 2) Carrega E_dl de cada sonda
@@ -574,10 +580,42 @@ def plot_voltage_data(
         raise RuntimeError(f"Nenhum arquivo de fio encontrado em '{OUTPUTS}'")
 
     plt.figure(figsize=(8, 5))
-    plt.scatter(noda_time_ns, noda_voltage, s=12, marker='o', label='Noda (2002)', color='red')
-    for fname, cols in wire_data.items():
-        plt.plot(cols['time'][:-1]*1e9, cols['E_dl'][:-1], label=fname.replace('.dat', ''))
 
+    # Plota os pontos digitalizados (referência)
+    plt.scatter(noda_time_ns, noda_voltage, s=12, marker='o', label='Noda (2002)', color='red')
+
+    # Variável acumuladora para soma de E_dl
+    E_dl_sum = None
+    t_ref_ns = None  # tempo de referência (em ns)
+
+    # Plota E_dl de cada sonda
+    for fname, cols in wire_data.items():
+        t_ns = cols['time'] * 1e9
+        E_dl = cols['E_dl']
+
+        # Atualiza tempo de referência
+        if t_ref_ns is None:
+            t_ref_ns = t_ns
+
+        # Alinha tamanho se necessário
+        min_len = min(len(t_ns), len(E_dl))
+        t_ns = t_ns[:min_len]
+        E_dl = E_dl[:min_len]
+
+        # Soma acumulada
+        if E_dl_sum is None:
+            E_dl_sum = E_dl.copy()
+        else:
+            E_dl_sum[:min_len] += E_dl
+
+        # Plota individualmente
+        plt.plot(t_ns, E_dl, label=fname.replace('.dat', ''))
+
+    # Plota a curva somada
+    if E_dl_sum is not None:
+        plt.plot(t_ref_ns[:len(E_dl_sum)], E_dl_sum, label='Soma E_dl', color='black', linewidth=2, linestyle='--')
+
+    # Ajustes do gráfico
     plt.xlabel('Time (ns)')
     plt.ylabel('Voltage (V)')
     plt.title('Fig. 6b. Voltage waveform in wire probe')
@@ -597,6 +635,9 @@ def compute_surge_impedance(
     """
     Calcula a razão média entre E_dl e corrente no intervalo de tempo especificado.
 
+    Inclui também a impedância de surto total usando a soma de E_dl e corrente
+    de todas as sondas.
+
     Parâmetros
     ----------
     t_start_ns : float
@@ -608,12 +649,16 @@ def compute_surge_impedance(
     -------
     Dict[str, float]
         Dicionário com os nomes das sondas e suas respectivas razões médias V/I (Ohms).
+        Inclui a chave especial 'TOTAL' para a impedância de surto total somada.
     """
     data_dict = extract_wire_probe_data()
     if not data_dict:
         raise RuntimeError("Nenhum arquivo de corrente foi encontrado.")
 
     zs = {}
+    total_voltage = None
+    time_ref = None
+
     for fname, data in data_dict.items():
         t_ns = data['time'] * 1e9
         mask = (t_ns >= t_start_ns) & (t_ns <= t_end_ns)
@@ -622,19 +667,38 @@ def compute_surge_impedance(
         if not np.any(mask):
             continue
 
-        abs_mean_voltage = abs(np.mean(data['E_dl'][mask]))
-        abs_mean_current = abs(np.mean(data['current'][mask]))
+        v_avg = np.mean(data['E_dl'][mask])
+        i_avg = np.mean(data['current'][mask])
+
+        abs_mean_voltage = abs(v_avg)
+        abs_mean_current = abs(i_avg)
 
         if np.isclose(abs_mean_current, 0):
             zs[fname] = np.nan
         else:
             zs[fname] = abs_mean_voltage / abs_mean_current
 
-        # Saída de dados
-        print(f"Arquivo: {fname}")
-        print(f"  V_avg: {abs_mean_voltage:.2f} V")
-        print(f"  I_avg: {abs_mean_current:.2f} A")
-        print(f"    Z_s: {zs[fname]:.0f} Ohms")
+        # Impressão individual
+        print(f"Arquivo: {fname}: V_avg: {abs_mean_voltage:.2f} V")
+
+        # Acumula para soma total
+        if total_voltage is None:
+            total_voltage = data['E_dl'].copy()
+            time_ref = t_ns
+        else:
+            min_len = min(len(total_voltage), len(data['E_dl']))
+            total_voltage[:min_len] += data['E_dl'][:min_len]
+
+    # Cálculo da impedância total
+    if total_voltage is not None:
+        total_mask = (time_ref >= t_start_ns) & (time_ref <= t_end_ns)
+        v_sum_avg = abs(np.mean(total_voltage[total_mask]))
+        zs['TOTAL'] = v_sum_avg / abs_mean_current
+
+        print("\nTOTAL:")
+        print(f" V_sum_avg: {v_sum_avg:.2f} V")
+        print(f"     I_avg: {abs_mean_current:.2f} A")
+        print(f"       Z_s: {zs['TOTAL']:.0f} Ohms")
 
     return zs
 
@@ -644,7 +708,7 @@ if __name__ == '__main__':
     copy_json_file_from_ugrfdtd()
 
     ## Cria o arquivo de excitação com base no JSON
-    create_excitation_file(json_file_name='noda2002_fig_6a.json')
+    create_excitation_file(json_file_name='noda2002_fig_6a.json', auto_plot=False)
     run_probes = run_simulation()
 
     ## Compute the surge impedance

@@ -1,0 +1,80 @@
+=========================
+SEMBA-FDTD SOLVER
+=========================
+__________________________________________
+SEMBA-FDTD. Release build, compiled on: Apr 16 2025 12:57:22
+__________________________________________
+All rights reserved by the University of Granada (Spain)
+Contact person: Salvador G. Garcia <salva@ugr.es>
+
+__________________________________________
+Compiled WITH .h5 HDF support
+Compiled WITH SMBJSON support
+__________________________________________
+Launched on              15/05/2025 12:54
+Switches "C:\Program Files\FreeCAD 0.21\Mod\ElemwaveWorkbench\semba\semba-fdtd.exe" -i Noda2002.fdtd.json
+__________________________________________
+Closing warning file. Number of messages:            0
+__________________________________________
+Compiled with Single precision (real*4)
+__________________________________________
+Launched on              15/05/2025 12:54
+__________________________________________
+Launched with total options
+"C:\Program Files\FreeCAD 0.21\Mod\ElemwaveWorkbench\semba\semba-fdtd.exe" -i Noda2002.fdtd.json
+If later resuming use compulsory options
+mpirun -n    1
+__________________________________________
+INIT conversion internal ASCII => Binary
+__________________________________________
+__________________________________________
+__________________________________________
+CFLN=   0.3999999
+__________________________________________
+__________________________________________
+Deltat=   7.703330334729586E-011
+__________________________________________
+INIT NFDE --------> GEOM
+INIT UPDATING SHARED INFO. This process may take time!
+Launch with -noshared to skip this process (just relevant for structured NIBC CFCs and Anisot.)
+[OK] END UPDATING SHARED INFO
+[OK] ENDED NFDE --------> GEOM
+!SLICES_40
+_________Spanning from z=    -10 to z=     30
+[OK] Ended conversion internal ASCII => Binary
+[OK] Ended Conformal Mesh
+__________________________________________
+Solver launched with options:
+---> l%mibc    solver for NIBC multilayer: F
+---> l%ade     solver for ADC multilayer: F
+---> sgbc    solver for multilayer: T
+---> sgbc DISPERSIVE solver for multilayer: F
+---> sgbc Crank-Nicolson solver for multilayer: T
+---> sgbc Depth: -1
+---> sgbc Freq: 1.0000000E+09
+---> sgbc Resol: 1.000000
+---> l%skindepthpre preprocessing for multilayer: F
+---> Conformal file external: F
+---> Conformal solver: F
+---> Conformal thin-gap solver: F
+---> DMMA thin-gap solver: T
+---> Wire model: holland
+---> Inductance model: boutayeb
+---> Holland -l%stableradholland automatic correction switch: F
+---> Thin-wire double-tails removed: T
+---> Thin-wire -l%fieldtotl experimental switch: F
+__________________________________________
+Init Reporting...
+__________________________________________
+[OK]
+Init Other Borders...
+----> no PEC, PMC or periodic Borders found
+Init CPML Borders...
+----> there are CPML Borders
+Init PML Bodies...
+----> no PML Bodies found
+Init Mur Borders...
+----> no Mur Borders found
+Init Lumped Elements...
+----> no lumped Structured elements found
+Init Holland Wires...

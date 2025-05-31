@@ -1,0 +1,26 @@
+csa.fdtd_Point probe A2_Ex_70_20_0.dat
+csa.fdtd_Point probe A2_Ey_70_20_0.dat
+csa.fdtd_Point probe A2_Ez_70_20_0.dat
+csa.fdtd_Point probe B2_Ex_120_20_0.dat
+csa.fdtd_Point probe B2_Ey_120_20_0.dat
+csa.fdtd_Point probe B2_Ez_120_20_0.dat
+csa.fdtd_Point probe C2_Ex_170_20_0.dat
+csa.fdtd_Point probe C2_Ey_170_20_0.dat
+csa.fdtd_Point probe C2_Ez_170_20_0.dat
+csa.fdtd_Point probe A1_Ex_45_20_25.dat
+csa.fdtd_Point probe A1_Ey_45_20_25.dat
+csa.fdtd_Point probe A1_Ez_45_20_25.dat
+csa.fdtd_Point probe B1_Ex_70_20_50.dat
+csa.fdtd_Point probe B1_Ey_70_20_50.dat
+csa.fdtd_Point probe B1_Ez_70_20_50.dat
+csa.fdtd_Point probe C1_Ex_95_20_75.dat
+csa.fdtd_Point probe C1_Ey_95_20_75.dat
+csa.fdtd_Point probe C1_Ez_95_20_75.dat
+csa.fdtd_Bulk probe 0 m_Jz_19_19_0__20_20_0.dat
+csa.fdtd_Bulk probe 5 m_Jz_19_19_5__20_20_5.dat
+csa.fdtd_Bulk probe 10 m_Jz_19_19_10__20_20_10.dat
+csa.fdtd_Bulk probe 20 m_Jz_19_19_20__20_20_20.dat
+csa.fdtd_Bulk probe 50 m_Jz_19_19_50__20_20_50.dat
+csa.fdtd_Bulk probe 100 m_Jz_19_19_100__20_20_100.dat
+csa.fdtd_Bulk probe 200 m_Jz_19_19_200__20_20_200.dat
+!END 

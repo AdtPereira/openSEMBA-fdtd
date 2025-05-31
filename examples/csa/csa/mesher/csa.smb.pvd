@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<VTKFile type="Collection" version="0.1" byte_order="LittleEndian" compressor="vtkZLibDataCompressor">
+  <Collection>
+    <DataSet group="PEC@Plane" part="0" file="csa.smb.vtk\PEC@Plane.vtu" />
+    <DataSet group="Short@Wire" part="1" file="csa.smb.vtk\Short@Wire.vtu" />
+    <DataSet group="Open@Wire" part="2" file="csa.smb.vtk\Open@Wire.vtu" />
+    <DataSet group="Wirematerial_1@Wire" part="3" file="csa.smb.vtk\Wirematerial_1@Wire.vtu" />
+    <DataSet group="EMSource_Generator" part="4" file="csa.smb.vtk\EMSource_Generator.vtu" />
+    <DataSet group="OutRq_On_Point_Point_probe_A2_0" part="5" file="csa.smb.vtk\OutRq_On_Point_Point_probe_A2_0.vtu" />
+    <DataSet group="OutRq_On_Point_Point_probe_B2_0" part="6" file="csa.smb.vtk\OutRq_On_Point_Point_probe_B2_0.vtu" />
+    <DataSet group="OutRq_On_Point_Point_probe_C2_0" part="7" file="csa.smb.vtk\OutRq_On_Point_Point_probe_C2_0.vtu" />
+    <DataSet group="OutRq_On_Point_Point_probe_A1_0" part="8" file="csa.smb.vtk\OutRq_On_Point_Point_probe_A1_0.vtu" />
+    <DataSet group="OutRq_On_Point_Point_probe_B1_0" part="9" file="csa.smb.vtk\OutRq_On_Point_Point_probe_B1_0.vtu" />
+    <DataSet group="OutRq_On_Point_Point_probe_C1_0" part="10" file="csa.smb.vtk\OutRq_On_Point_Point_probe_C1_0.vtu" />
+    <DataSet group="OutRq_Bulk_Current_Bulk_probe_0_m" part="11" file="csa.smb.vtk\OutRq_Bulk_Current_Bulk_probe_0_m.vtu" />
+    <DataSet group="OutRq_Bulk_Current_Bulk_probe_5_m" part="12" file="csa.smb.vtk\OutRq_Bulk_Current_Bulk_probe_5_m.vtu" />
+    <DataSet group="OutRq_Bulk_Current_Bulk_probe_10_m" part="13" file="csa.smb.vtk\OutRq_Bulk_Current_Bulk_probe_10_m.vtu" />
+    <DataSet group="OutRq_Bulk_Current_Bulk_probe_20_m" part="14" file="csa.smb.vtk\OutRq_Bulk_Current_Bulk_probe_20_m.vtu" />
+    <DataSet group="OutRq_Bulk_Current_Bulk_probe_50_m" part="15" file="csa.smb.vtk\OutRq_Bulk_Current_Bulk_probe_50_m.vtu" />
+    <DataSet group="OutRq_Bulk_Current_Bulk_probe_100_m" part="16" file="csa.smb.vtk\OutRq_Bulk_Current_Bulk_probe_100_m.vtu" />
+    <DataSet group="OutRq_Bulk_Current_Bulk_probe_200_m" part="17" file="csa.smb.vtk\OutRq_Bulk_Current_Bulk_probe_200_m.vtu" />
+  </Collection>
+</VTKFile>

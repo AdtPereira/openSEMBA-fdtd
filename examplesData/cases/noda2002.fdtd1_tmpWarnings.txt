@@ -1,0 +1,188 @@
+(    1/    1) pre1_INFO:  Bounding Box for WIREs min_x,min_y,min_z, MAX_x,MAX_y,MAX_z          20          20           2          20          99          12
+(    1/    1) ----------------------------------------------------------------
+(    1/    1) wir0_WARNING: NO de-embedding a terminal/non-terminal segment in Lossless medium         9       -1       20       60       12        2
+(    1/    1) wir0_WARNING: NO de-embedding a terminal/non-terminal segment in Lossless medium         9       -1       20       61       12        2
+(    1/    1) wir0_WARNING: NO de-embedding a terminal/non-terminal segment in Lossless medium         9       -1       20       62       12        2
+(    1/    1) wir0_WARNING: NO de-embedding a terminal/non-terminal segment in Lossless medium         9       -1       20       63       12        2
+(    1/    1) wir0_WARNING: NO de-embedding a terminal/non-terminal segment in Lossless medium         9       -1       20       64       12        2
+(    1/    1) wir0_WARNING: NO de-embedding a terminal/non-terminal segment in Lossless medium         9       -1       20       65       12        2
+(    1/    1) wir0_WARNING: NO de-embedding a terminal/non-terminal segment in Lossless medium         9       -1       20       66       12        2
+(    1/    1) wir0_WARNING: NO de-embedding a terminal/non-terminal segment in Lossless medium         9       -1       20       67       12        2
+(    1/    1) wir0_WARNING: NO de-embedding a terminal/non-terminal segment in Lossless medium         9       -1       20       68       12        2
+(    1/    1) wir0_WARNING: NO de-embedding a terminal/non-terminal segment in Lossless medium         9       -1       20       69       12        2
+(    1/    1) wir0_WARNING: NO de-embedding a terminal/non-terminal segment in Lossless medium         9       -1       20       70       12        2
+(    1/    1) wir1_WARNING: Series RLC in terminal LeftEnd segment       1     20     20      2      3
+(    1/    1) wir1_WARNING:  Lossy, pec,  2.: A wire is connected at some ending both to a lossy and to a PEC edge. Assuming it PEC            20          20          12  0.000000000000000E+000 F F F F
+(    1/    1) wir1_WARNING:  Lossy, pec,  2.: A wire is connected at some ending both to a lossy and to a PEC edge. Assuming it PEC            20          21          12  0.000000000000000E+000 F F F F
+(    1/    1) wir1_WARNING:  Lossy, pec,  2.: A wire is connected at some ending both to a lossy and to a PEC edge. Assuming it PEC            20          22          12  0.000000000000000E+000 F F F F
+(    1/    1) wir1_WARNING:  Lossy, pec,  2.: A wire is connected at some ending both to a lossy and to a PEC edge. Assuming it PEC            20          23          12  0.000000000000000E+000 F F F F
+(    1/    1) wir1_WARNING:  Lossy, pec,  2.: A wire is connected at some ending both to a lossy and to a PEC edge. Assuming it PEC            20          24          12  0.000000000000000E+000 F F F F
+(    1/    1) wir1_WARNING:  Lossy, pec,  2.: A wire is connected at some ending both to a lossy and to a PEC edge. Assuming it PEC            20          25          12  0.000000000000000E+000 F F F F
+(    1/    1) wir1_WARNING:  Lossy, pec,  2.: A wire is connected at some ending both to a lossy and to a PEC edge. Assuming it PEC            20          26          12  0.000000000000000E+000 F F F F
+(    1/    1) wir1_WARNING:  Lossy, pec,  2.: A wire is connected at some ending both to a lossy and to a PEC edge. Assuming it PEC            20          27          12  0.000000000000000E+000 F F F F
+(    1/    1) wir1_WARNING:  Lossy, pec,  2.: A wire is connected at some ending both to a lossy and to a PEC edge. Assuming it PEC            20          28          12  0.000000000000000E+000 F F F F
+(    1/    1) wir1_WARNING:  Lossy, pec,  2.: A wire is connected at some ending both to a lossy and to a PEC edge. Assuming it PEC            20          29          12  0.000000000000000E+000 F F F F
+(    1/    1) wir1_WARNING:  Lossy, pec,  2.: A wire is connected at some ending both to a lossy and to a PEC edge. Assuming it PEC            20          30          12  0.000000000000000E+000 F F F F
+(    1/    1) wir1_WARNING:  Lossy, pec,  2.: A wire is connected at some ending both to a lossy and to a PEC edge. Assuming it PEC            20          31          12  0.000000000000000E+000 F F F F
+(    1/    1) wir1_WARNING:  Lossy, pec,  2.: A wire is connected at some ending both to a lossy and to a PEC edge. Assuming it PEC            20          32          12  0.000000000000000E+000 F F F F
+(    1/    1) wir1_WARNING:  Lossy, pec,  2.: A wire is connected at some ending both to a lossy and to a PEC edge. Assuming it PEC            20          33          12  0.000000000000000E+000 F F F F
+(    1/    1) wir1_WARNING:  Lossy, pec,  2.: A wire is connected at some ending both to a lossy and to a PEC edge. Assuming it PEC            20          34          12  0.000000000000000E+000 F F F F
+(    1/    1) wir1_WARNING:  Lossy, pec,  2.: A wire is connected at some ending both to a lossy and to a PEC edge. Assuming it PEC            20          35          12  0.000000000000000E+000 F F F F
+(    1/    1) wir1_WARNING:  Lossy, pec,  2.: A wire is connected at some ending both to a lossy and to a PEC edge. Assuming it PEC            20          36          12  0.000000000000000E+000 F F F F
+(    1/    1) wir1_WARNING:  Lossy, pec,  2.: A wire is connected at some ending both to a lossy and to a PEC edge. Assuming it PEC            20          37          12  0.000000000000000E+000 F F F F
+(    1/    1) wir1_WARNING:  Lossy, pec,  2.: A wire is connected at some ending both to a lossy and to a PEC edge. Assuming it PEC            20          38          12  0.000000000000000E+000 F F F F
+(    1/    1) wir1_WARNING:  Lossy, pec,  2.: A wire is connected at some ending both to a lossy and to a PEC edge. Assuming it PEC            20          39          12  0.000000000000000E+000 F F F F
+(    1/    1) wir1_WARNING:  Lossy, pec,  2.: A wire is connected at some ending both to a lossy and to a PEC edge. Assuming it PEC            20          40          12  0.000000000000000E+000 F F F F
+(    1/    1) wir1_WARNING:  Lossy, pec,  2.: A wire is connected at some ending both to a lossy and to a PEC edge. Assuming it PEC            20          41          12  0.000000000000000E+000 F F F F
+(    1/    1) wir1_WARNING:  Lossy, pec,  2.: A wire is connected at some ending both to a lossy and to a PEC edge. Assuming it PEC            20          42          12  0.000000000000000E+000 F F F F
+(    1/    1) wir1_WARNING:  Lossy, pec,  2.: A wire is connected at some ending both to a lossy and to a PEC edge. Assuming it PEC            20          43          12  0.000000000000000E+000 F F F F
+(    1/    1) wir1_WARNING:  Lossy, pec,  2.: A wire is connected at some ending both to a lossy and to a PEC edge. Assuming it PEC            20          44          12  0.000000000000000E+000 F F F F
+(    1/    1) wir1_WARNING:  Lossy, pec,  2.: A wire is connected at some ending both to a lossy and to a PEC edge. Assuming it PEC            20          45          12  0.000000000000000E+000 F F F F
+(    1/    1) wir1_WARNING:  Lossy, pec,  2.: A wire is connected at some ending both to a lossy and to a PEC edge. Assuming it PEC            20          46          12  0.000000000000000E+000 F F F F
+(    1/    1) wir1_WARNING:  Lossy, pec,  2.: A wire is connected at some ending both to a lossy and to a PEC edge. Assuming it PEC            20          47          12  0.000000000000000E+000 F F F F
+(    1/    1) wir1_WARNING:  Lossy, pec,  2.: A wire is connected at some ending both to a lossy and to a PEC edge. Assuming it PEC            20          48          12  0.000000000000000E+000 F F F F
+(    1/    1) wir1_WARNING:  Lossy, pec,  2.: A wire is connected at some ending both to a lossy and to a PEC edge. Assuming it PEC            20          49          12  0.000000000000000E+000 F F F F
+(    1/    1) wir1_WARNING:  Lossy, pec,  2.: A wire is connected at some ending both to a lossy and to a PEC edge. Assuming it PEC            20          50          12  0.000000000000000E+000 F F F F
+(    1/    1) wir1_WARNING:  Lossy, pec,  2.: A wire is connected at some ending both to a lossy and to a PEC edge. Assuming it PEC            20          51          12  0.000000000000000E+000 F F F F
+(    1/    1) wir1_WARNING:  Lossy, pec,  2.: A wire is connected at some ending both to a lossy and to a PEC edge. Assuming it PEC            20          52          12  0.000000000000000E+000 F F F F
+(    1/    1) wir1_WARNING:  Lossy, pec,  2.: A wire is connected at some ending both to a lossy and to a PEC edge. Assuming it PEC            20          53          12  0.000000000000000E+000 F F F F
+(    1/    1) wir1_WARNING:  Lossy, pec,  2.: A wire is connected at some ending both to a lossy and to a PEC edge. Assuming it PEC            20          54          12  0.000000000000000E+000 F F F F
+(    1/    1) wir1_WARNING:  Lossy, pec,  2.: A wire is connected at some ending both to a lossy and to a PEC edge. Assuming it PEC            20          55          12  0.000000000000000E+000 F F F F
+(    1/    1) wir1_WARNING:  Lossy, pec,  2.: A wire is connected at some ending both to a lossy and to a PEC edge. Assuming it PEC            20          56          12  0.000000000000000E+000 F F F F
+(    1/    1) wir1_WARNING:  Lossy, pec,  2.: A wire is connected at some ending both to a lossy and to a PEC edge. Assuming it PEC            20          57          12  0.000000000000000E+000 F F F F
+(    1/    1) wir1_WARNING:  Lossy, pec,  2.: A wire is connected at some ending both to a lossy and to a PEC edge. Assuming it PEC            20          58          12  0.000000000000000E+000 F F F F
+(    1/    1) wir1_WARNING:  Lossy, pec,  2.: A wire is connected at some ending both to a lossy and to a PEC edge. Assuming it PEC            20          59          12  0.000000000000000E+000 F F F F
+(    1/    1) wir1_WARNING:  Lossy, pec,  2.: A wire is connected at some ending both to a lossy and to a PEC edge. Assuming it PEC            20          20           2   59171596.0000000      F F F F
+(    1/    1) wir1_WARNING:  Lossy, pec,  2.: A wire is connected at some ending both to a lossy and to a PEC edge. Assuming it PEC            20          20           3  0.000000000000000E+000 F F F F
+(    1/    1) wir1_WARNING:  Lossy, pec,  2.: A wire is connected at some ending both to a lossy and to a PEC edge. Assuming it PEC            20          20           4  0.000000000000000E+000 F F F F
+(    1/    1) wir1_WARNING:  Lossy, pec,  2.: A wire is connected at some ending both to a lossy and to a PEC edge. Assuming it PEC            20          20           5  0.000000000000000E+000 F F F F
+(    1/    1) wir1_WARNING:  Lossy, pec,  2.: A wire is connected at some ending both to a lossy and to a PEC edge. Assuming it PEC            20          20           6  0.000000000000000E+000 F F F F
+(    1/    1) wir1_WARNING:  Lossy, pec,  2.: A wire is connected at some ending both to a lossy and to a PEC edge. Assuming it PEC            20          20           7  0.000000000000000E+000 F F F F
+(    1/    1) wir1_WARNING:  Lossy, pec,  2.: A wire is connected at some ending both to a lossy and to a PEC edge. Assuming it PEC            20          20           8  0.000000000000000E+000 F F F F
+(    1/    1) wir1_WARNING:  Lossy, pec,  2.: A wire is connected at some ending both to a lossy and to a PEC edge. Assuming it PEC            20          20           9  0.000000000000000E+000 F F F F
+(    1/    1) wir1_WARNING:  Lossy, pec,  2.: A wire is connected at some ending both to a lossy and to a PEC edge. Assuming it PEC            20          20          10  0.000000000000000E+000 F F F F
+(    1/    1) wir1_WARNING:  Lossy, pec,  2.: A wire is connected at some ending both to a lossy and to a PEC edge. Assuming it PEC            20          20          11  0.000000000000000E+000 F F F F
+(    1/    1) ----------------------------------------------------------------
+(    1/    1) ----------------------------------------------------------------
+(    1/    1) wir1_WARNING: Node      20     21     12with FRONT Mur conditions
+(    1/    1) wir1_WARNING: Node      20     21     12is both a non-open and a Mur
+(    1/    1) wir1_WARNING: Node      20     20     12with FRONT Mur conditions
+(    1/    1) wir1_WARNING: Node      20     20     12is both a non-open and a Mur
+(    1/    1) wir1_WARNING: Node      20     22     12with FRONT Mur conditions
+(    1/    1) wir1_WARNING: Node      20     22     12is both a non-open and a Mur
+(    1/    1) wir1_WARNING: Node      20     23     12with FRONT Mur conditions
+(    1/    1) wir1_WARNING: Node      20     23     12is both a non-open and a Mur
+(    1/    1) wir1_WARNING: Node      20     24     12with FRONT Mur conditions
+(    1/    1) wir1_WARNING: Node      20     24     12is both a non-open and a Mur
+(    1/    1) wir1_WARNING: Node      20     25     12with FRONT Mur conditions
+(    1/    1) wir1_WARNING: Node      20     25     12is both a non-open and a Mur
+(    1/    1) wir1_WARNING: Node      20     26     12with FRONT Mur conditions
+(    1/    1) wir1_WARNING: Node      20     26     12is both a non-open and a Mur
+(    1/    1) wir1_WARNING: Node      20     27     12with FRONT Mur conditions
+(    1/    1) wir1_WARNING: Node      20     27     12is both a non-open and a Mur
+(    1/    1) wir1_WARNING: Node      20     28     12with FRONT Mur conditions
+(    1/    1) wir1_WARNING: Node      20     28     12is both a non-open and a Mur
+(    1/    1) wir1_WARNING: Node      20     29     12with FRONT Mur conditions
+(    1/    1) wir1_WARNING: Node      20     29     12is both a non-open and a Mur
+(    1/    1) wir1_WARNING: Node      20     30     12with FRONT Mur conditions
+(    1/    1) wir1_WARNING: Node      20     30     12is both a non-open and a Mur
+(    1/    1) wir1_WARNING: Node      20     31     12with FRONT Mur conditions
+(    1/    1) wir1_WARNING: Node      20     31     12is both a non-open and a Mur
+(    1/    1) wir1_WARNING: Node      20     32     12with FRONT Mur conditions
+(    1/    1) wir1_WARNING: Node      20     32     12is both a non-open and a Mur
+(    1/    1) wir1_WARNING: Node      20     33     12with FRONT Mur conditions
+(    1/    1) wir1_WARNING: Node      20     33     12is both a non-open and a Mur
+(    1/    1) wir1_WARNING: Node      20     34     12with FRONT Mur conditions
+(    1/    1) wir1_WARNING: Node      20     34     12is both a non-open and a Mur
+(    1/    1) wir1_WARNING: Node      20     35     12with FRONT Mur conditions
+(    1/    1) wir1_WARNING: Node      20     35     12is both a non-open and a Mur
+(    1/    1) wir1_WARNING: Node      20     36     12with FRONT Mur conditions
+(    1/    1) wir1_WARNING: Node      20     36     12is both a non-open and a Mur
+(    1/    1) wir1_WARNING: Node      20     37     12with FRONT Mur conditions
+(    1/    1) wir1_WARNING: Node      20     37     12is both a non-open and a Mur
+(    1/    1) wir1_WARNING: Node      20     38     12with FRONT Mur conditions
+(    1/    1) wir1_WARNING: Node      20     38     12is both a non-open and a Mur
+(    1/    1) wir1_WARNING: Node      20     39     12with FRONT Mur conditions
+(    1/    1) wir1_WARNING: Node      20     39     12is both a non-open and a Mur
+(    1/    1) wir1_WARNING: Node      20     40     12with FRONT Mur conditions
+(    1/    1) wir1_WARNING: Node      20     40     12is both a non-open and a Mur
+(    1/    1) wir1_WARNING: Node      20     41     12with FRONT Mur conditions
+(    1/    1) wir1_WARNING: Node      20     41     12is both a non-open and a Mur
+(    1/    1) wir1_WARNING: Node      20     42     12with FRONT Mur conditions
+(    1/    1) wir1_WARNING: Node      20     42     12is both a non-open and a Mur
+(    1/    1) wir1_WARNING: Node      20     43     12with FRONT Mur conditions
+(    1/    1) wir1_WARNING: Node      20     43     12is both a non-open and a Mur
+(    1/    1) wir1_WARNING: Node      20     44     12with FRONT Mur conditions
+(    1/    1) wir1_WARNING: Node      20     44     12is both a non-open and a Mur
+(    1/    1) wir1_WARNING: Node      20     45     12with FRONT Mur conditions
+(    1/    1) wir1_WARNING: Node      20     45     12is both a non-open and a Mur
+(    1/    1) wir1_WARNING: Node      20     46     12with FRONT Mur conditions
+(    1/    1) wir1_WARNING: Node      20     46     12is both a non-open and a Mur
+(    1/    1) wir1_WARNING: Node      20     47     12with FRONT Mur conditions
+(    1/    1) wir1_WARNING: Node      20     47     12is both a non-open and a Mur
+(    1/    1) wir1_WARNING: Node      20     48     12with FRONT Mur conditions
+(    1/    1) wir1_WARNING: Node      20     48     12is both a non-open and a Mur
+(    1/    1) wir1_WARNING: Node      20     49     12with FRONT Mur conditions
+(    1/    1) wir1_WARNING: Node      20     49     12is both a non-open and a Mur
+(    1/    1) wir1_WARNING: Node      20     50     12with FRONT Mur conditions
+(    1/    1) wir1_WARNING: Node      20     50     12is both a non-open and a Mur
+(    1/    1) wir1_WARNING: Node      20     51     12with FRONT Mur conditions
+(    1/    1) wir1_WARNING: Node      20     51     12is both a non-open and a Mur
+(    1/    1) wir1_WARNING: Node      20     52     12with FRONT Mur conditions
+(    1/    1) wir1_WARNING: Node      20     52     12is both a non-open and a Mur
+(    1/    1) wir1_WARNING: Node      20     53     12with FRONT Mur conditions
+(    1/    1) wir1_WARNING: Node      20     53     12is both a non-open and a Mur
+(    1/    1) wir1_WARNING: Node      20     54     12with FRONT Mur conditions
+(    1/    1) wir1_WARNING: Node      20     54     12is both a non-open and a Mur
+(    1/    1) wir1_WARNING: Node      20     55     12with FRONT Mur conditions
+(    1/    1) wir1_WARNING: Node      20     55     12is both a non-open and a Mur
+(    1/    1) wir1_WARNING: Node      20     56     12with FRONT Mur conditions
+(    1/    1) wir1_WARNING: Node      20     56     12is both a non-open and a Mur
+(    1/    1) wir1_WARNING: Node      20     57     12with FRONT Mur conditions
+(    1/    1) wir1_WARNING: Node      20     57     12is both a non-open and a Mur
+(    1/    1) wir1_WARNING: Node      20     58     12with FRONT Mur conditions
+(    1/    1) wir1_WARNING: Node      20     58     12is both a non-open and a Mur
+(    1/    1) wir1_WARNING: Node      20     59     12with FRONT Mur conditions
+(    1/    1) wir1_WARNING: Node      20     59     12is both a non-open and a Mur
+(    1/    1) wir1_WARNING: Node      20     60     12with FRONT Mur conditions
+(    1/    1) wir1_WARNING: Node      20     60     12with RIGHT Mur conditions
+(    1/    1) wir1_WARNING: Node      20     60     12is both a non-open and a Mur
+(    1/    1) wir1_WARNING: Node      20     61     12with FRONT Mur conditions
+(    1/    1) wir1_WARNING: Node      20     61     12is both a non-open and a Mur
+(    1/    1) wir1_WARNING: Node      20     62     12with FRONT Mur conditions
+(    1/    1) wir1_WARNING: Node      20     62     12is both a non-open and a Mur
+(    1/    1) wir1_WARNING: Node      20     63     12with FRONT Mur conditions
+(    1/    1) wir1_WARNING: Node      20     63     12is both a non-open and a Mur
+(    1/    1) wir1_WARNING: Node      20     64     12with FRONT Mur conditions
+(    1/    1) wir1_WARNING: Node      20     64     12is both a non-open and a Mur
+(    1/    1) wir1_WARNING: Node      20     65     12with FRONT Mur conditions
+(    1/    1) wir1_WARNING: Node      20     65     12is both a non-open and a Mur
+(    1/    1) wir1_WARNING: Node      20     66     12with FRONT Mur conditions
+(    1/    1) wir1_WARNING: Node      20     66     12is both a non-open and a Mur
+(    1/    1) wir1_WARNING: Node      20     67     12with FRONT Mur conditions
+(    1/    1) wir1_WARNING: Node      20     67     12is both a non-open and a Mur
+(    1/    1) wir1_WARNING: Node      20     68     12with FRONT Mur conditions
+(    1/    1) wir1_WARNING: Node      20     68     12is both a non-open and a Mur
+(    1/    1) wir1_WARNING: Node      20     69     12with FRONT Mur conditions
+(    1/    1) wir1_WARNING: Node      20     69     12is both a non-open and a Mur
+(    1/    1) wir1_WARNING: Node      20     70     12with FRONT Mur conditions
+(    1/    1) wir1_WARNING: Node      20     70     12is both a non-open and a Mur
+(    1/    1) wir1_WARNING: Node      20     20      3with FRONT Mur conditions
+(    1/    1) wir1_WARNING: Node      20     20      3is both a non-open and a Mur
+(    1/    1) wir1_WARNING: Node      20     20      4with FRONT Mur conditions
+(    1/    1) wir1_WARNING: Node      20     20      4is both a non-open and a Mur
+(    1/    1) wir1_WARNING: Node      20     20      5with FRONT Mur conditions
+(    1/    1) wir1_WARNING: Node      20     20      5is both a non-open and a Mur
+(    1/    1) wir1_WARNING: Node      20     20      6with FRONT Mur conditions
+(    1/    1) wir1_WARNING: Node      20     20      6is both a non-open and a Mur
+(    1/    1) wir1_WARNING: Node      20     20      7with FRONT Mur conditions
+(    1/    1) wir1_WARNING: Node      20     20      7is both a non-open and a Mur
+(    1/    1) wir1_WARNING: Node      20     20      8with FRONT Mur conditions
+(    1/    1) wir1_WARNING: Node      20     20      8is both a non-open and a Mur
+(    1/    1) wir1_WARNING: Node      20     20      9with FRONT Mur conditions
+(    1/    1) wir1_WARNING: Node      20     20      9is both a non-open and a Mur
+(    1/    1) wir1_WARNING: Node      20     20     10with FRONT Mur conditions
+(    1/    1) wir1_WARNING: Node      20     20     10is both a non-open and a Mur
+(    1/    1) wir1_WARNING: Node      20     20     11with FRONT Mur conditions
+(    1/    1) wir1_WARNING: Node      20     20     11is both a non-open and a Mur
+(    1/    1) wir1_WARNING: Node      20     71     12with FRONT Mur conditions

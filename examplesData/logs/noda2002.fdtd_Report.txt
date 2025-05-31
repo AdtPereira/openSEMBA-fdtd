@@ -12,14 +12,14 @@ Compiled WITH .h5 HDF support
 Compiled WITH MTLN support
 Compiled WITH SMBJSON support
 __________________________________________
-Launched on              11/05/2025 13:12
+Launched on              15/05/2025 12:37
 Switches C:\Users\adilt\OneDrive\05_GIT\openSEMBA\fdtd\build\bin\semba-fdtd.exe -i noda2002.fdtd.json -stableradholland
 __________________________________________
 Closing warning file. Number of messages:            0
 __________________________________________
 Compiled with Single precision (real*4)
 __________________________________________
-Launched on              11/05/2025 13:12
+Launched on              15/05/2025 12:37
 __________________________________________
 Launched with total options
 C:\Users\adilt\OneDrive\05_GIT\openSEMBA\fdtd\build\bin\semba-fdtd.exe -i noda2002.fdtd.json -stableradholland
@@ -30,7 +30,7 @@ INIT conversion internal ASCII => Binary
 __________________________________________
 __________________________________________
 __________________________________________
-CFLN=   0.7999998
+CFLN=   0.3999999
 __________________________________________
 __________________________________________
 Deltat=   7.703330334729586E-011
@@ -40,8 +40,8 @@ INIT UPDATING SHARED INFO. This process may take time!
 Launch with -noshared to skip this process (just relevant for structured NIBC CFCs and Anisot.)
 [OK] END UPDATING SHARED INFO
 [OK] ENDED NFDE --------> GEOM
-!SLICES_68
-_________Spanning from z=    -10 to z=     58
+!SLICES_40
+_________Spanning from z=    -10 to z=     30
 [OK] Ended conversion internal ASCII => Binary
 [OK] Ended Conformal Mesh
 __________________________________________
@@ -95,19 +95,19 @@ Init Nodal Sources...
 Init Observation...
 ----> there are observation requests
 Init Timing...
-Total Mcells:   0.6843520
+Total Mcells:   0.1280000
 NO flushing of restarting FIELDS scheduled
 Flushing observation DATA every      10000001  minutes and every         1024  steps
 Reporting simulation info every             1  minutes
 __________________________________________
 Simulation from n=      0, t=   0.000000000E+000 to n=      519, t=   0.399802844E-007
-Date/time 11/05/2025   13:12:40
+Date/time 15/05/2025   12:37:23
 __________________________________________
-Closing warning file. Number of messages:          192
+Closing warning file. Number of messages:           64
 __________________________________________
 END PREPROCESSING. STARTING simulation.
 __________________________________________
-Start Date/time 11/05   13:12:40
+Start Date/time 15/05   12:37:23
 __________________________________________
 END FDTD time stepping. Beginning posprocessing at n=          519
 __________________________________________
@@ -132,7 +132,7 @@ END FINAL POSTPROCESSING at n=          519
 __________________________________________
 DONE :  noda2002.fdtd UNTIL n=         519
 __________________________________________
-BEGUN noda2002.fdtd at 11/05/2025 , 13:12
-ENDED noda2002.fdtd at 11/05/2025 , 13:12
+BEGUN noda2002.fdtd at 15/05/2025 , 12:37
+ENDED noda2002.fdtd at 15/05/2025 , 12:37
 __________________________________________
 __________________________________________
